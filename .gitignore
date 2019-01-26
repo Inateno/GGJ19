@@ -61,3 +61,5 @@ typings/
 .next
 
 @dreamirl/
+dist/
+.cache/

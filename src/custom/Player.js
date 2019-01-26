@@ -40,19 +40,25 @@ Player.prototype.setupInputs = function()
 
 Player.prototype.move = function()
 {
-
-  if ( !this.landed )
+  if(this.gravity.x != 0 || this.gravity.y != 0)
   {
     var rot = new DE.Vector2( this.gravity.x, this.gravity.y ).getAngle( { x: 0,y: 0 } ) + Math.PI / 2;
-    this.rotation += ( rot - this.rotation ) / 20;
-  }
-  else 
-  {
-    this.rotation = new DE.Vector2( this.gravity.x, this.gravity.y ).getAngle( { x: 0,y: 0 } ) + Math.PI / 2;
-  }
 
-  this.gravity.x = 0;
-  this.gravity.y = 0;
+    rot = ( Math.PI * 2 + rot ) % (Math.PI * 2);
+    this.rotation = ( Math.PI * 2 + this.rotation ) % (Math.PI * 2);
+
+    if( rot < 1 && this.rotation > 6 )
+      rot = rot + this.rotation;
+    if( rot > 6 && this.rotation < 1 )
+      this.rotation = this.rotation + rot;
+
+    var calc = rot - this.rotation;
+
+    this.rotation += calc * this.ratioGravity;
+    
+    this.gravity.x = 0;
+    this.gravity.y = 0;
+  }
 
   var newAxe = new DE.Vector2( this.axes.x, this.axes.y );
   
@@ -78,7 +84,7 @@ Player.prototype.jump = function()
   if( !this.landed ) 
     return;
 
-  var jump = new DE.Vector2( 0, -7 );
+  var jump = new DE.Vector2( 0, -5 );
 
   jump = this.rotateJump( jump, this.rotation );
 

@@ -35,6 +35,8 @@ const images = {
       , [ "planetGoth", "space/planetGoth.png" ]
       , [ "planetGiraffe", "space/planetGiraffe.png" ]
       , [ "planetChill", "space/planetChill.png" ]
+      , [ "collectible", "collectible.png" ]
+
     ],
     
     // a custom pool not loaded by default, you have to load it whenever you want (you can display a custom loader or just the default loader)

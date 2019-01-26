@@ -27,6 +27,7 @@
     "Game": "./src/Game.js",
     "config": "./src/config.js",
     "DreamWorldControler": "./src/custom/DreamWorldControler.js",
+    "Collectible": "./src/custom/Collectible.js",
     "dreamWorld": "./src/custom/dreamWorld.js",
     "Planet": "./src/custom/Planet.js",
     "Player": "./src/custom/Player.js",
