@@ -45,7 +45,7 @@ Game.onload = function()
   console.log( "game start" );
 
   Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
-  Game.screenManager.changeScreen( dreamWorld.name );
+  Game.screenManager.changeScreen( homeWorld.name );
   
 }
 

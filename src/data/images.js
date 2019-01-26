@@ -21,13 +21,20 @@ const images = {
   pools: {
     // loaded when engine is inited
     default: [
-      [ "bg", "env/bg.jpg", { "totalFrame": 1, "animated":false, "isReversed": false } ]
-      , [ "house", "house.png" ]
-      , [ "player", "player.png" ]
-      , [ "planetVide", "planetVide.png" ]
-      , [ "planetGoth", "planetGoth.png" ]
-      , [ "planetGiraffe", "planetGiraffe.png" ]
-      , [ "planetChill", "planetChill.png" ]
+      [ "title", "house/title.png", { totalFrame: 3, interval: 250 } ]
+      , [ "house-basic", "house/house/basic.png" ]
+      , [ "real-char-walk", "house/mr-holme-walk.png", { totalFrame: 4, interval: 100 } ]
+      , [ "real-char-idle", "house/mr-holme-idle.png", { totalFrame: 5, interval: 300, startFrame: 1, endFrame: 4, pingPongMode: true } ]
+      , [ "real-char-happy", "house/mr-holme-happy.png", { totalFrame: 5, interval: 150, startFrame: 1, pingPongMode: true } ]
+
+      , [ "dream-char-walk", "space/mr-dream-walk.png", { totalFrame: 3, interval: 120 } ]
+      , [ "dream-char-fly", "space/mr-dream-fly.png", { totalFrame: 3, interval: 120 } ]
+
+      , [ "player", "space/player.png" ]
+      , [ "planetVide", "space/planetVide.png" ]
+      , [ "planetGoth", "space/planetGoth.png" ]
+      , [ "planetGiraffe", "space/planetGiraffe.png" ]
+      , [ "planetChill", "space/planetChill.png" ]
     ],
     
     // a custom pool not loaded by default, you have to load it whenever you want (you can display a custom loader or just the default loader)
