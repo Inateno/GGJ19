@@ -3,13 +3,15 @@ import DE from '@dreamirl/dreamengine'
 function Collectible( data )
 {
   DE.GameObject.call( this, {
-    renderer: new DE.SpriteRenderer( { spriteName: "collectible" + data.type } )
+    collisionRadius: 50,
+    attractRadius: 250,
+    attractForce: 3,
+    zindex: -1,
+    velocity: new DE.Vector2( 0, 0 ),
+    renderer: new DE.SpriteRenderer( { spriteName: "collectible" + data.type } ),
+    slowRate: 0.98,
+    automatisms: [ [ "move", "move" ] ]
   } );
-
-  this.collisionRadius = 50;
-  this.attractRadius = 150;
-  this.attractForce = 3;
-
 }
 
 Collectible.Types = {
@@ -28,6 +30,15 @@ Collectible.Types = {
 Collectible.prototype = new DE.GameObject();
 Collectible.constructor = Collectible;
 Collectible.supr = DE.GameObject.prototype;
+
+Collectible.prototype.move = function()
+{
+  this.translate( this.velocity, true );
+
+  this.velocity.multiply( this.slowRate );
+
+  //this.rotation = this.velocity.getAngle( { x: 0, y: 0} );
+}
 
 export default Collectible;
 

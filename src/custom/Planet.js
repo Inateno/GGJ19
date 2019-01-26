@@ -11,8 +11,8 @@ function Planet( data )
   this.gravityRadius = 750;
   this.attractForce = 4;
   this.type = "";
-
-  this.spawnCollectibles( 5 );
+  this.hasReleasedCollectibles = false;
+  this.collectibles = undefined;
 
 }
 
@@ -39,20 +39,35 @@ Planet.prototype.spawnCollectibles = function( numberCollectibles )
 
     var collectible = new Collectible( { type: this.type } );
 
-    var pos = new DE.Vector2( Math.random() * 2 - 1, Math.random() * 2 - 1 );
-
-    pos.normalize();
-    pos.multiply( this.collisionRadius + 50 );
-
-    collectible.x = this.x + pos.x;
-    collectible.y = this.y + pos.y;
+    collectible.x = this.x;
+    collectible.y = this.y;
+    
+    collectible.rotation = Math.random() * Math.PI * 2;
 
     collectibles.push( collectible );
+  }
+
+  this.collectibles = collectibles;
+  
+  return collectibles;
+}
+
+Planet.prototype.releaseCollectibles = function()
+{
+  for (let index = 0; index < this.collectibles.length; index++) {
+    const collectible = this.collectibles[index];
+    
+    var velocity = new DE.Vector2( Math.random() * 2 - 1, Math.random() * 2 - 1 );
+    var speed = Math.random() * 4 + 6;
+
+    velocity.normalize();
+    velocity.multiply( speed );
+
+    collectible.velocity = velocity;
 
   }
 
-  return collectibles;
-
+  this.hasReleasedCollectibles = true;
 }
 
 export default Planet;

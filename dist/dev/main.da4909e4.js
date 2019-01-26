@@ -52474,7 +52474,11 @@ DreamWorldControler.prototype.checkPlanetsGravity = function () {
 
   for (var index = 0; index < this.dreamWorld.planets.length; index++) {
     var planet = this.dreamWorld.planets[index];
-    if (player.vector2.getDistance(planet) - planet.collisionRadius < 5) landed = true;
+
+    if (player.vector2.getDistance(planet) - planet.collisionRadius < 5) {
+      landed = true;
+      if (!planet.hasReleasedCollectibles) planet.releaseCollectibles();
+    }
 
     if (player.vector2.isInRangeFrom(planet.vector2, planet.gravityRadius)) {
       var dir = new _dreamengine.default.Vector2(planet.x - player.x, planet.y - player.y);
@@ -52509,7 +52513,14 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function () {
       var dir = new _dreamengine.default.Vector2(player.x - collectible.x, player.y - collectible.y);
       dir.normalize();
       dir.multiply(collectible.attractForce);
-      collectible.translate(dir, true);
+      collectible.velocity.x += dir.x * 0.016;
+      collectible.velocity.y += dir.y * 0.016;
+
+      if (collectible.vector2.getDistance(player) < 50) {
+        this.dreamWorld.collectibles.splice(i, 1);
+        i--;
+        collectible.askToKill();
+      }
     }
   }
 };
@@ -52530,14 +52541,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Collectible(data) {
   _dreamengine.default.GameObject.call(this, {
+    collisionRadius: 50,
+    attractRadius: 250,
+    attractForce: 3,
+    zindex: -1,
+    velocity: new _dreamengine.default.Vector2(0, 0),
     renderer: new _dreamengine.default.SpriteRenderer({
       spriteName: "collectible" + data.type
-    })
+    }),
+    slowRate: 0.98,
+    automatisms: [["move", "move"]]
   });
-
-  this.collisionRadius = 50;
-  this.attractRadius = 150;
-  this.attractForce = 3;
 }
 
 Collectible.Types = {
@@ -52555,6 +52569,12 @@ Collectible.Types = {
 Collectible.prototype = new _dreamengine.default.GameObject();
 Collectible.constructor = Collectible;
 Collectible.supr = _dreamengine.default.GameObject.prototype;
+
+Collectible.prototype.move = function () {
+  this.translate(this.velocity, true);
+  this.velocity.multiply(this.slowRate); //this.rotation = this.velocity.getAngle( { x: 0, y: 0} );
+};
+
 var _default = Collectible;
 exports.default = _default;
 },{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Planet.js":[function(require,module,exports) {
@@ -52582,7 +52602,8 @@ function Planet(data) {
   this.gravityRadius = 750;
   this.attractForce = 4;
   this.type = "";
-  this.spawnCollectibles(5);
+  this.hasReleasedCollectibles = false;
+  this.collectibles = undefined;
 }
 
 Planet.IDS = {
@@ -52606,15 +52627,27 @@ Planet.prototype.spawnCollectibles = function (numberCollectibles) {
     var collectible = new _Collectible.default({
       type: this.type
     });
-    var pos = new _dreamengine.default.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1);
-    pos.normalize();
-    pos.multiply(this.collisionRadius + 50);
-    collectible.x = this.x + pos.x;
-    collectible.y = this.y + pos.y;
+    collectible.x = this.x;
+    collectible.y = this.y;
+    collectible.rotation = Math.random() * Math.PI * 2;
     collectibles.push(collectible);
   }
 
+  this.collectibles = collectibles;
   return collectibles;
+};
+
+Planet.prototype.releaseCollectibles = function () {
+  for (var index = 0; index < this.collectibles.length; index++) {
+    var collectible = this.collectibles[index];
+    var velocity = new _dreamengine.default.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1);
+    var speed = Math.random() * 4 + 6;
+    velocity.normalize();
+    velocity.multiply(speed);
+    collectible.velocity = velocity;
+  }
+
+  this.hasReleasedCollectibles = true;
 };
 
 var _default = Planet;

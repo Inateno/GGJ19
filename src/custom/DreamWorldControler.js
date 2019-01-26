@@ -25,8 +25,13 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
     const planet = this.dreamWorld.planets[ index ];
 
     if ( player.vector2.getDistance( planet ) - planet.collisionRadius < 5 )
+    {
       landed = true;
-    
+
+      if ( !planet.hasReleasedCollectibles )
+        planet.releaseCollectibles();
+    }
+      
     if ( player.vector2.isInRangeFrom( planet.vector2, planet.gravityRadius ) ) {
 
       var dir = new DE.Vector2( planet.x - player.x, planet.y - player.y );
@@ -68,7 +73,15 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
       dir.normalize();
       dir.multiply( collectible.attractForce );
 
-      collectible.translate( dir, true );
+      collectible.velocity.x += dir.x * 0.016;
+      collectible.velocity.y += dir.y * 0.016;
+
+      if( collectible.vector2.getDistance( player ) < 50 )
+      {
+        this.dreamWorld.collectibles.splice( i, 1 );
+        i--;
+        collectible.askToKill();
+      }
     }
   }
 }
