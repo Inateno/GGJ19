@@ -7,6 +7,7 @@ function DreamWorldControler( dreamWorld )
   this.dreamWorld = dreamWorld;
 
   this.addAutomatism("checkPlanetsGravity", "checkPlanetsGravity");
+  this.addAutomatism("checkPlanetsCollectibles", "checkPlanetsCollectibles");
 }
 
 DreamWorldControler.prototype = new DE.GameObject();
@@ -50,6 +51,26 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 
   player.landed = landed;
 
+}
+
+DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
+
+  const player = this.dreamWorld.player;
+
+  for ( let i = 0; i < this.dreamWorld.collectibles.length; i++ ) {
+
+    let collectible = this.dreamWorld.collectibles[ i ];
+
+    if( collectible.vector2.getDistance( player ) < collectible.attractRadius )
+    {
+      var dir = new DE.Vector2( player.x - collectible.x, player.y - collectible.y );
+
+      dir.normalize();
+      dir.multiply( collectible.attractForce );
+
+      collectible.translate( dir, true );
+    }
+  }
 }
 
 export default DreamWorldControler;

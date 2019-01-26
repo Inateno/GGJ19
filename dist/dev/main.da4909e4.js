@@ -52461,6 +52461,7 @@ function DreamWorldControler(dreamWorld) {
 
   this.dreamWorld = dreamWorld;
   this.addAutomatism("checkPlanetsGravity", "checkPlanetsGravity");
+  this.addAutomatism("checkPlanetsCollectibles", "checkPlanetsCollectibles");
 }
 
 DreamWorldControler.prototype = new _dreamengine.default.GameObject();
@@ -52498,6 +52499,21 @@ DreamWorldControler.prototype.checkPlanetsGravity = function () {
   player.landed = landed;
 };
 
+DreamWorldControler.prototype.checkPlanetsCollectibles = function () {
+  var player = this.dreamWorld.player;
+
+  for (var i = 0; i < this.dreamWorld.collectibles.length; i++) {
+    var collectible = this.dreamWorld.collectibles[i];
+
+    if (collectible.vector2.getDistance(player) < collectible.attractRadius) {
+      var dir = new _dreamengine.default.Vector2(player.x - collectible.x, player.y - collectible.y);
+      dir.normalize();
+      dir.multiply(collectible.attractForce);
+      collectible.translate(dir, true);
+    }
+  }
+};
+
 var _default = DreamWorldControler;
 exports.default = _default;
 },{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Collectible.js":[function(require,module,exports) {
@@ -52520,8 +52536,8 @@ function Collectible(data) {
   });
 
   this.collisionRadius = 50;
-  this.attractRadius = 250;
-  this.attractForce = 4;
+  this.attractRadius = 150;
+  this.attractForce = 3;
 }
 
 Collectible.Types = {
@@ -52565,8 +52581,8 @@ function Planet(data) {
   this.collisionRadius = 245;
   this.gravityRadius = 750;
   this.attractForce = 4;
-  this.numberCollectibles = Math.random() * 10 >> 0;
-  this.collectibles = [];
+  this.type = "";
+  this.spawnCollectibles(5);
 }
 
 Planet.IDS = {
@@ -52583,14 +52599,22 @@ Planet.prototype = new _dreamengine.default.GameObject();
 Planet.constructor = Planet;
 Planet.supr = _dreamengine.default.GameObject.prototype;
 
-Planet.prototype.spawnCollectibles = function () {
-  for (var index = 0; index < this.numberCollectibles; index++) {
+Planet.prototype.spawnCollectibles = function (numberCollectibles) {
+  var collectibles = [];
+
+  for (var index = 0; index < numberCollectibles; index++) {
     var collectible = new _Collectible.default({
-      type: ""
+      type: this.type
     });
-    this.collectibles.push(collectible);
-    this.add(collectible);
+    var pos = new _dreamengine.default.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1);
+    pos.normalize();
+    pos.multiply(this.collisionRadius + 50);
+    collectible.x = this.x + pos.x;
+    collectible.y = this.y + pos.y;
+    collectibles.push(collectible);
   }
+
+  return collectibles;
 };
 
 var _default = Planet;
@@ -52732,6 +52756,7 @@ var dreamWorld = new _dePluginGamescreen.GameScreen("dreamWorld", {
     var self = this;
     this.controler = new _DreamWorldControler.default(this);
     this.scene.add(this.controler);
+    this.collectibles = [];
     this.on("show", function (self, args) {
       this.spawnPlanets();
       this.spawnPlayer();
@@ -52746,6 +52771,7 @@ dreamWorld.spawnPlanets = function () {
   });
   this.add(this.planetSpawn);
   this.planets = [this.planetSpawn];
+  this.collectibles = this.collectibles.concat(this.planetSpawn.spawnCollectibles(5));
 
   for (var index = 1; index < 4; index++) {
     var planet = new _Planet.default({
@@ -52755,7 +52781,11 @@ dreamWorld.spawnPlanets = function () {
     planet.y = index > 1 ? 1000 : 0;
     this.add(planet);
     this.planets.push(planet);
+    this.collectibles = this.collectibles.concat(planet.spawnCollectibles(5));
   }
+
+  console.log(this.collectibles);
+  this.add(this.collectibles);
 };
 
 dreamWorld.spawnPlayer = function () {
@@ -52963,7 +52993,7 @@ var images = {
       "totalFrame": 1,
       "animated": false,
       "isReversed": false
-    }], ["house", "house.png"], ["player", "player.png"], ["planetVide", "planetVide.png"], ["planetGoth", "planetGoth.png"], ["planetGiraffe", "planetGiraffe.png"], ["planetChill", "planetChill.png"]],
+    }], ["house", "house.png"], ["player", "player.png"], ["planetVide", "planetVide.png"], ["planetGoth", "planetGoth.png"], ["planetGiraffe", "planetGiraffe.png"], ["planetChill", "planetChill.png"], ["collectible", "collectible.png"]],
     // a custom pool not loaded by default, you have to load it whenever you want (you can display a custom loader or just the default loader)
     aCustomPool: [// resources
     ]
@@ -53076,7 +53106,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58584" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

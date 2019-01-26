@@ -14,6 +14,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     this.controler = new DreamWorldControler( this );
     this.scene.add( this.controler );
 
+    this.collectibles = [];
+
     this.on( "show", function( self, args )
     {
       this.spawnPlanets();
@@ -29,10 +31,12 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 dreamWorld.spawnPlanets = function()
 {
   this.planetSpawn = new Planet( { planetId: Planet.IDS.vide } );
-
+  
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
 
+  this.collectibles = this.collectibles.concat( this.planetSpawn.spawnCollectibles( 5 ) );
+  
   for ( let index = 1; index < 4; index++ ) {
     
     var planet = new Planet( { planetId: Planet.IDS[ index ] } );
@@ -40,9 +44,14 @@ dreamWorld.spawnPlanets = function()
     planet.x = ( index % 2 ) * 1000;
     planet.y = ( index > 1 ? 1000 : 0 );
 
-    this.add(planet);
+    this.add( planet );
     this.planets.push( planet );
+
+    this.collectibles = this.collectibles.concat( planet.spawnCollectibles( 5 ) );
   }
+
+  console.log(this.collectibles);
+  this.add( this.collectibles );
 }
 
 dreamWorld.spawnPlayer = function()

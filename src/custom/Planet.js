@@ -10,9 +10,10 @@ function Planet( data )
   this.collisionRadius = 245;
   this.gravityRadius = 750;
   this.attractForce = 4;
-  this.numberCollectibles = Math.random() * 10 >> 0;
-  this.collectibles = [];
-  
+  this.type = "";
+
+  this.spawnCollectibles( 5 );
+
 }
 
 Planet.IDS = {
@@ -30,15 +31,28 @@ Planet.prototype = new DE.GameObject();
 Planet.constructor = Planet;
 Planet.supr = DE.GameObject.prototype;
 
-Planet.prototype.spawnCollectibles = function()
+Planet.prototype.spawnCollectibles = function( numberCollectibles )
 {
-  for (let index = 0; index < this.numberCollectibles; index++) {
-    var collectible = new Collectible( { type: "" } );
+  var collectibles = [];
 
-    this.collectibles.push( collectible );
-    this.add( collectible );
+  for ( let index = 0; index < numberCollectibles; index++ ) {
+
+    var collectible = new Collectible( { type: this.type } );
+
+    var pos = new DE.Vector2( Math.random() * 2 - 1, Math.random() * 2 - 1 );
+
+    pos.normalize();
+    pos.multiply( this.collisionRadius + 50 );
+
+    collectible.x = this.x + pos.x;
+    collectible.y = this.y + pos.y;
+
+    collectibles.push( collectible );
 
   }
+
+  return collectibles;
+
 }
 
 export default Planet;

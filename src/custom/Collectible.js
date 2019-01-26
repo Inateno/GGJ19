@@ -7,8 +7,8 @@ function Collectible( data )
   } );
 
   this.collisionRadius = 50;
-  this.attractRadius = 250;
-  this.attractForce = 4;
+  this.attractRadius = 150;
+  this.attractForce = 3;
 
 }
 
