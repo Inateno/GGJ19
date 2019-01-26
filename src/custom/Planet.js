@@ -1,4 +1,5 @@
 import DE from '@dreamirl/dreamengine'
+import Collectible from 'Collectible'
 
 function Planet( data )
 {
@@ -7,17 +8,11 @@ function Planet( data )
   } );
 
   this.collisionRadius = 245;
-  this.gravityRadius = 850;
-  this.attractForce = 10;
-
-  /**
-   * TODO
-   * elements présents sur la planette collectibles + entitées ? (génération aleatoire ?)
-   * shaders d'ambiance ?
-   * musique ?
-   */
-
-
+  this.gravityRadius = 750;
+  this.attractForce = 4;
+  this.numberCollectibles = Math.random() * 10 >> 0;
+  this.collectibles = [];
+  
 }
 
 Planet.IDS = {
@@ -34,6 +29,17 @@ Planet.IDS = {
 Planet.prototype = new DE.GameObject();
 Planet.constructor = Planet;
 Planet.supr = DE.GameObject.prototype;
+
+Planet.prototype.spawnCollectibles = function()
+{
+  for (let index = 0; index < this.numberCollectibles; index++) {
+    var collectible = new Collectible( { type: "" } );
+
+    this.collectibles.push( collectible );
+    this.add( collectible );
+
+  }
+}
 
 export default Planet;
 

@@ -35,8 +35,9 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
       player.vector2.getDistance( planet );
 
       var ratio = 1 - ( player.vector2.getDistance( planet ) - planet.collisionRadius ) / ( planet.gravityRadius - planet.collisionRadius );
-      console.log({ x: dir.x * ratio * 0.0016, y: dir.y * ratio * 0.0016 } )
-      player.addGravity( { x: dir.x * ratio * 0.0016, y: dir.y * ratio * 0.0016 } );
+
+      player.addGravity( { x: dir.x * ratio * 0.016, y: dir.y * ratio * 0.016 } );
+      player.ratioGravity = ratio;
     }
 
     if ( player.vector2.isInRangeFrom( planet.vector2, planet.collisionRadius ) ) { 

@@ -53,7 +53,7 @@ dreamWorld.spawnPlayer = function()
 
   this.add( this.player );
 
-  this.camera.focus( this.player, { lock: { rotation: false } } );
+  this.camera.focus( this.player, { options: { rotation: true } } );
 }
 
 export default dreamWorld;

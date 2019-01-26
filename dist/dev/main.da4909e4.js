@@ -177,7 +177,7 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/object-assign/index.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/object-assign/index.js":[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -273,7 +273,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
   return to;
 };
-},{}],"../node_modules/pixi.js/lib/polyfill/Object.assign.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/Object.assign.js":[function(require,module,exports) {
 'use strict';
 
 var _objectAssign = require('object-assign');
@@ -288,7 +288,7 @@ if (!Object.assign) {
 // https://github.com/sindresorhus/object-assign
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
-},{"object-assign":"../node_modules/object-assign/index.js"}],"../node_modules/pixi.js/lib/polyfill/requestAnimationFrame.js":[function(require,module,exports) {
+},{"object-assign":"../node_modules/@dreamirl/dreamengine/node_modules/object-assign/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/requestAnimationFrame.js":[function(require,module,exports) {
 var global = arguments[3];
 'use strict';
 
@@ -364,7 +364,7 @@ if (!global.cancelAnimationFrame) {
     };
 }
 
-},{}],"../node_modules/pixi.js/lib/polyfill/Math.sign.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/Math.sign.js":[function(require,module,exports) {
 "use strict";
 
 // References:
@@ -382,7 +382,7 @@ if (!Math.sign) {
     };
 }
 
-},{}],"../node_modules/pixi.js/lib/polyfill/index.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/index.js":[function(require,module,exports) {
 'use strict';
 
 require('./Object.assign');
@@ -407,7 +407,7 @@ if (!window.Uint16Array) {
     window.Uint16Array = Array;
 }
 
-},{"./Object.assign":"../node_modules/pixi.js/lib/polyfill/Object.assign.js","./requestAnimationFrame":"../node_modules/pixi.js/lib/polyfill/requestAnimationFrame.js","./Math.sign":"../node_modules/pixi.js/lib/polyfill/Math.sign.js"}],"../node_modules/pixi.js/lib/core/const.js":[function(require,module,exports) {
+},{"./Object.assign":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/Object.assign.js","./requestAnimationFrame":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/requestAnimationFrame.js","./Math.sign":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/Math.sign.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -750,7 +750,7 @@ var UPDATE_PRIORITY = exports.UPDATE_PRIORITY = {
   UTILITY: -50
 };
 
-},{}],"../node_modules/pixi.js/lib/core/math/Point.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Point.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -841,7 +841,7 @@ var Point = function () {
 
 exports.default = Point;
 
-},{}],"../node_modules/pixi.js/lib/core/math/ObservablePoint.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/ObservablePoint.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -958,7 +958,7 @@ var ObservablePoint = function () {
 
 exports.default = ObservablePoint;
 
-},{}],"../node_modules/pixi.js/lib/core/math/Matrix.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Matrix.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -1489,7 +1489,7 @@ var Matrix = function () {
 
 exports.default = Matrix;
 
-},{"./Point":"../node_modules/pixi.js/lib/core/math/Point.js"}],"../node_modules/pixi.js/lib/core/math/GroupD8.js":[function(require,module,exports) {
+},{"./Point":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Point.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/GroupD8.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -1681,7 +1681,7 @@ var GroupD8 = {
 
 exports.default = GroupD8;
 
-},{"./Matrix":"../node_modules/pixi.js/lib/core/math/Matrix.js"}],"../node_modules/pixi.js/lib/core/math/shapes/Rectangle.js":[function(require,module,exports) {
+},{"./Matrix":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Matrix.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Rectangle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -1944,7 +1944,7 @@ var Rectangle = function () {
 
 exports.default = Rectangle;
 
-},{"../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/math/shapes/Circle.js":[function(require,module,exports) {
+},{"../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Circle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -2058,7 +2058,7 @@ var Circle = function () {
 
 exports.default = Circle;
 
-},{"./Rectangle":"../node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/math/shapes/Ellipse.js":[function(require,module,exports) {
+},{"./Rectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Ellipse.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -2180,7 +2180,7 @@ var Ellipse = function () {
 
 exports.default = Ellipse;
 
-},{"./Rectangle":"../node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/math/shapes/Polygon.js":[function(require,module,exports) {
+},{"./Rectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Polygon.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -2311,7 +2311,7 @@ var Polygon = function () {
 
 exports.default = Polygon;
 
-},{"../Point":"../node_modules/pixi.js/lib/core/math/Point.js","../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/math/shapes/RoundedRectangle.js":[function(require,module,exports) {
+},{"../Point":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Point.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/RoundedRectangle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -2444,7 +2444,7 @@ var RoundedRectangle = function () {
 
 exports.default = RoundedRectangle;
 
-},{"../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/math/index.js":[function(require,module,exports) {
+},{"../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -2532,7 +2532,7 @@ Object.defineProperty(exports, 'RoundedRectangle', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./Point":"../node_modules/pixi.js/lib/core/math/Point.js","./ObservablePoint":"../node_modules/pixi.js/lib/core/math/ObservablePoint.js","./Matrix":"../node_modules/pixi.js/lib/core/math/Matrix.js","./GroupD8":"../node_modules/pixi.js/lib/core/math/GroupD8.js","./shapes/Circle":"../node_modules/pixi.js/lib/core/math/shapes/Circle.js","./shapes/Ellipse":"../node_modules/pixi.js/lib/core/math/shapes/Ellipse.js","./shapes/Polygon":"../node_modules/pixi.js/lib/core/math/shapes/Polygon.js","./shapes/Rectangle":"../node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","./shapes/RoundedRectangle":"../node_modules/pixi.js/lib/core/math/shapes/RoundedRectangle.js"}],"../node_modules/pixi-gl-core/src/createContext.js":[function(require,module,exports) {
+},{"./Point":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Point.js","./ObservablePoint":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/ObservablePoint.js","./Matrix":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Matrix.js","./GroupD8":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/GroupD8.js","./shapes/Circle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Circle.js","./shapes/Ellipse":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Ellipse.js","./shapes/Polygon":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Polygon.js","./shapes/Rectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/Rectangle.js","./shapes/RoundedRectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/shapes/RoundedRectangle.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/createContext.js":[function(require,module,exports) {
 
 /**
  * Helper class to create a webGL Context
@@ -2560,7 +2560,7 @@ var createContext = function(canvas, options)
 
 module.exports = createContext;
 
-},{}],"../node_modules/pixi-gl-core/src/setVertexAttribArrays.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/setVertexAttribArrays.js":[function(require,module,exports) {
 // var GL_MAP = {};
 
 /**
@@ -2617,7 +2617,7 @@ var setVertexAttribArrays = function (gl, attribs, state)
 
 module.exports = setVertexAttribArrays;
 
-},{}],"../node_modules/pixi-gl-core/src/GLBuffer.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLBuffer.js":[function(require,module,exports) {
 
 var EMPTY_ARRAY_BUFFER = new ArrayBuffer(0);
 
@@ -2739,7 +2739,7 @@ Buffer.prototype.destroy = function(){
 
 module.exports = Buffer;
 
-},{}],"../node_modules/pixi-gl-core/src/GLTexture.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLTexture.js":[function(require,module,exports) {
 
 /**
  * Helper class to create a WebGL Texture
@@ -3074,7 +3074,7 @@ Texture.fromData = function(gl, data, width, height)
 
 module.exports = Texture;
 
-},{}],"../node_modules/pixi-gl-core/src/GLFramebuffer.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLFramebuffer.js":[function(require,module,exports) {
 
 var Texture = require('./GLTexture');
 
@@ -3302,7 +3302,7 @@ Framebuffer.createFloat32 = function(gl, width, height, data)
 
 module.exports = Framebuffer;
 
-},{"./GLTexture":"../node_modules/pixi-gl-core/src/GLTexture.js"}],"../node_modules/pixi-gl-core/src/shader/compileProgram.js":[function(require,module,exports) {
+},{"./GLTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLTexture.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/compileProgram.js":[function(require,module,exports) {
 
 /**
  * @class
@@ -3384,7 +3384,7 @@ var compileShader = function (gl, type, src)
 
 module.exports = compileProgram;
 
-},{}],"../node_modules/pixi-gl-core/src/shader/mapType.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapType.js":[function(require,module,exports) {
 
 
 var mapType = function(gl, type) 
@@ -3432,7 +3432,7 @@ var GL_TO_GLSL_TYPES = {
 
 module.exports = mapType;
 
-},{}],"../node_modules/pixi-gl-core/src/shader/mapSize.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapSize.js":[function(require,module,exports) {
 /**
  * @class
  * @memberof PIXI.glCore.shader
@@ -3470,7 +3470,7 @@ var GLSL_TO_SIZE = {
 
 module.exports = mapSize;
 
-},{}],"../node_modules/pixi-gl-core/src/shader/extractAttributes.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractAttributes.js":[function(require,module,exports) {
 
 var mapType = require('./mapType');
 var mapSize = require('./mapSize');
@@ -3513,7 +3513,7 @@ var pointer = function(type, normalized, stride, start){
 
 module.exports = extractAttributes;
 
-},{"./mapType":"../node_modules/pixi-gl-core/src/shader/mapType.js","./mapSize":"../node_modules/pixi-gl-core/src/shader/mapSize.js"}],"../node_modules/pixi-gl-core/src/shader/defaultValue.js":[function(require,module,exports) {
+},{"./mapType":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapType.js","./mapSize":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapSize.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/defaultValue.js":[function(require,module,exports) {
 /**
  * @class
  * @memberof PIXI.glCore.shader
@@ -3593,7 +3593,7 @@ var booleanArray = function(size)
 
 module.exports = defaultValue;
 
-},{}],"../node_modules/pixi-gl-core/src/shader/extractUniforms.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractUniforms.js":[function(require,module,exports) {
 var mapType = require('./mapType');
 var defaultValue = require('./defaultValue');
 
@@ -3630,7 +3630,7 @@ var extractUniforms = function(gl, program)
 
 module.exports = extractUniforms;
 
-},{"./mapType":"../node_modules/pixi-gl-core/src/shader/mapType.js","./defaultValue":"../node_modules/pixi-gl-core/src/shader/defaultValue.js"}],"../node_modules/pixi-gl-core/src/shader/setPrecision.js":[function(require,module,exports) {
+},{"./mapType":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapType.js","./defaultValue":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/defaultValue.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/setPrecision.js":[function(require,module,exports) {
 /**
  * Sets the float precision on the shader. If the precision is already present this function will do nothing
  * @param {string} src       the shader source
@@ -3650,7 +3650,7 @@ var setPrecision = function(src, precision)
 
 module.exports = setPrecision;
 
-},{}],"../node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js":[function(require,module,exports) {
 /**
  * Extracts the attributes
  * @class
@@ -3773,7 +3773,7 @@ function getUniformGroup(nameTokens, uniform)
 
 module.exports = generateUniformAccessObject;
 
-},{}],"../node_modules/pixi-gl-core/src/GLShader.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLShader.js":[function(require,module,exports) {
 
 var compileProgram = require('./shader/compileProgram'),
 	extractAttributes = require('./shader/extractAttributes'),
@@ -3869,7 +3869,7 @@ Shader.prototype.destroy = function()
 
 module.exports = Shader;
 
-},{"./shader/compileProgram":"../node_modules/pixi-gl-core/src/shader/compileProgram.js","./shader/extractAttributes":"../node_modules/pixi-gl-core/src/shader/extractAttributes.js","./shader/extractUniforms":"../node_modules/pixi-gl-core/src/shader/extractUniforms.js","./shader/setPrecision":"../node_modules/pixi-gl-core/src/shader/setPrecision.js","./shader/generateUniformAccessObject":"../node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js"}],"../node_modules/pixi-gl-core/src/VertexArrayObject.js":[function(require,module,exports) {
+},{"./shader/compileProgram":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/compileProgram.js","./shader/extractAttributes":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractAttributes.js","./shader/extractUniforms":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractUniforms.js","./shader/setPrecision":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/setPrecision.js","./shader/generateUniformAccessObject":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/VertexArrayObject.js":[function(require,module,exports) {
 
 // state object//
 var setVertexAttribArrays = require( './setVertexAttribArrays' );
@@ -4137,7 +4137,7 @@ VertexArrayObject.prototype.getSize = function()
     return attrib.buffer.data.length / (( attrib.stride/4 ) || attrib.attribute.size);
 };
 
-},{"./setVertexAttribArrays":"../node_modules/pixi-gl-core/src/setVertexAttribArrays.js"}],"../node_modules/pixi-gl-core/src/shader/index.js":[function(require,module,exports) {
+},{"./setVertexAttribArrays":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/setVertexAttribArrays.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/index.js":[function(require,module,exports) {
 module.exports = {
     compileProgram: require('./compileProgram'),
     defaultValue: require('./defaultValue'),
@@ -4148,7 +4148,7 @@ module.exports = {
     mapSize: require('./mapSize'),
     mapType: require('./mapType')
 };
-},{"./compileProgram":"../node_modules/pixi-gl-core/src/shader/compileProgram.js","./defaultValue":"../node_modules/pixi-gl-core/src/shader/defaultValue.js","./extractAttributes":"../node_modules/pixi-gl-core/src/shader/extractAttributes.js","./extractUniforms":"../node_modules/pixi-gl-core/src/shader/extractUniforms.js","./generateUniformAccessObject":"../node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js","./setPrecision":"../node_modules/pixi-gl-core/src/shader/setPrecision.js","./mapSize":"../node_modules/pixi-gl-core/src/shader/mapSize.js","./mapType":"../node_modules/pixi-gl-core/src/shader/mapType.js"}],"../node_modules/pixi-gl-core/src/index.js":[function(require,module,exports) {
+},{"./compileProgram":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/compileProgram.js","./defaultValue":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/defaultValue.js","./extractAttributes":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractAttributes.js","./extractUniforms":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/extractUniforms.js","./generateUniformAccessObject":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/generateUniformAccessObject.js","./setPrecision":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/setPrecision.js","./mapSize":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapSize.js","./mapType":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/mapType.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js":[function(require,module,exports) {
 var gl = {
     createContext:          require('./createContext'),
     setVertexAttribArrays:  require('./setVertexAttribArrays'),
@@ -4175,7 +4175,7 @@ if (typeof window !== 'undefined')
     window.PIXI.glCore = gl;
 }
 
-},{"./createContext":"../node_modules/pixi-gl-core/src/createContext.js","./setVertexAttribArrays":"../node_modules/pixi-gl-core/src/setVertexAttribArrays.js","./GLBuffer":"../node_modules/pixi-gl-core/src/GLBuffer.js","./GLFramebuffer":"../node_modules/pixi-gl-core/src/GLFramebuffer.js","./GLShader":"../node_modules/pixi-gl-core/src/GLShader.js","./GLTexture":"../node_modules/pixi-gl-core/src/GLTexture.js","./VertexArrayObject":"../node_modules/pixi-gl-core/src/VertexArrayObject.js","./shader":"../node_modules/pixi-gl-core/src/shader/index.js"}],"../node_modules/pixi.js/lib/core/display/Bounds.js":[function(require,module,exports) {
+},{"./createContext":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/createContext.js","./setVertexAttribArrays":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/setVertexAttribArrays.js","./GLBuffer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLBuffer.js","./GLFramebuffer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLFramebuffer.js","./GLShader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLShader.js","./GLTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/GLTexture.js","./VertexArrayObject":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/VertexArrayObject.js","./shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/shader/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Bounds.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -4518,7 +4518,7 @@ var Bounds = function () {
 
 exports.default = Bounds;
 
-},{"../math":"../node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/eventemitter3/index.js":[function(require,module,exports) {
+},{"../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js":[function(require,module,exports) {
 'use strict';
 
 var has = Object.prototype.hasOwnProperty
@@ -4831,7 +4831,7 @@ if ('undefined' !== typeof module) {
   module.exports = EventEmitter;
 }
 
-},{}],"../node_modules/ismobilejs/isMobile.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/ismobilejs/isMobile.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /**
@@ -4972,7 +4972,7 @@ var global = arguments[3];
 
 })(this);
 
-},{}],"../node_modules/pixi.js/lib/core/utils/maxRecommendedTextures.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/maxRecommendedTextures.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -4994,7 +4994,7 @@ function maxRecommendedTextures(max) {
     return max;
 }
 
-},{"ismobilejs":"../node_modules/ismobilejs/isMobile.js"}],"../node_modules/pixi.js/lib/core/utils/canUploadSameBuffer.js":[function(require,module,exports) {
+},{"ismobilejs":"../node_modules/@dreamirl/dreamengine/node_modules/ismobilejs/isMobile.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/canUploadSameBuffer.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -5008,7 +5008,7 @@ function canUploadSameBuffer() {
 	return !ios;
 }
 
-},{}],"../node_modules/pixi.js/lib/core/settings.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -5243,7 +5243,7 @@ exports.default = {
 
 };
 
-},{"./utils/maxRecommendedTextures":"../node_modules/pixi.js/lib/core/utils/maxRecommendedTextures.js","./utils/canUploadSameBuffer":"../node_modules/pixi.js/lib/core/utils/canUploadSameBuffer.js"}],"../node_modules/pixi.js/lib/core/display/TransformBase.js":[function(require,module,exports) {
+},{"./utils/maxRecommendedTextures":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/maxRecommendedTextures.js","./utils/canUploadSameBuffer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/canUploadSameBuffer.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformBase.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -5330,7 +5330,7 @@ TransformBase.prototype.updateWorldTransform = TransformBase.prototype.updateTra
 
 TransformBase.IDENTITY = new TransformBase();
 
-},{"../math":"../node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/pixi.js/lib/core/display/TransformStatic.js":[function(require,module,exports) {
+},{"../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformStatic.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -5540,7 +5540,7 @@ var TransformStatic = function (_TransformBase) {
 
 exports.default = TransformStatic;
 
-},{"../math":"../node_modules/pixi.js/lib/core/math/index.js","./TransformBase":"../node_modules/pixi.js/lib/core/display/TransformBase.js"}],"../node_modules/pixi.js/lib/core/display/Transform.js":[function(require,module,exports) {
+},{"../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","./TransformBase":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformBase.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Transform.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -5721,7 +5721,7 @@ var Transform = function (_TransformBase) {
 
 exports.default = Transform;
 
-},{"../math":"../node_modules/pixi.js/lib/core/math/index.js","./TransformBase":"../node_modules/pixi.js/lib/core/display/TransformBase.js"}],"../node_modules/pixi.js/lib/core/display/DisplayObject.js":[function(require,module,exports) {
+},{"../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","./TransformBase":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformBase.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/DisplayObject.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -6413,7 +6413,7 @@ var DisplayObject = function (_EventEmitter) {
 exports.default = DisplayObject;
 DisplayObject.prototype.displayObjectUpdateTransform = DisplayObject.prototype.updateTransform;
 
-},{"eventemitter3":"../node_modules/eventemitter3/index.js","../const":"../node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/pixi.js/lib/core/settings.js","./TransformStatic":"../node_modules/pixi.js/lib/core/display/TransformStatic.js","./Transform":"../node_modules/pixi.js/lib/core/display/Transform.js","./Bounds":"../node_modules/pixi.js/lib/core/display/Bounds.js","../math":"../node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/pixi.js/lib/core/utils/pluginTarget.js":[function(require,module,exports) {
+},{"eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","./TransformStatic":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformStatic.js","./Transform":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Transform.js","./Bounds":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Bounds.js","../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/pluginTarget.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -6479,7 +6479,7 @@ exports.default = {
     }
 };
 
-},{}],"../node_modules/pixi.js/lib/core/utils/mixin.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/mixin.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -6541,7 +6541,7 @@ function performMixins() {
     mixins.length = 0;
 }
 
-},{}],"../node_modules/remove-array-items/index.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/remove-array-items/index.js":[function(require,module,exports) {
 'use strict'
 
 /**
@@ -6570,7 +6570,7 @@ module.exports = function removeItems (arr, startIdx, removeCount) {
   arr.length = len
 }
 
-},{}],"../node_modules/pixi.js/lib/core/utils/mapPremultipliedBlendModes.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/mapPremultipliedBlendModes.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -6613,7 +6613,7 @@ function mapPremultipliedBlendModes() {
     return array;
 }
 
-},{"../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/utils/index.js":[function(require,module,exports) {
+},{"../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -7087,7 +7087,7 @@ function premultiplyTintToRgba(tint, alpha, out, premultiply) {
     return out;
 }
 
-},{"../const":"../node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/pixi.js/lib/core/settings.js","eventemitter3":"../node_modules/eventemitter3/index.js","./pluginTarget":"../node_modules/pixi.js/lib/core/utils/pluginTarget.js","./mixin":"../node_modules/pixi.js/lib/core/utils/mixin.js","ismobilejs":"../node_modules/ismobilejs/isMobile.js","remove-array-items":"../node_modules/remove-array-items/index.js","./mapPremultipliedBlendModes":"../node_modules/pixi.js/lib/core/utils/mapPremultipliedBlendModes.js"}],"../node_modules/pixi.js/lib/core/display/Container.js":[function(require,module,exports) {
+},{"../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","./pluginTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/pluginTarget.js","./mixin":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/mixin.js","ismobilejs":"../node_modules/@dreamirl/dreamengine/node_modules/ismobilejs/isMobile.js","remove-array-items":"../node_modules/@dreamirl/dreamengine/node_modules/remove-array-items/index.js","./mapPremultipliedBlendModes":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/mapPremultipliedBlendModes.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -7705,7 +7705,7 @@ var Container = function (_DisplayObject) {
 exports.default = Container;
 Container.prototype.containerUpdateTransform = Container.prototype.updateTransform;
 
-},{"../utils":"../node_modules/pixi.js/lib/core/utils/index.js","./DisplayObject":"../node_modules/pixi.js/lib/core/display/DisplayObject.js"}],"../node_modules/punycode/punycode.js":[function(require,module,exports) {
+},{"../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","./DisplayObject":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/DisplayObject.js"}],"../node_modules/punycode/punycode.js":[function(require,module,exports) {
 var global = arguments[3];
 var define;
 /*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -9174,7 +9174,7 @@ Url.prototype.parseHost = function() {
   if (host) this.hostname = host;
 };
 
-},{"punycode":"../node_modules/punycode/punycode.js","./util":"../node_modules/url/util.js","querystring":"../node_modules/querystring-es3/index.js"}],"../node_modules/pixi.js/lib/core/utils/determineCrossOrigin.js":[function(require,module,exports) {
+},{"punycode":"../node_modules/punycode/punycode.js","./util":"../node_modules/url/util.js","querystring":"../node_modules/querystring-es3/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/determineCrossOrigin.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -9230,7 +9230,7 @@ function determineCrossOrigin(url) {
     return '';
 }
 
-},{"url":"../node_modules/url/url.js"}],"../node_modules/bit-twiddle/twiddle.js":[function(require,module,exports) {
+},{"url":"../node_modules/url/url.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/bit-twiddle/twiddle.js":[function(require,module,exports) {
 /**
  * Bit twiddling hacks for JavaScript.
  *
@@ -9436,7 +9436,7 @@ exports.nextCombination = function(v) {
 }
 
 
-},{}],"../node_modules/pixi.js/lib/core/textures/BaseTexture.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -10280,7 +10280,7 @@ var BaseTexture = function (_EventEmitter) {
 
 exports.default = BaseTexture;
 
-},{"../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../settings":"../node_modules/pixi.js/lib/core/settings.js","eventemitter3":"../node_modules/eventemitter3/index.js","../utils/determineCrossOrigin":"../node_modules/pixi.js/lib/core/utils/determineCrossOrigin.js","bit-twiddle":"../node_modules/bit-twiddle/twiddle.js"}],"../node_modules/pixi.js/lib/core/ticker/TickerListener.js":[function(require,module,exports) {
+},{"../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","../utils/determineCrossOrigin":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/determineCrossOrigin.js","bit-twiddle":"../node_modules/@dreamirl/dreamengine/node_modules/bit-twiddle/twiddle.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/TickerListener.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -10454,7 +10454,7 @@ var TickerListener = function () {
 
 exports.default = TickerListener;
 
-},{}],"../node_modules/pixi.js/lib/core/ticker/Ticker.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/Ticker.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -10927,7 +10927,7 @@ var Ticker = function () {
 
 exports.default = Ticker;
 
-},{"../settings":"../node_modules/pixi.js/lib/core/settings.js","../const":"../node_modules/pixi.js/lib/core/const.js","./TickerListener":"../node_modules/pixi.js/lib/core/ticker/TickerListener.js"}],"../node_modules/pixi.js/lib/core/ticker/index.js":[function(require,module,exports) {
+},{"../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","./TickerListener":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/TickerListener.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -11007,7 +11007,7 @@ shared.destroy = function () {
 exports.shared = shared;
 exports.Ticker = _Ticker2.default;
 
-},{"./Ticker":"../node_modules/pixi.js/lib/core/ticker/Ticker.js"}],"../node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js":[function(require,module,exports) {
+},{"./Ticker":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/Ticker.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -11332,7 +11332,7 @@ function createSource(path, type) {
     return source;
 }
 
-},{"./BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../ticker":"../node_modules/pixi.js/lib/core/ticker/index.js","../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/textures/TextureUvs.js":[function(require,module,exports) {
+},{"./BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../ticker":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/TextureUvs.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -11437,7 +11437,7 @@ var TextureUvs = function () {
 
 exports.default = TextureUvs;
 
-},{"../math/GroupD8":"../node_modules/pixi.js/lib/core/math/GroupD8.js"}],"../node_modules/pixi.js/lib/core/textures/Texture.js":[function(require,module,exports) {
+},{"../math/GroupD8":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/GroupD8.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -12127,7 +12127,7 @@ Texture.WHITE = createWhiteTexture();
 removeAllHandlers(Texture.WHITE);
 removeAllHandlers(Texture.WHITE.baseTexture);
 
-},{"./BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","./VideoBaseTexture":"../node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js","./TextureUvs":"../node_modules/pixi.js/lib/core/textures/TextureUvs.js","eventemitter3":"../node_modules/eventemitter3/index.js","../math":"../node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/sprites/Sprite.js":[function(require,module,exports) {
+},{"./BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","./VideoBaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js","./TextureUvs":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/TextureUvs.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/Sprite.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -12750,7 +12750,7 @@ var Sprite = function (_Container) {
 
 exports.default = Sprite;
 
-},{"../math":"../node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/pixi.js/lib/core/const.js","../textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js","../display/Container":"../node_modules/pixi.js/lib/core/display/Container.js"}],"../node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js":[function(require,module,exports) {
+},{"../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js","../display/Container":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -12909,7 +12909,7 @@ var BaseRenderTexture = function (_BaseTexture) {
 
 exports.default = BaseRenderTexture;
 
-},{"./BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/textures/RenderTexture.js":[function(require,module,exports) {
+},{"./BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/RenderTexture.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13060,7 +13060,7 @@ var RenderTexture = function (_Texture) {
 
 exports.default = RenderTexture;
 
-},{"./BaseRenderTexture":"../node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js","./Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js"}],"../node_modules/pixi.js/lib/core/renderers/SystemRenderer.js":[function(require,module,exports) {
+},{"./BaseRenderTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js","./Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/SystemRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13423,7 +13423,7 @@ var SystemRenderer = function (_EventEmitter) {
 
 exports.default = SystemRenderer;
 
-},{"../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../math":"../node_modules/pixi.js/lib/core/math/index.js","../const":"../node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/pixi.js/lib/core/settings.js","../display/Container":"../node_modules/pixi.js/lib/core/display/Container.js","../textures/RenderTexture":"../node_modules/pixi.js/lib/core/textures/RenderTexture.js","eventemitter3":"../node_modules/eventemitter3/index.js"}],"../node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasMaskManager.js":[function(require,module,exports) {
+},{"../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","../display/Container":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js","../textures/RenderTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/RenderTexture.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasMaskManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13592,7 +13592,7 @@ var CanvasMaskManager = function () {
 
 exports.default = CanvasMaskManager;
 
-},{"../../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js":[function(require,module,exports) {
+},{"../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13716,7 +13716,7 @@ var CanvasRenderTarget = function () {
 
 exports.default = CanvasRenderTarget;
 
-},{"../../../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js":[function(require,module,exports) {
+},{"../../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13777,7 +13777,7 @@ function canUseNewCanvasBlendModes() {
     return data[0] === 255 && data[1] === 0 && data[2] === 0;
 }
 
-},{}],"../node_modules/pixi.js/lib/core/renderers/canvas/utils/mapCanvasBlendModesToPixi.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/mapCanvasBlendModesToPixi.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -13849,7 +13849,7 @@ function mapCanvasBlendModesToPixi() {
     return array;
 }
 
-},{"../../../const":"../node_modules/pixi.js/lib/core/const.js","./canUseNewCanvasBlendModes":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js"}],"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js":[function(require,module,exports) {
+},{"../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","./canUseNewCanvasBlendModes":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14211,7 +14211,7 @@ var CanvasRenderer = function (_SystemRenderer) {
 exports.default = CanvasRenderer;
 _utils.pluginTarget.mixin(CanvasRenderer);
 
-},{"../SystemRenderer":"../node_modules/pixi.js/lib/core/renderers/SystemRenderer.js","./utils/CanvasMaskManager":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasMaskManager.js","./utils/CanvasRenderTarget":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js","./utils/mapCanvasBlendModesToPixi":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/mapCanvasBlendModesToPixi.js","../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../../const":"../node_modules/pixi.js/lib/core/const.js","../../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js":[function(require,module,exports) {
+},{"../SystemRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/SystemRenderer.js","./utils/CanvasMaskManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasMaskManager.js","./utils/CanvasRenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js","./utils/mapCanvasBlendModesToPixi":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/mapCanvasBlendModesToPixi.js","../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14462,7 +14462,7 @@ CanvasTinter.tintMethod = CanvasTinter.canUseMultiply ? CanvasTinter.tintWithMul
 
 exports.default = CanvasTinter;
 
-},{"../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../../renderers/canvas/utils/canUseNewCanvasBlendModes":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js"}],"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasSpriteRenderer.js":[function(require,module,exports) {
+},{"../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../../renderers/canvas/utils/canUseNewCanvasBlendModes":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/canUseNewCanvasBlendModes.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasSpriteRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14615,7 +14615,7 @@ exports.default = CanvasSpriteRenderer;
 
 _CanvasRenderer2.default.registerPlugin('sprite', CanvasSpriteRenderer);
 
-},{"../../renderers/canvas/CanvasRenderer":"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","../../const":"../node_modules/pixi.js/lib/core/const.js","../../math":"../node_modules/pixi.js/lib/core/math/index.js","./CanvasTinter":"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js":[function(require,module,exports) {
+},{"../../renderers/canvas/CanvasRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","./CanvasTinter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14670,7 +14670,7 @@ var WebGLManager = function () {
 
 exports.default = WebGLManager;
 
-},{}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14748,7 +14748,7 @@ var ObjectRenderer = function (_WebGLManager) {
 
 exports.default = ObjectRenderer;
 
-},{"../managers/WebGLManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/filters/extractUniformsFromSrc.js":[function(require,module,exports) {
+},{"../managers/WebGLManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/extractUniformsFromSrc.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -14810,7 +14810,7 @@ function extractUniformsFromString(string) {
     return uniforms;
 }
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -15006,7 +15006,7 @@ var Filter = function () {
 
 exports.default = Filter;
 
-},{"./extractUniformsFromSrc":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/extractUniformsFromSrc.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../../../const":"../node_modules/pixi.js/lib/core/const.js","../../../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/process/browser.js":[function(require,module,exports) {
+},{"./extractUniformsFromSrc":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/extractUniformsFromSrc.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -15443,7 +15443,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-},{"process":"../node_modules/process/browser.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js":[function(require,module,exports) {
+},{"process":"../node_modules/process/browser.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -15515,7 +15515,7 @@ var SpriteMaskFilter = function (_Filter) {
 
 exports.default = SpriteMaskFilter;
 
-},{"../Filter":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js","../../../../math":"../node_modules/pixi.js/lib/core/math/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/managers/MaskManager.js":[function(require,module,exports) {
+},{"../Filter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js","../../../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/MaskManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -15725,7 +15725,7 @@ var MaskManager = function (_WebGLManager) {
 
 exports.default = MaskManager;
 
-},{"./WebGLManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","../filters/spriteMask/SpriteMaskFilter":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/managers/StencilManager.js":[function(require,module,exports) {
+},{"./WebGLManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","../filters/spriteMask/SpriteMaskFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/StencilManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -15878,7 +15878,7 @@ var StencilManager = function (_WebGLManager) {
 
 exports.default = StencilManager;
 
-},{"./WebGLManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js":[function(require,module,exports) {
+},{"./WebGLManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -16205,7 +16205,7 @@ var RenderTarget = function () {
 
 exports.default = RenderTarget;
 
-},{"../../../math":"../node_modules/pixi.js/lib/core/math/index.js","../../../const":"../node_modules/pixi.js/lib/core/const.js","../../../settings":"../node_modules/pixi.js/lib/core/settings.js","pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js"}],"../node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js":[function(require,module,exports) {
+},{"../../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -16239,7 +16239,7 @@ function createIndicesForQuads(size) {
     return indices;
 }
 
-},{}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -16420,7 +16420,7 @@ var Quad = function () {
 
 exports.default = Quad;
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","../../../utils/createIndicesForQuads":"../node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js"}],"../node_modules/pixi.js/lib/core/Shader.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","../../../utils/createIndicesForQuads":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -16484,7 +16484,7 @@ var Shader = function (_GLShader) {
 
 exports.default = Shader;
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","./settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/filters/filterTransforms.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","./settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/filterTransforms.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -16543,7 +16543,7 @@ function calculateSpriteMatrix(outputMatrix, filterArea, textureSize, sprite) {
     return mappedMatrix;
 }
 
-},{"../../../math":"../node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/managers/FilterManager.js":[function(require,module,exports) {
+},{"../../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/FilterManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17137,7 +17137,7 @@ var FilterManager = function (_WebGLManager) {
 
 exports.default = FilterManager;
 
-},{"./WebGLManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","../utils/RenderTarget":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","../utils/Quad":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js","../../../math":"../node_modules/pixi.js/lib/core/math/index.js","../../../Shader":"../node_modules/pixi.js/lib/core/Shader.js","../filters/filterTransforms":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/filterTransforms.js","bit-twiddle":"../node_modules/bit-twiddle/twiddle.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/TextureManager.js":[function(require,module,exports) {
+},{"./WebGLManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","../utils/RenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","../utils/Quad":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js","../../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../../../Shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js","../filters/filterTransforms":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/filterTransforms.js","bit-twiddle":"../node_modules/@dreamirl/dreamengine/node_modules/bit-twiddle/twiddle.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/TextureManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17393,7 +17393,7 @@ var TextureManager = function () {
 
 exports.default = TextureManager;
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","../../const":"../node_modules/pixi.js/lib/core/const.js","./utils/RenderTarget":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","../../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/TextureGarbageCollector.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","./utils/RenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/TextureGarbageCollector.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17513,7 +17513,7 @@ var TextureGarbageCollector = function () {
 
 exports.default = TextureGarbageCollector;
 
-},{"../../const":"../node_modules/pixi.js/lib/core/const.js","../../settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLBlendModesToPixi.js":[function(require,module,exports) {
+},{"../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLBlendModesToPixi.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17562,7 +17562,7 @@ function mapWebGLBlendModesToPixi(gl) {
     return array;
 }
 
-},{"../../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLState.js":[function(require,module,exports) {
+},{"../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLState.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17842,7 +17842,7 @@ var WebGLState = function () {
 
 exports.default = WebGLState;
 
-},{"./utils/mapWebGLBlendModesToPixi":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLBlendModesToPixi.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLDrawModesToPixi.js":[function(require,module,exports) {
+},{"./utils/mapWebGLBlendModesToPixi":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLBlendModesToPixi.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLDrawModesToPixi.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17874,7 +17874,7 @@ function mapWebGLDrawModesToPixi(gl) {
   return object;
 }
 
-},{"../../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/validateContext.js":[function(require,module,exports) {
+},{"../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/validateContext.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -17890,7 +17890,7 @@ function validateContext(gl) {
     }
 }
 
-},{}],"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -18702,7 +18702,7 @@ var WebGLRenderer = function (_SystemRenderer) {
 exports.default = WebGLRenderer;
 _utils.pluginTarget.mixin(WebGLRenderer);
 
-},{"../SystemRenderer":"../node_modules/pixi.js/lib/core/renderers/SystemRenderer.js","./managers/MaskManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/MaskManager.js","./managers/StencilManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/StencilManager.js","./managers/FilterManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/FilterManager.js","./utils/RenderTarget":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","./utils/ObjectRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","./TextureManager":"../node_modules/pixi.js/lib/core/renderers/webgl/TextureManager.js","../../textures/BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","./TextureGarbageCollector":"../node_modules/pixi.js/lib/core/renderers/webgl/TextureGarbageCollector.js","./WebGLState":"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLState.js","./utils/mapWebGLDrawModesToPixi":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLDrawModesToPixi.js","./utils/validateContext":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/validateContext.js","../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/sprites/webgl/generateMultiTextureShader.js":[function(require,module,exports) {
+},{"../SystemRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/SystemRenderer.js","./managers/MaskManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/MaskManager.js","./managers/StencilManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/StencilManager.js","./managers/FilterManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/FilterManager.js","./utils/RenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","./utils/ObjectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","./TextureManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/TextureManager.js","../../textures/BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","./TextureGarbageCollector":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/TextureGarbageCollector.js","./WebGLState":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLState.js","./utils/mapWebGLDrawModesToPixi":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/mapWebGLDrawModesToPixi.js","./utils/validateContext":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/validateContext.js","../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/generateMultiTextureShader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -18765,7 +18765,7 @@ function generateSampleSrc(maxTextures) {
     return src;
 }
 
-},{"../../Shader":"../node_modules/pixi.js/lib/core/Shader.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/core/renderers/webgl/utils/checkMaxIfStatmentsInShader.js":[function(require,module,exports) {
+},{"../../Shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/checkMaxIfStatmentsInShader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -18840,7 +18840,7 @@ function generateIfTestSrc(maxIfs) {
     return src;
 }
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js"}],"../node_modules/pixi.js/lib/core/sprites/webgl/BatchBuffer.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/BatchBuffer.js":[function(require,module,exports) {
 
 "use strict";
 
@@ -18894,7 +18894,7 @@ var Buffer = function () {
 
 exports.default = Buffer;
 
-},{}],"../node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -19436,7 +19436,7 @@ exports.default = SpriteRenderer;
 
 _WebGLRenderer2.default.registerPlugin('sprite', SpriteRenderer);
 
-},{"../../renderers/webgl/utils/ObjectRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","../../renderers/webgl/WebGLRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js","../../utils/createIndicesForQuads":"../node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js","./generateMultiTextureShader":"../node_modules/pixi.js/lib/core/sprites/webgl/generateMultiTextureShader.js","../../renderers/webgl/utils/checkMaxIfStatmentsInShader":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/checkMaxIfStatmentsInShader.js","./BatchBuffer":"../node_modules/pixi.js/lib/core/sprites/webgl/BatchBuffer.js","../../settings":"../node_modules/pixi.js/lib/core/settings.js","../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","bit-twiddle":"../node_modules/bit-twiddle/twiddle.js"}],"../node_modules/pixi.js/lib/core/text/TextStyle.js":[function(require,module,exports) {
+},{"../../renderers/webgl/utils/ObjectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","../../renderers/webgl/WebGLRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js","../../utils/createIndicesForQuads":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js","./generateMultiTextureShader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/generateMultiTextureShader.js","../../renderers/webgl/utils/checkMaxIfStatmentsInShader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/checkMaxIfStatmentsInShader.js","./BatchBuffer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/BatchBuffer.js","../../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","bit-twiddle":"../node_modules/@dreamirl/dreamengine/node_modules/bit-twiddle/twiddle.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextStyle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -20220,7 +20220,7 @@ function areArraysEqual(array1, array2) {
     return true;
 }
 
-},{"../const":"../node_modules/pixi.js/lib/core/const.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/text/TextMetrics.js":[function(require,module,exports) {
+},{"../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextMetrics.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -20522,7 +20522,7 @@ TextMetrics._context = canvas.getContext('2d');
  */
 TextMetrics._fonts = {};
 
-},{}],"../node_modules/pixi.js/lib/core/utils/trimCanvas.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/trimCanvas.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -20598,7 +20598,7 @@ function trimCanvas(canvas) {
     };
 }
 
-},{}],"../node_modules/pixi.js/lib/core/text/Text.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/Text.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -21253,7 +21253,7 @@ var Text = function (_Sprite) {
 
 exports.default = Text;
 
-},{"../sprites/Sprite":"../node_modules/pixi.js/lib/core/sprites/Sprite.js","../textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js","../math":"../node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/pixi.js/lib/core/settings.js","./TextStyle":"../node_modules/pixi.js/lib/core/text/TextStyle.js","./TextMetrics":"../node_modules/pixi.js/lib/core/text/TextMetrics.js","../utils/trimCanvas":"../node_modules/pixi.js/lib/core/utils/trimCanvas.js"}],"../node_modules/pixi.js/lib/core/graphics/GraphicsData.js":[function(require,module,exports) {
+},{"../sprites/Sprite":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/Sprite.js","../textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js","../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","./TextStyle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextStyle.js","./TextMetrics":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextMetrics.js","../utils/trimCanvas":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/trimCanvas.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/GraphicsData.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -21375,7 +21375,7 @@ var GraphicsData = function () {
 
 exports.default = GraphicsData;
 
-},{}],"../node_modules/pixi.js/lib/core/graphics/utils/bezierCurveTo.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/utils/bezierCurveTo.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -21425,7 +21425,7 @@ function bezierCurveTo(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY) {
     return path;
 }
 
-},{}],"../node_modules/pixi.js/lib/core/graphics/Graphics.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/Graphics.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22597,7 +22597,7 @@ exports.default = Graphics;
 
 Graphics._SPRITE_TEXTURE = null;
 
-},{"../display/Container":"../node_modules/pixi.js/lib/core/display/Container.js","../textures/RenderTexture":"../node_modules/pixi.js/lib/core/textures/RenderTexture.js","../textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js","./GraphicsData":"../node_modules/pixi.js/lib/core/graphics/GraphicsData.js","../sprites/Sprite":"../node_modules/pixi.js/lib/core/sprites/Sprite.js","../math":"../node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/pixi.js/lib/core/const.js","../display/Bounds":"../node_modules/pixi.js/lib/core/display/Bounds.js","./utils/bezierCurveTo":"../node_modules/pixi.js/lib/core/graphics/utils/bezierCurveTo.js","../renderers/canvas/CanvasRenderer":"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/WebGLGraphicsData.js":[function(require,module,exports) {
+},{"../display/Container":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js","../textures/RenderTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/RenderTexture.js","../textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js","./GraphicsData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/GraphicsData.js","../sprites/Sprite":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/Sprite.js","../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../display/Bounds":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Bounds.js","./utils/bezierCurveTo":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/utils/bezierCurveTo.js","../renderers/canvas/CanvasRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/WebGLGraphicsData.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22740,7 +22740,7 @@ var WebGLGraphicsData = function () {
 
 exports.default = WebGLGraphicsData;
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/shaders/PrimitiveShader.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/shaders/PrimitiveShader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22785,7 +22785,7 @@ var PrimitiveShader = function (_Shader) {
 
 exports.default = PrimitiveShader;
 
-},{"../../../Shader":"../node_modules/pixi.js/lib/core/Shader.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js":[function(require,module,exports) {
+},{"../../../Shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -23055,7 +23055,7 @@ function buildNativeLine(graphicsData, webGLData) {
     }
 }
 
-},{"../../../math":"../node_modules/pixi.js/lib/core/math/index.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/earcut/src/earcut.js":[function(require,module,exports) {
+},{"../../../math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/earcut/src/earcut.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = earcut;
@@ -23707,7 +23707,7 @@ earcut.flatten = function (data) {
     return result;
 };
 
-},{}],"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildPoly.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildPoly.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -23793,7 +23793,7 @@ function buildPoly(graphicsData, webGLData, webGLDataNativeLines) {
     }
 }
 
-},{"./buildLine":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","earcut":"../node_modules/earcut/src/earcut.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRectangle.js":[function(require,module,exports) {
+},{"./buildLine":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","earcut":"../node_modules/@dreamirl/dreamengine/node_modules/earcut/src/earcut.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRectangle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -23869,7 +23869,7 @@ function buildRectangle(graphicsData, webGLData, webGLDataNativeLines) {
     }
 }
 
-},{"./buildLine":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRoundedRectangle.js":[function(require,module,exports) {
+},{"./buildLine":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRoundedRectangle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24025,7 +24025,7 @@ function quadraticBezierCurve(fromX, fromY, cpX, cpY, toX, toY) {
     return points;
 }
 
-},{"earcut":"../node_modules/earcut/src/earcut.js","./buildLine":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildCircle.js":[function(require,module,exports) {
+},{"earcut":"../node_modules/@dreamirl/dreamengine/node_modules/earcut/src/earcut.js","./buildLine":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildCircle.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24118,7 +24118,7 @@ function buildCircle(graphicsData, webGLData, webGLDataNativeLines) {
     }
 }
 
-},{"./buildLine":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../const":"../node_modules/pixi.js/lib/core/const.js","../../../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/graphics/webgl/GraphicsRenderer.js":[function(require,module,exports) {
+},{"./buildLine":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildLine.js","../../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/GraphicsRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24383,7 +24383,7 @@ exports.default = GraphicsRenderer;
 
 _WebGLRenderer2.default.registerPlugin('graphics', GraphicsRenderer);
 
-},{"../../utils":"../node_modules/pixi.js/lib/core/utils/index.js","../../const":"../node_modules/pixi.js/lib/core/const.js","../../renderers/webgl/utils/ObjectRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","../../renderers/webgl/WebGLRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js","./WebGLGraphicsData":"../node_modules/pixi.js/lib/core/graphics/webgl/WebGLGraphicsData.js","./shaders/PrimitiveShader":"../node_modules/pixi.js/lib/core/graphics/webgl/shaders/PrimitiveShader.js","./utils/buildPoly":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildPoly.js","./utils/buildRectangle":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRectangle.js","./utils/buildRoundedRectangle":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRoundedRectangle.js","./utils/buildCircle":"../node_modules/pixi.js/lib/core/graphics/webgl/utils/buildCircle.js"}],"../node_modules/pixi.js/lib/core/graphics/canvas/CanvasGraphicsRenderer.js":[function(require,module,exports) {
+},{"../../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","../../renderers/webgl/utils/ObjectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","../../renderers/webgl/WebGLRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js","./WebGLGraphicsData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/WebGLGraphicsData.js","./shaders/PrimitiveShader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/shaders/PrimitiveShader.js","./utils/buildPoly":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildPoly.js","./utils/buildRectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRectangle.js","./utils/buildRoundedRectangle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildRoundedRectangle.js","./utils/buildCircle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/utils/buildCircle.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/canvas/CanvasGraphicsRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24652,7 +24652,7 @@ exports.default = CanvasGraphicsRenderer;
 
 _CanvasRenderer2.default.registerPlugin('graphics', CanvasGraphicsRenderer);
 
-},{"../../renderers/canvas/CanvasRenderer":"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","../../const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/textures/Spritesheet.js":[function(require,module,exports) {
+},{"../../renderers/canvas/CanvasRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","../../const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Spritesheet.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24914,7 +24914,7 @@ var Spritesheet = function () {
 
 exports.default = Spritesheet;
 
-},{"../":"../node_modules/pixi.js/lib/core/index.js","../utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/core/autoDetectRenderer.js":[function(require,module,exports) {
+},{"../":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/autoDetectRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -24983,7 +24983,7 @@ function autoDetectRenderer(options, arg1, arg2, arg3) {
     return new _CanvasRenderer2.default(options, arg1, arg2);
 }
 
-},{"./utils":"../node_modules/pixi.js/lib/core/utils/index.js","./renderers/canvas/CanvasRenderer":"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","./renderers/webgl/WebGLRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js"}],"../node_modules/pixi.js/lib/core/Application.js":[function(require,module,exports) {
+},{"./utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","./renderers/canvas/CanvasRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","./renderers/webgl/WebGLRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Application.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -25206,7 +25206,7 @@ var Application = function () {
 
 exports.default = Application;
 
-},{"./autoDetectRenderer":"../node_modules/pixi.js/lib/core/autoDetectRenderer.js","./display/Container":"../node_modules/pixi.js/lib/core/display/Container.js","./ticker":"../node_modules/pixi.js/lib/core/ticker/index.js","./settings":"../node_modules/pixi.js/lib/core/settings.js","./const":"../node_modules/pixi.js/lib/core/const.js"}],"../node_modules/pixi.js/lib/core/index.js":[function(require,module,exports) {
+},{"./autoDetectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/autoDetectRenderer.js","./display/Container":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js","./ticker":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/index.js","./settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","./const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -25583,7 +25583,7 @@ exports.WebGLRenderer = _WebGLRenderer2.default; /**
                                                   * @namespace PIXI
                                                   */
 
-},{"./const":"../node_modules/pixi.js/lib/core/const.js","./math":"../node_modules/pixi.js/lib/core/math/index.js","pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","./display/Bounds":"../node_modules/pixi.js/lib/core/display/Bounds.js","./display/DisplayObject":"../node_modules/pixi.js/lib/core/display/DisplayObject.js","./display/Container":"../node_modules/pixi.js/lib/core/display/Container.js","./display/Transform":"../node_modules/pixi.js/lib/core/display/Transform.js","./display/TransformStatic":"../node_modules/pixi.js/lib/core/display/TransformStatic.js","./display/TransformBase":"../node_modules/pixi.js/lib/core/display/TransformBase.js","./sprites/Sprite":"../node_modules/pixi.js/lib/core/sprites/Sprite.js","./sprites/canvas/CanvasSpriteRenderer":"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasSpriteRenderer.js","./sprites/canvas/CanvasTinter":"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js","./sprites/webgl/SpriteRenderer":"../node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js","./text/Text":"../node_modules/pixi.js/lib/core/text/Text.js","./text/TextStyle":"../node_modules/pixi.js/lib/core/text/TextStyle.js","./text/TextMetrics":"../node_modules/pixi.js/lib/core/text/TextMetrics.js","./graphics/Graphics":"../node_modules/pixi.js/lib/core/graphics/Graphics.js","./graphics/GraphicsData":"../node_modules/pixi.js/lib/core/graphics/GraphicsData.js","./graphics/webgl/GraphicsRenderer":"../node_modules/pixi.js/lib/core/graphics/webgl/GraphicsRenderer.js","./graphics/canvas/CanvasGraphicsRenderer":"../node_modules/pixi.js/lib/core/graphics/canvas/CanvasGraphicsRenderer.js","./textures/Spritesheet":"../node_modules/pixi.js/lib/core/textures/Spritesheet.js","./textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js","./textures/BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","./textures/RenderTexture":"../node_modules/pixi.js/lib/core/textures/RenderTexture.js","./textures/BaseRenderTexture":"../node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js","./textures/VideoBaseTexture":"../node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js","./textures/TextureUvs":"../node_modules/pixi.js/lib/core/textures/TextureUvs.js","./renderers/canvas/utils/CanvasRenderTarget":"../node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js","./Shader":"../node_modules/pixi.js/lib/core/Shader.js","./renderers/webgl/managers/WebGLManager":"../node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","./renderers/webgl/utils/ObjectRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","./renderers/webgl/utils/RenderTarget":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","./renderers/webgl/utils/Quad":"../node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js","./renderers/webgl/filters/spriteMask/SpriteMaskFilter":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js","./renderers/webgl/filters/Filter":"../node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js","./Application":"../node_modules/pixi.js/lib/core/Application.js","./autoDetectRenderer":"../node_modules/pixi.js/lib/core/autoDetectRenderer.js","./utils":"../node_modules/pixi.js/lib/core/utils/index.js","./ticker":"../node_modules/pixi.js/lib/core/ticker/index.js","./settings":"../node_modules/pixi.js/lib/core/settings.js","./renderers/canvas/CanvasRenderer":"../node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","./renderers/webgl/WebGLRenderer":"../node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js"}],"../node_modules/pixi.js/lib/deprecation.js":[function(require,module,exports) {
+},{"./const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","./math":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/index.js","pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","./display/Bounds":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Bounds.js","./display/DisplayObject":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/DisplayObject.js","./display/Container":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Container.js","./display/Transform":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/Transform.js","./display/TransformStatic":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformStatic.js","./display/TransformBase":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/display/TransformBase.js","./sprites/Sprite":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/Sprite.js","./sprites/canvas/CanvasSpriteRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasSpriteRenderer.js","./sprites/canvas/CanvasTinter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js","./sprites/webgl/SpriteRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/webgl/SpriteRenderer.js","./text/Text":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/Text.js","./text/TextStyle":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextStyle.js","./text/TextMetrics":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/text/TextMetrics.js","./graphics/Graphics":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/Graphics.js","./graphics/GraphicsData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/GraphicsData.js","./graphics/webgl/GraphicsRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/webgl/GraphicsRenderer.js","./graphics/canvas/CanvasGraphicsRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/graphics/canvas/CanvasGraphicsRenderer.js","./textures/Spritesheet":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Spritesheet.js","./textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js","./textures/BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","./textures/RenderTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/RenderTexture.js","./textures/BaseRenderTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseRenderTexture.js","./textures/VideoBaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/VideoBaseTexture.js","./textures/TextureUvs":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/TextureUvs.js","./renderers/canvas/utils/CanvasRenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/utils/CanvasRenderTarget.js","./Shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js","./renderers/webgl/managers/WebGLManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/managers/WebGLManager.js","./renderers/webgl/utils/ObjectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/ObjectRenderer.js","./renderers/webgl/utils/RenderTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/RenderTarget.js","./renderers/webgl/utils/Quad":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/utils/Quad.js","./renderers/webgl/filters/spriteMask/SpriteMaskFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/spriteMask/SpriteMaskFilter.js","./renderers/webgl/filters/Filter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/filters/Filter.js","./Application":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Application.js","./autoDetectRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/autoDetectRenderer.js","./utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js","./ticker":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/ticker/index.js","./settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js","./renderers/canvas/CanvasRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/canvas/CanvasRenderer.js","./renderers/webgl/WebGLRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/renderers/webgl/WebGLRenderer.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/deprecation.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -26679,7 +26679,7 @@ function deprecation(core) {
     }
 }
 
-},{}],"../node_modules/pixi.js/lib/accessibility/accessibleTarget.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/accessibleTarget.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -26737,7 +26737,7 @@ exports.default = {
   _accessibleDiv: false
 };
 
-},{}],"../node_modules/pixi.js/lib/accessibility/AccessibilityManager.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/AccessibilityManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -27231,7 +27231,7 @@ exports.default = AccessibilityManager;
 core.WebGLRenderer.registerPlugin('accessibility', AccessibilityManager);
 core.CanvasRenderer.registerPlugin('accessibility', AccessibilityManager);
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","ismobilejs":"../node_modules/ismobilejs/isMobile.js","./accessibleTarget":"../node_modules/pixi.js/lib/accessibility/accessibleTarget.js"}],"../node_modules/pixi.js/lib/accessibility/index.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","ismobilejs":"../node_modules/@dreamirl/dreamengine/node_modules/ismobilejs/isMobile.js","./accessibleTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/accessibleTarget.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -27256,7 +27256,7 @@ Object.defineProperty(exports, 'AccessibilityManager', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./accessibleTarget":"../node_modules/pixi.js/lib/accessibility/accessibleTarget.js","./AccessibilityManager":"../node_modules/pixi.js/lib/accessibility/AccessibilityManager.js"}],"../node_modules/pixi.js/lib/extract/webgl/WebGLExtract.js":[function(require,module,exports) {
+},{"./accessibleTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/accessibleTarget.js","./AccessibilityManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/AccessibilityManager.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/webgl/WebGLExtract.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -27479,7 +27479,7 @@ exports.default = WebGLExtract;
 
 core.WebGLRenderer.registerPlugin('extract', WebGLExtract);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/extract/canvas/CanvasExtract.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/canvas/CanvasExtract.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -27659,7 +27659,7 @@ exports.default = CanvasExtract;
 
 core.CanvasRenderer.registerPlugin('extract', CanvasExtract);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/extract/index.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -27684,7 +27684,7 @@ Object.defineProperty(exports, 'canvas', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./webgl/WebGLExtract":"../node_modules/pixi.js/lib/extract/webgl/WebGLExtract.js","./canvas/CanvasExtract":"../node_modules/pixi.js/lib/extract/canvas/CanvasExtract.js"}],"../node_modules/pixi.js/lib/extras/AnimatedSprite.js":[function(require,module,exports) {
+},{"./webgl/WebGLExtract":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/webgl/WebGLExtract.js","./canvas/CanvasExtract":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/canvas/CanvasExtract.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/AnimatedSprite.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -28093,7 +28093,7 @@ var AnimatedSprite = function (_core$Sprite) {
 
 exports.default = AnimatedSprite;
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/extras/TextureTransform.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TextureTransform.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -28252,7 +28252,7 @@ var TextureTransform = function () {
 
 exports.default = TextureTransform;
 
-},{"../core/math/Matrix":"../node_modules/pixi.js/lib/core/math/Matrix.js"}],"../node_modules/pixi.js/lib/extras/TilingSprite.js":[function(require,module,exports) {
+},{"../core/math/Matrix":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/Matrix.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TilingSprite.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -28702,7 +28702,7 @@ var TilingSprite = function (_core$Sprite) {
 
 exports.default = TilingSprite;
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","../core/sprites/canvas/CanvasTinter":"../node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js","./TextureTransform":"../node_modules/pixi.js/lib/extras/TextureTransform.js"}],"../node_modules/pixi.js/lib/extras/webgl/TilingSpriteRenderer.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../core/sprites/canvas/CanvasTinter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/sprites/canvas/CanvasTinter.js","./TextureTransform":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TextureTransform.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/webgl/TilingSpriteRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -28864,7 +28864,7 @@ exports.default = TilingSpriteRenderer;
 
 core.WebGLRenderer.registerPlugin('tilingSprite', TilingSpriteRenderer);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","../../core/const":"../node_modules/pixi.js/lib/core/const.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/extras/BitmapText.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../../core/const":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/const.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/BitmapText.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -29452,7 +29452,7 @@ exports.default = BitmapText;
 
 BitmapText.fonts = {};
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","../core/math/ObservablePoint":"../node_modules/pixi.js/lib/core/math/ObservablePoint.js","../core/settings":"../node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/pixi.js/lib/extras/cacheAsBitmap.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../core/math/ObservablePoint":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/math/ObservablePoint.js","../core/settings":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/settings.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/cacheAsBitmap.js":[function(require,module,exports) {
 'use strict';
 
 var _core = require('../core');
@@ -29856,7 +29856,7 @@ DisplayObject.prototype._cacheAsBitmapDestroy = function _cacheAsBitmapDestroy(o
     this.destroy(options);
 };
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","../core/textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js","../core/textures/BaseTexture":"../node_modules/pixi.js/lib/core/textures/BaseTexture.js","../core/utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/extras/getChildByName.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../core/textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js","../core/textures/BaseTexture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/BaseTexture.js","../core/utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/getChildByName.js":[function(require,module,exports) {
 'use strict';
 
 var _core = require('../core');
@@ -29890,7 +29890,7 @@ core.Container.prototype.getChildByName = function getChildByName(name) {
     return null;
 };
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/extras/getGlobalPosition.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/getGlobalPosition.js":[function(require,module,exports) {
 'use strict';
 
 var _core = require('../core');
@@ -29923,7 +29923,7 @@ core.DisplayObject.prototype.getGlobalPosition = function getGlobalPosition() {
     return point;
 };
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/extras/index.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -29984,7 +29984,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // imported for side effect of extending the prototype only, contains no exports
 
-},{"./AnimatedSprite":"../node_modules/pixi.js/lib/extras/AnimatedSprite.js","./TextureTransform":"../node_modules/pixi.js/lib/extras/TextureTransform.js","./TilingSprite":"../node_modules/pixi.js/lib/extras/TilingSprite.js","./webgl/TilingSpriteRenderer":"../node_modules/pixi.js/lib/extras/webgl/TilingSpriteRenderer.js","./BitmapText":"../node_modules/pixi.js/lib/extras/BitmapText.js","./cacheAsBitmap":"../node_modules/pixi.js/lib/extras/cacheAsBitmap.js","./getChildByName":"../node_modules/pixi.js/lib/extras/getChildByName.js","./getGlobalPosition":"../node_modules/pixi.js/lib/extras/getGlobalPosition.js"}],"../node_modules/pixi.js/lib/filters/fxaa/FXAAFilter.js":[function(require,module,exports) {
+},{"./AnimatedSprite":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/AnimatedSprite.js","./TextureTransform":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TextureTransform.js","./TilingSprite":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TilingSprite.js","./webgl/TilingSpriteRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/webgl/TilingSpriteRenderer.js","./BitmapText":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/BitmapText.js","./cacheAsBitmap":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/cacheAsBitmap.js","./getChildByName":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/getChildByName.js","./getGlobalPosition":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/getGlobalPosition.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/fxaa/FXAAFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30038,7 +30038,7 @@ var FXAAFilter = function (_core$Filter) {
 
 exports.default = FXAAFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/filters/noise/NoiseFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/noise/NoiseFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30135,7 +30135,7 @@ var NoiseFilter = function (_core$Filter) {
 
 exports.default = NoiseFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/filters/displacement/DisplacementFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/displacement/DisplacementFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30245,7 +30245,7 @@ var DisplacementFilter = function (_core$Filter) {
 
 exports.default = DisplacementFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30289,7 +30289,7 @@ function generateVertBlurSource(kernelSize, x) {
     return vertSource;
 }
 
-},{}],"../node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30336,7 +30336,7 @@ function generateFragBlurSource(kernelSize) {
     return fragSource;
 }
 
-},{}],"../node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -30352,7 +30352,7 @@ function getMaxKernelSize(gl) {
     return kernelSize;
 }
 
-},{}],"../node_modules/pixi.js/lib/filters/blur/BlurXFilter.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurXFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30518,7 +30518,7 @@ var BlurXFilter = function (_core$Filter) {
 
 exports.default = BlurXFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","./generateBlurVertSource":"../node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js","./generateBlurFragSource":"../node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js","./getMaxBlurKernelSize":"../node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js"}],"../node_modules/pixi.js/lib/filters/blur/BlurYFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./generateBlurVertSource":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js","./generateBlurFragSource":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js","./getMaxBlurKernelSize":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurYFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30683,7 +30683,7 @@ var BlurYFilter = function (_core$Filter) {
 
 exports.default = BlurYFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","./generateBlurVertSource":"../node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js","./generateBlurFragSource":"../node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js","./getMaxBlurKernelSize":"../node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js"}],"../node_modules/pixi.js/lib/filters/blur/BlurFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./generateBlurVertSource":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurVertSource.js","./generateBlurFragSource":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/generateBlurFragSource.js","./getMaxBlurKernelSize":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/getMaxBlurKernelSize.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -30857,7 +30857,7 @@ var BlurFilter = function (_core$Filter) {
 
 exports.default = BlurFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","./BlurXFilter":"../node_modules/pixi.js/lib/filters/blur/BlurXFilter.js","./BlurYFilter":"../node_modules/pixi.js/lib/filters/blur/BlurYFilter.js"}],"../node_modules/pixi.js/lib/filters/colormatrix/ColorMatrixFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./BlurXFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurXFilter.js","./BlurYFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurYFilter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/colormatrix/ColorMatrixFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -31408,7 +31408,7 @@ var ColorMatrixFilter = function (_core$Filter) {
 exports.default = ColorMatrixFilter;
 ColorMatrixFilter.prototype.grayscale = ColorMatrixFilter.prototype.greyscale;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/filters/void/VoidFilter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/void/VoidFilter.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -31458,7 +31458,7 @@ var VoidFilter = function (_core$Filter) {
 
 exports.default = VoidFilter;
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/filters/index.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -31537,7 +31537,7 @@ Object.defineProperty(exports, 'VoidFilter', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./fxaa/FXAAFilter":"../node_modules/pixi.js/lib/filters/fxaa/FXAAFilter.js","./noise/NoiseFilter":"../node_modules/pixi.js/lib/filters/noise/NoiseFilter.js","./displacement/DisplacementFilter":"../node_modules/pixi.js/lib/filters/displacement/DisplacementFilter.js","./blur/BlurFilter":"../node_modules/pixi.js/lib/filters/blur/BlurFilter.js","./blur/BlurXFilter":"../node_modules/pixi.js/lib/filters/blur/BlurXFilter.js","./blur/BlurYFilter":"../node_modules/pixi.js/lib/filters/blur/BlurYFilter.js","./colormatrix/ColorMatrixFilter":"../node_modules/pixi.js/lib/filters/colormatrix/ColorMatrixFilter.js","./void/VoidFilter":"../node_modules/pixi.js/lib/filters/void/VoidFilter.js"}],"../node_modules/pixi.js/lib/interaction/InteractionData.js":[function(require,module,exports) {
+},{"./fxaa/FXAAFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/fxaa/FXAAFilter.js","./noise/NoiseFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/noise/NoiseFilter.js","./displacement/DisplacementFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/displacement/DisplacementFilter.js","./blur/BlurFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurFilter.js","./blur/BlurXFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurXFilter.js","./blur/BlurYFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/blur/BlurYFilter.js","./colormatrix/ColorMatrixFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/colormatrix/ColorMatrixFilter.js","./void/VoidFilter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/void/VoidFilter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionData.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -31761,7 +31761,7 @@ var InteractionData = function () {
 
 exports.default = InteractionData;
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/interaction/InteractionEvent.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionEvent.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -31846,7 +31846,7 @@ var InteractionEvent = function () {
 
 exports.default = InteractionEvent;
 
-},{}],"../node_modules/pixi.js/lib/interaction/InteractionTrackingData.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionTrackingData.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -32022,7 +32022,7 @@ InteractionTrackingData.FLAGS = Object.freeze({
     RIGHT_DOWN: 1 << 2
 });
 
-},{}],"../node_modules/pixi.js/lib/interaction/interactiveTarget.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/interactiveTarget.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -32139,7 +32139,7 @@ exports.default = {
   _trackedPointers: undefined
 };
 
-},{}],"../node_modules/pixi.js/lib/interaction/InteractionManager.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionManager.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -33899,7 +33899,7 @@ exports.default = InteractionManager;
 core.WebGLRenderer.registerPlugin('interaction', InteractionManager);
 core.CanvasRenderer.registerPlugin('interaction', InteractionManager);
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","./InteractionData":"../node_modules/pixi.js/lib/interaction/InteractionData.js","./InteractionEvent":"../node_modules/pixi.js/lib/interaction/InteractionEvent.js","./InteractionTrackingData":"../node_modules/pixi.js/lib/interaction/InteractionTrackingData.js","eventemitter3":"../node_modules/eventemitter3/index.js","./interactiveTarget":"../node_modules/pixi.js/lib/interaction/interactiveTarget.js"}],"../node_modules/pixi.js/lib/interaction/index.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./InteractionData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionData.js","./InteractionEvent":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionEvent.js","./InteractionTrackingData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionTrackingData.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","./interactiveTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/interactiveTarget.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -33951,7 +33951,7 @@ Object.defineProperty(exports, 'InteractionEvent', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./InteractionData":"../node_modules/pixi.js/lib/interaction/InteractionData.js","./InteractionManager":"../node_modules/pixi.js/lib/interaction/InteractionManager.js","./interactiveTarget":"../node_modules/pixi.js/lib/interaction/interactiveTarget.js","./InteractionTrackingData":"../node_modules/pixi.js/lib/interaction/InteractionTrackingData.js","./InteractionEvent":"../node_modules/pixi.js/lib/interaction/InteractionEvent.js"}],"../node_modules/mini-signals/lib/mini-signals.js":[function(require,module,exports) {
+},{"./InteractionData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionData.js","./InteractionManager":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionManager.js","./interactiveTarget":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/interactiveTarget.js","./InteractionTrackingData":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionTrackingData.js","./InteractionEvent":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/InteractionEvent.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/mini-signals/lib/mini-signals.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -34118,7 +34118,7 @@ MiniSignal.MiniSignalBinding = MiniSignalBinding;
 exports['default'] = MiniSignal;
 module.exports = exports['default'];
 
-},{}],"../node_modules/parse-uri/index.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/parse-uri/index.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = function parseURI(str, opts) {
@@ -34146,7 +34146,7 @@ module.exports = function parseURI(str, opts) {
   });
   return uri;
 };
-},{}],"../node_modules/resource-loader/lib/async.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/async.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -34368,7 +34368,7 @@ function queue(worker, concurrency) {
     return q;
 }
 
-},{}],"../node_modules/resource-loader/lib/Resource.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Resource.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -35617,7 +35617,7 @@ if (typeof module !== 'undefined') {
     module.exports.default = Resource; // eslint-disable-line no-undef
 }
 
-},{"parse-uri":"../node_modules/parse-uri/index.js","mini-signals":"../node_modules/mini-signals/lib/mini-signals.js"}],"../node_modules/resource-loader/lib/Loader.js":[function(require,module,exports) {
+},{"parse-uri":"../node_modules/@dreamirl/dreamengine/node_modules/parse-uri/index.js","mini-signals":"../node_modules/@dreamirl/dreamengine/node_modules/mini-signals/lib/mini-signals.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Loader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36341,7 +36341,7 @@ Loader.use = function LoaderUseStatic(fn) {
     return Loader;
 };
 
-},{"mini-signals":"../node_modules/mini-signals/lib/mini-signals.js","parse-uri":"../node_modules/parse-uri/index.js","./async":"../node_modules/resource-loader/lib/async.js","./Resource":"../node_modules/resource-loader/lib/Resource.js"}],"../node_modules/resource-loader/lib/b64.js":[function(require,module,exports) {
+},{"mini-signals":"../node_modules/@dreamirl/dreamengine/node_modules/mini-signals/lib/mini-signals.js","parse-uri":"../node_modules/@dreamirl/dreamengine/node_modules/parse-uri/index.js","./async":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/async.js","./Resource":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Resource.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/b64.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36420,7 +36420,7 @@ if (typeof module !== 'undefined') {
     module.exports.default = encodeBinary; // eslint-disable-line no-undef
 }
 
-},{}],"../node_modules/resource-loader/lib/index.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js":[function(require,module,exports) {
 'use strict';
 
 // import Loader from './Loader';
@@ -36477,7 +36477,7 @@ module.exports = Loader;
 module.exports.Loader = Loader;
 module.exports.default = Loader;
 
-},{"./Loader":"../node_modules/resource-loader/lib/Loader.js","./Resource":"../node_modules/resource-loader/lib/Resource.js","./async":"../node_modules/resource-loader/lib/async.js","./b64":"../node_modules/resource-loader/lib/b64.js"}],"../node_modules/pixi.js/lib/loaders/bitmapFontParser.js":[function(require,module,exports) {
+},{"./Loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Loader.js","./Resource":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Resource.js","./async":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/async.js","./b64":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/b64.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/bitmapFontParser.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36569,7 +36569,7 @@ function parse(resource, texture) {
     resource.bitmapFont = _extras.BitmapText.registerFont(resource.data, texture);
 }
 
-},{"path":"../node_modules/path-browserify/index.js","../core":"../node_modules/pixi.js/lib/core/index.js","resource-loader":"../node_modules/resource-loader/lib/index.js","../extras":"../node_modules/pixi.js/lib/extras/index.js"}],"../node_modules/pixi.js/lib/loaders/spritesheetParser.js":[function(require,module,exports) {
+},{"path":"../node_modules/path-browserify/index.js","../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","resource-loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js","../extras":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/spritesheetParser.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36628,7 +36628,7 @@ function getResourcePath(resource, baseUrl) {
     return _url2.default.resolve(resource.url.replace(baseUrl, ''), resource.data.meta.image);
 }
 
-},{"resource-loader":"../node_modules/resource-loader/lib/index.js","url":"../node_modules/url/url.js","../core":"../node_modules/pixi.js/lib/core/index.js"}],"../node_modules/pixi.js/lib/loaders/textureParser.js":[function(require,module,exports) {
+},{"resource-loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js","url":"../node_modules/url/url.js","../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/textureParser.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36651,7 +36651,7 @@ var _Texture2 = _interopRequireDefault(_Texture);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"resource-loader":"../node_modules/resource-loader/lib/index.js","../core/textures/Texture":"../node_modules/pixi.js/lib/core/textures/Texture.js"}],"../node_modules/resource-loader/lib/middlewares/parsing/blob.js":[function(require,module,exports) {
+},{"resource-loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js","../core/textures/Texture":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/textures/Texture.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/middlewares/parsing/blob.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36724,7 +36724,7 @@ function blobMiddlewareFactory() {
     };
 }
 
-},{"../../Resource":"../node_modules/resource-loader/lib/Resource.js","../../b64":"../node_modules/resource-loader/lib/b64.js"}],"../node_modules/pixi.js/lib/loaders/loader.js":[function(require,module,exports) {
+},{"../../Resource":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/Resource.js","../../b64":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/b64.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/loader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -36895,7 +36895,7 @@ var Resource = _resourceLoader2.default.Resource;
 
 Resource.setExtensionXhrType('fnt', Resource.XHR_RESPONSE_TYPE.DOCUMENT);
 
-},{"resource-loader":"../node_modules/resource-loader/lib/index.js","resource-loader/lib/middlewares/parsing/blob":"../node_modules/resource-loader/lib/middlewares/parsing/blob.js","eventemitter3":"../node_modules/eventemitter3/index.js","./textureParser":"../node_modules/pixi.js/lib/loaders/textureParser.js","./spritesheetParser":"../node_modules/pixi.js/lib/loaders/spritesheetParser.js","./bitmapFontParser":"../node_modules/pixi.js/lib/loaders/bitmapFontParser.js"}],"../node_modules/pixi.js/lib/loaders/index.js":[function(require,module,exports) {
+},{"resource-loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js","resource-loader/lib/middlewares/parsing/blob":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/middlewares/parsing/blob.js","eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js","./textureParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/textureParser.js","./spritesheetParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/spritesheetParser.js","./bitmapFontParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/bitmapFontParser.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -37023,7 +37023,7 @@ AppPrototype.destroy = function destroy(removeView) {
     this._parentDestroy(removeView);
 };
 
-},{"./bitmapFontParser":"../node_modules/pixi.js/lib/loaders/bitmapFontParser.js","./spritesheetParser":"../node_modules/pixi.js/lib/loaders/spritesheetParser.js","./textureParser":"../node_modules/pixi.js/lib/loaders/textureParser.js","resource-loader":"../node_modules/resource-loader/lib/index.js","../core/Application":"../node_modules/pixi.js/lib/core/Application.js","./loader":"../node_modules/pixi.js/lib/loaders/loader.js"}],"../node_modules/pixi.js/lib/mesh/Mesh.js":[function(require,module,exports) {
+},{"./bitmapFontParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/bitmapFontParser.js","./spritesheetParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/spritesheetParser.js","./textureParser":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/textureParser.js","resource-loader":"../node_modules/@dreamirl/dreamengine/node_modules/resource-loader/lib/index.js","../core/Application":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Application.js","./loader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/loader.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -37391,7 +37391,7 @@ Mesh.DRAW_MODES = {
   TRIANGLES: 1
 };
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","../extras/TextureTransform":"../node_modules/pixi.js/lib/extras/TextureTransform.js"}],"../node_modules/pixi.js/lib/mesh/webgl/MeshRenderer.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../extras/TextureTransform":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/TextureTransform.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/webgl/MeshRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -37542,7 +37542,7 @@ exports.default = MeshRenderer;
 
 core.WebGLRenderer.registerPlugin('mesh', MeshRenderer);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","../Mesh":"../node_modules/pixi.js/lib/mesh/Mesh.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/pixi.js/lib/mesh/canvas/CanvasMeshRenderer.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","../Mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js","path":"../node_modules/path-browserify/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/canvas/CanvasMeshRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -37825,7 +37825,7 @@ exports.default = MeshSpriteRenderer;
 
 core.CanvasRenderer.registerPlugin('mesh', MeshSpriteRenderer);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","../Mesh":"../node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/pixi.js/lib/mesh/Plane.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../Mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Plane.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -37964,7 +37964,7 @@ var Plane = function (_Mesh) {
 
 exports.default = Plane;
 
-},{"./Mesh":"../node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/pixi.js/lib/mesh/NineSlicePlane.js":[function(require,module,exports) {
+},{"./Mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/NineSlicePlane.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -38350,7 +38350,7 @@ var NineSlicePlane = function (_Plane) {
 
 exports.default = NineSlicePlane;
 
-},{"./Plane":"../node_modules/pixi.js/lib/mesh/Plane.js"}],"../node_modules/pixi.js/lib/mesh/Rope.js":[function(require,module,exports) {
+},{"./Plane":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Plane.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Rope.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -38586,7 +38586,7 @@ var Rope = function (_Mesh) {
 
 exports.default = Rope;
 
-},{"./Mesh":"../node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/pixi.js/lib/mesh/index.js":[function(require,module,exports) {
+},{"./Mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -38647,7 +38647,7 @@ Object.defineProperty(exports, 'Rope', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./Mesh":"../node_modules/pixi.js/lib/mesh/Mesh.js","./webgl/MeshRenderer":"../node_modules/pixi.js/lib/mesh/webgl/MeshRenderer.js","./canvas/CanvasMeshRenderer":"../node_modules/pixi.js/lib/mesh/canvas/CanvasMeshRenderer.js","./Plane":"../node_modules/pixi.js/lib/mesh/Plane.js","./NineSlicePlane":"../node_modules/pixi.js/lib/mesh/NineSlicePlane.js","./Rope":"../node_modules/pixi.js/lib/mesh/Rope.js"}],"../node_modules/pixi.js/lib/particles/ParticleContainer.js":[function(require,module,exports) {
+},{"./Mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Mesh.js","./webgl/MeshRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/webgl/MeshRenderer.js","./canvas/CanvasMeshRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/canvas/CanvasMeshRenderer.js","./Plane":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Plane.js","./NineSlicePlane":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/NineSlicePlane.js","./Rope":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/Rope.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/ParticleContainer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -39025,7 +39025,7 @@ var ParticleContainer = function (_core$Container) {
 
 exports.default = ParticleContainer;
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","../core/utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/particles/webgl/ParticleShader.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../core/utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleShader.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -39068,7 +39068,7 @@ var ParticleShader = function (_Shader) {
 
 exports.default = ParticleShader;
 
-},{"../../core/Shader":"../node_modules/pixi.js/lib/core/Shader.js"}],"../node_modules/pixi.js/lib/particles/webgl/ParticleBuffer.js":[function(require,module,exports) {
+},{"../../core/Shader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/Shader.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleBuffer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -39311,7 +39311,7 @@ var ParticleBuffer = function () {
 
 exports.default = ParticleBuffer;
 
-},{"pixi-gl-core":"../node_modules/pixi-gl-core/src/index.js","../../core/utils/createIndicesForQuads":"../node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js"}],"../node_modules/pixi.js/lib/particles/webgl/ParticleRenderer.js":[function(require,module,exports) {
+},{"pixi-gl-core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi-gl-core/src/index.js","../../core/utils/createIndicesForQuads":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/createIndicesForQuads.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleRenderer.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -39787,7 +39787,7 @@ exports.default = ParticleRenderer;
 
 core.WebGLRenderer.registerPlugin('particle', ParticleRenderer);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","./ParticleShader":"../node_modules/pixi.js/lib/particles/webgl/ParticleShader.js","./ParticleBuffer":"../node_modules/pixi.js/lib/particles/webgl/ParticleBuffer.js","../../core/utils":"../node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/pixi.js/lib/particles/index.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./ParticleShader":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleShader.js","./ParticleBuffer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleBuffer.js","../../core/utils":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/utils/index.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -39812,7 +39812,7 @@ Object.defineProperty(exports, 'ParticleRenderer', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./ParticleContainer":"../node_modules/pixi.js/lib/particles/ParticleContainer.js","./webgl/ParticleRenderer":"../node_modules/pixi.js/lib/particles/webgl/ParticleRenderer.js"}],"../node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js":[function(require,module,exports) {
+},{"./ParticleContainer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/ParticleContainer.js","./webgl/ParticleRenderer":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/webgl/ParticleRenderer.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -39870,7 +39870,7 @@ var CountLimiter = function () {
 
 exports.default = CountLimiter;
 
-},{}],"../node_modules/pixi.js/lib/prepare/BasePrepare.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/BasePrepare.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -40358,7 +40358,7 @@ function findTextStyle(item, queue) {
     return false;
 }
 
-},{"../core":"../node_modules/pixi.js/lib/core/index.js","./limiters/CountLimiter":"../node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js"}],"../node_modules/pixi.js/lib/prepare/webgl/WebGLPrepare.js":[function(require,module,exports) {
+},{"../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./limiters/CountLimiter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/webgl/WebGLPrepare.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -40480,7 +40480,7 @@ function findGraphics(item, queue) {
 
 core.WebGLRenderer.registerPlugin('prepare', WebGLPrepare);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","../BasePrepare":"../node_modules/pixi.js/lib/prepare/BasePrepare.js"}],"../node_modules/pixi.js/lib/prepare/canvas/CanvasPrepare.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../BasePrepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/BasePrepare.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/canvas/CanvasPrepare.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -40600,7 +40600,7 @@ function uploadBaseTextures(prepare, item) {
 
 core.CanvasRenderer.registerPlugin('prepare', CanvasPrepare);
 
-},{"../../core":"../node_modules/pixi.js/lib/core/index.js","../BasePrepare":"../node_modules/pixi.js/lib/prepare/BasePrepare.js"}],"../node_modules/pixi.js/lib/prepare/limiters/TimeLimiter.js":[function(require,module,exports) {
+},{"../../core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","../BasePrepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/BasePrepare.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/limiters/TimeLimiter.js":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -40658,7 +40658,7 @@ var TimeLimiter = function () {
 
 exports.default = TimeLimiter;
 
-},{}],"../node_modules/pixi.js/lib/prepare/index.js":[function(require,module,exports) {
+},{}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/index.js":[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -40710,7 +40710,7 @@ Object.defineProperty(exports, 'TimeLimiter', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./webgl/WebGLPrepare":"../node_modules/pixi.js/lib/prepare/webgl/WebGLPrepare.js","./canvas/CanvasPrepare":"../node_modules/pixi.js/lib/prepare/canvas/CanvasPrepare.js","./BasePrepare":"../node_modules/pixi.js/lib/prepare/BasePrepare.js","./limiters/CountLimiter":"../node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js","./limiters/TimeLimiter":"../node_modules/pixi.js/lib/prepare/limiters/TimeLimiter.js"}],"../node_modules/pixi.js/lib/index.js":[function(require,module,exports) {
+},{"./webgl/WebGLPrepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/webgl/WebGLPrepare.js","./canvas/CanvasPrepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/canvas/CanvasPrepare.js","./BasePrepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/BasePrepare.js","./limiters/CountLimiter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/limiters/CountLimiter.js","./limiters/TimeLimiter":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/limiters/TimeLimiter.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js":[function(require,module,exports) {
 var global = arguments[3];
 'use strict';
 
@@ -40823,7 +40823,7 @@ if (typeof _deprecation2.default === 'function') {
 // Always export PixiJS globally.
 global.PIXI = exports; // eslint-disable-line
 
-},{"./polyfill":"../node_modules/pixi.js/lib/polyfill/index.js","./core":"../node_modules/pixi.js/lib/core/index.js","./deprecation":"../node_modules/pixi.js/lib/deprecation.js","./accessibility":"../node_modules/pixi.js/lib/accessibility/index.js","./extract":"../node_modules/pixi.js/lib/extract/index.js","./extras":"../node_modules/pixi.js/lib/extras/index.js","./filters":"../node_modules/pixi.js/lib/filters/index.js","./interaction":"../node_modules/pixi.js/lib/interaction/index.js","./loaders":"../node_modules/pixi.js/lib/loaders/index.js","./mesh":"../node_modules/pixi.js/lib/mesh/index.js","./particles":"../node_modules/pixi.js/lib/particles/index.js","./prepare":"../node_modules/pixi.js/lib/prepare/index.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/extendPIXI.js":[function(require,module,exports) {
+},{"./polyfill":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/polyfill/index.js","./core":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/core/index.js","./deprecation":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/deprecation.js","./accessibility":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/accessibility/index.js","./extract":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extract/index.js","./extras":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/extras/index.js","./filters":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/filters/index.js","./interaction":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/interaction/index.js","./loaders":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/loaders/index.js","./mesh":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/mesh/index.js","./particles":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/particles/index.js","./prepare":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/prepare/index.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/extendPIXI.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40866,7 +40866,7 @@ Events.DEName = "Events";
 Events.trigger = Events.emit;
 var _default = Events;
 exports.default = _default;
-},{"eventemitter3":"../node_modules/eventemitter3/index.js"}],"../node_modules/@dreamirl/dreamengine/src/config.js":[function(require,module,exports) {
+},{"eventemitter3":"../node_modules/@dreamirl/dreamengine/node_modules/eventemitter3/index.js"}],"../node_modules/@dreamirl/dreamengine/src/config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42341,7 +42341,7 @@ Vector2.prototype.getAnglesDifference = function (angleA, angleB) {
 Vector2.prototype.DEName = "Vector2";
 var _default = Vector2;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42689,7 +42689,7 @@ _DE.default.inherits(GraphicRenderer);
 GraphicRenderer.prototype.DEName = "GraphicRenderer";
 var _default = GraphicRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43519,7 +43519,7 @@ GameObject.prototype.getWorldPos = function () {
 GameObject.prototype.DEName = "GameObject";
 var _default = GameObject;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.Vector2":"../node_modules/@dreamirl/dreamengine/src/classes/Vector2.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.GraphicRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/GraphicRenderer.js","DE.sortGameObjects":"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.Vector2":"../node_modules/@dreamirl/dreamengine/src/classes/Vector2.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.GraphicRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/GraphicRenderer.js","DE.sortGameObjects":"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43591,7 +43591,7 @@ _DE.default.inherits(TextRenderer);
 TextRenderer.prototype.DEName = "TextRenderer";
 var _default = TextRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43860,7 +43860,7 @@ var ImageManager = new function () {
 }();
 var _default = ImageManager;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44554,7 +44554,7 @@ SpriteRenderer.prototype.changeSprite = function (spriteName, params) {
 
 var _default = SpriteRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/MainLoop.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/MainLoop.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44739,7 +44739,7 @@ function checkGameObjectsTextRenderer(go) {
 
 var _default = MainLoop;
 exports.default = _default;
-},{"DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","PIXI":"../node_modules/pixi.js/lib/index.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.TextRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js","DE.SpriteRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js"}],"../node_modules/@dreamirl/dreamengine/src/ext_libs/stash.js":[function(require,module,exports) {
+},{"DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.TextRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js","DE.SpriteRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js"}],"../node_modules/@dreamirl/dreamengine/src/ext_libs/stash.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45681,7 +45681,7 @@ window.onunload = function (e) {
 
 var _default = Inputs;
 exports.default = _default;
-},{"DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js"}],"../node_modules/howler/dist/howler.js":[function(require,module,exports) {
+},{"DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js"}],"../node_modules/@dreamirl/dreamengine/node_modules/howler/dist/howler.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /*!
@@ -49285,7 +49285,7 @@ const Audio = new function () {
 }();
 var _default = Audio;
 exports.default = _default;
-},{"DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","howler":"../node_modules/howler/dist/howler.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/Achievements.js":[function(require,module,exports) {
+},{"DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","howler":"../node_modules/@dreamirl/dreamengine/node_modules/howler/dist/howler.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js"}],"../node_modules/@dreamirl/dreamengine/src/utils/Achievements.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49939,7 +49939,7 @@ Render.prototype.add = function (container) {
 Render.prototype.DEName = "Render";
 var _default = Render;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/Scene.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/Scene.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50157,7 +50157,7 @@ Scene.prototype.remove = function (object) {
 
 var _default = Scene;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","DE.sortGameObjects":"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","DE.sortGameObjects":"../node_modules/@dreamirl/dreamengine/src/utils/sortGameObjects.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50245,7 +50245,7 @@ RectRenderer.prototype.updateRender = function (params) {
 RectRenderer.prototype.DEName = "RectRenderer";
 var _default = RectRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50295,7 +50295,7 @@ _DE.default.inherits(TilingRenderer);
 TilingRenderer.prototype.DEName = "TilingRenderer";
 var _default = TilingRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.automatisms.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.automatisms.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50588,11 +50588,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _DE.default.prototype.focus = function (gameObject, params) {
   params = params || {};
   this.target = gameObject;
-  this.focusLock = params.lock || {};
-  this.focusOffset = params.offsets || {
+  this._focusOptions = Object.assign({
+    x: true,
+    y: true,
+    rotation: false
+  }, params.options); // focus default x/y
+
+  this._focusOptions.x = this._focusOptions.x !== false ? true : false;
+  this._focusOptions.y = this._focusOptions.y !== false ? true : false;
+  this._focusOffsets = Object.assign({
     x: 0,
     y: 0
-  };
+  }, params.offsets || params.offset);
   return this;
 };
 /**
@@ -50608,24 +50615,30 @@ _DE.default.prototype.applyFocus = function () {
     return;
   }
 
-  var pos = this.target;
+  let pos = this.target;
 
-  if (this.target.getGlobalPosition) {
-    pos = this.target.getGlobalPosition();
+  if (this.target.getWorldPos) {
+    pos = this.target.getWorldPos();
   }
 
-  var parentPos = this.parent.getGlobalPosition();
-  /* TODO required only if there is camera in the engine // focus a camera ?
-  if ( !pos ) {
-    pos = this.target.sceneContainer;
-  }*/
+  let parentPos = {};
 
-  if (!this.focusLock.x) {
-    this.x = pos.x + (this.focusOffset.x || 0) - parentPos.x;
+  if (this.parent.getWorldPos) {
+    parentPos = this.parent.getWorldPos();
+  } else {
+    parentPos = this.parent;
   }
 
-  if (!this.focusLock.y) {
-    this.y = pos.y + (this.focusOffset.y || 0) - parentPos.y;
+  if (this._focusOptions.x) {
+    this.x = pos.x + (this._focusOffsets.x || 0) - parentPos.x;
+  }
+
+  if (this._focusOptions.y) {
+    this.y = pos.y + (this._focusOffsets.y || 0) - parentPos.y;
+  }
+
+  if (this._focusOptions.rotation) {
+    this.rotation = this.target.rotation;
   }
 };
 
@@ -51198,12 +51211,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 **/
 function Camera(x, y, width, height, params) {
   PIXI.Container.call(this);
-  this.x = x;
-  this.y = y;
   this.renderSizes = new PIXI.Point(width, height);
-  this.pivot.set(width / 2 >> 0, height / 2 >> 0);
-  this.x += this.pivot.x;
-  this.y += this.pivot.y;
+  this.pivot.set(x + width / 2 >> 0, y + height / 2 >> 0);
+  this.x = this.renderSizes.x / 2 >> 0;
+  this.y = this.renderSizes.y / 2 >> 0;
 
   var _params = params || {};
 
@@ -51622,12 +51633,16 @@ Camera.prototype.applyFocus = function () {
 
   var pos = this.target.getWorldPos();
 
-  if (!this.focusLock.x) {
-    this.x = -(pos.x - this.renderSizes.x + (this.focusOffset.x || 0));
+  if (this._focusOptions.x) {
+    this.pivot.x = pos.x + this._focusOffsets.x;
   }
 
-  if (!this.focusLock.y) {
-    this.y = -(pos.y - this.renderSizes.y + (this.focusOffset.y || 0));
+  if (this._focusOptions.y) {
+    this.pivot.y = pos.y + this._focusOffsets.y;
+  }
+
+  if (this._focusOptions.rotation) {
+    this.rotation = -this.target.rotation;
   }
 };
 /**
@@ -51646,7 +51661,7 @@ Camera.prototype.applyFade = _DEGameObject.default.prototype.applyFade; // name 
 Camera.prototype.DEName = "Camera";
 var _default = Camera;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.RectRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js","DE.TilingRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js","DE.GameObject.update":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.update.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextureRenderer.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.RectRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js","DE.TilingRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js","DE.GameObject.update":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.update.js"}],"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextureRenderer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51696,7 +51711,7 @@ _DE.default.inherits(TextureRenderer);
 TextureRenderer.prototype.DEName = "TextureRenderer";
 var _default = TextureRenderer;
 exports.default = _default;
-},{"PIXI":"../node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/index.js":[function(require,module,exports) {
+},{"PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js"}],"../node_modules/@dreamirl/dreamengine/src/index.js":[function(require,module,exports) {
 "use strict";
 
 require("../css/default.css");
@@ -51912,7 +51927,7 @@ DE.trigger = function () {
 };
 
 module.exports = DE;
-},{"../css/default.css":"../node_modules/@dreamirl/dreamengine/css/default.css","PIXI":"../node_modules/pixi.js/lib/index.js","DE.extendPIXI":"../node_modules/@dreamirl/dreamengine/src/utils/extendPIXI.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.Save":"../node_modules/@dreamirl/dreamengine/src/utils/Save.js","DE.Inputs":"../node_modules/@dreamirl/dreamengine/src/utils/Inputs.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.Audio":"../node_modules/@dreamirl/dreamengine/src/utils/Audio.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js","DE.Notifications":"../node_modules/@dreamirl/dreamengine/src/utils/Notifications.js","DE.Achievements":"../node_modules/@dreamirl/dreamengine/src/utils/Achievements.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.Render":"../node_modules/@dreamirl/dreamengine/src/classes/Render.js","DE.Scene":"../node_modules/@dreamirl/dreamengine/src/classes/Scene.js","DE.Camera":"../node_modules/@dreamirl/dreamengine/src/classes/Camera.js","DE.Vector2":"../node_modules/@dreamirl/dreamengine/src/classes/Vector2.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js","DE.TextureRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextureRenderer.js","DE.SpriteRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js","DE.TilingRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js","DE.TextRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js","DE.RectRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js","DE.GraphicRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/GraphicRenderer.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","DE.GameObject.update":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.update.js"}],"../src/config.js":[function(require,module,exports) {
+},{"../css/default.css":"../node_modules/@dreamirl/dreamengine/css/default.css","PIXI":"../node_modules/@dreamirl/dreamengine/node_modules/pixi.js/lib/index.js","DE.extendPIXI":"../node_modules/@dreamirl/dreamengine/src/utils/extendPIXI.js","DE.config":"../node_modules/@dreamirl/dreamengine/src/config.js","DE.about":"../node_modules/@dreamirl/dreamengine/src/about.js","DE.Events":"../node_modules/@dreamirl/dreamengine/src/utils/Events.js","DE.Time":"../node_modules/@dreamirl/dreamengine/src/utils/Time.js","DE.MainLoop":"../node_modules/@dreamirl/dreamengine/src/MainLoop.js","DE.Save":"../node_modules/@dreamirl/dreamengine/src/utils/Save.js","DE.Inputs":"../node_modules/@dreamirl/dreamengine/src/utils/Inputs.js","DE.gamepad":"../node_modules/@dreamirl/dreamengine/src/utils/gamepad.js","DE.Audio":"../node_modules/@dreamirl/dreamengine/src/utils/Audio.js","DE.Localization":"../node_modules/@dreamirl/dreamengine/src/utils/Localization.js","DE.Notifications":"../node_modules/@dreamirl/dreamengine/src/utils/Notifications.js","DE.Achievements":"../node_modules/@dreamirl/dreamengine/src/utils/Achievements.js","DE.ImageManager":"../node_modules/@dreamirl/dreamengine/src/utils/ImageManager.js","DE.Render":"../node_modules/@dreamirl/dreamengine/src/classes/Render.js","DE.Scene":"../node_modules/@dreamirl/dreamengine/src/classes/Scene.js","DE.Camera":"../node_modules/@dreamirl/dreamengine/src/classes/Camera.js","DE.Vector2":"../node_modules/@dreamirl/dreamengine/src/classes/Vector2.js","DE.BaseRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/BaseRenderer.js","DE.TextureRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextureRenderer.js","DE.SpriteRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/SpriteRenderer.js","DE.TilingRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TilingRenderer.js","DE.TextRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/TextRenderer.js","DE.RectRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/RectRenderer.js","DE.GraphicRenderer":"../node_modules/@dreamirl/dreamengine/src/classes/renderer/GraphicRenderer.js","DE.GameObject":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.js","DE.GameObject.update":"../node_modules/@dreamirl/dreamengine/src/classes/GameObject/GameObject.update.js"}],"../src/config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52466,14 +52481,11 @@ DreamWorldControler.prototype.checkPlanetsGravity = function () {
       dir.multiply(planet.attractForce);
       player.vector2.getDistance(planet);
       var ratio = 1 - (player.vector2.getDistance(planet) - planet.collisionRadius) / (planet.gravityRadius - planet.collisionRadius);
-      console.log({
-        x: dir.x * ratio * 0.0016,
-        y: dir.y * ratio * 0.0016
-      });
       player.addGravity({
-        x: dir.x * ratio * 0.0016,
-        y: dir.y * ratio * 0.0016
+        x: dir.x * ratio * 0.016,
+        y: dir.y * ratio * 0.016
       });
+      player.ratioGravity = ratio;
     }
 
     if (player.vector2.isInRangeFrom(planet.vector2, planet.collisionRadius)) {
@@ -52488,7 +52500,7 @@ DreamWorldControler.prototype.checkPlanetsGravity = function () {
 
 var _default = DreamWorldControler;
 exports.default = _default;
-},{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Planet.js":[function(require,module,exports) {
+},{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Collectible.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52500,6 +52512,49 @@ var _dreamengine = _interopRequireDefault(require("@dreamirl/dreamengine"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function Collectible(data) {
+  _dreamengine.default.GameObject.call(this, {
+    renderer: new _dreamengine.default.SpriteRenderer({
+      spriteName: "collectible" + data.type
+    })
+  });
+
+  this.collisionRadius = 50;
+  this.attractRadius = 250;
+  this.attractForce = 4;
+}
+
+Collectible.Types = {
+  c0: "Vide",
+  "0": "Vide",
+  c1: "Goth",
+  "1": "Goth",
+  c2: "Giraffe",
+  "2": "Giraffe",
+  c3: "Chill",
+  "3": "Chill",
+  c4: "Chill",
+  "4": "Chill"
+};
+Collectible.prototype = new _dreamengine.default.GameObject();
+Collectible.constructor = Collectible;
+Collectible.supr = _dreamengine.default.GameObject.prototype;
+var _default = Collectible;
+exports.default = _default;
+},{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Planet.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _dreamengine = _interopRequireDefault(require("@dreamirl/dreamengine"));
+
+var _Collectible = _interopRequireDefault(require("Collectible"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function Planet(data) {
   _dreamengine.default.GameObject.call(this, {
     renderer: new _dreamengine.default.SpriteRenderer({
@@ -52508,14 +52563,10 @@ function Planet(data) {
   });
 
   this.collisionRadius = 245;
-  this.gravityRadius = 850;
-  this.attractForce = 10;
-  /**
-   * TODO
-   * elements présents sur la planette collectibles + entitées ? (génération aleatoire ?)
-   * shaders d'ambiance ?
-   * musique ?
-   */
+  this.gravityRadius = 750;
+  this.attractForce = 4;
+  this.numberCollectibles = Math.random() * 10 >> 0;
+  this.collectibles = [];
 }
 
 Planet.IDS = {
@@ -52531,9 +52582,20 @@ Planet.IDS = {
 Planet.prototype = new _dreamengine.default.GameObject();
 Planet.constructor = Planet;
 Planet.supr = _dreamengine.default.GameObject.prototype;
+
+Planet.prototype.spawnCollectibles = function () {
+  for (var index = 0; index < this.numberCollectibles; index++) {
+    var collectible = new _Collectible.default({
+      type: ""
+    });
+    this.collectibles.push(collectible);
+    this.add(collectible);
+  }
+};
+
 var _default = Planet;
 exports.default = _default;
-},{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js"}],"../src/custom/Player.js":[function(require,module,exports) {
+},{"@dreamirl/dreamengine":"../node_modules/@dreamirl/dreamengine/src/index.js","Collectible":"../src/custom/Collectible.js"}],"../src/custom/Player.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52594,21 +52656,21 @@ Player.prototype.setupInputs = function () {
 };
 
 Player.prototype.move = function () {
-  if (!this.landed) {
+  if (this.gravity.x != 0 || this.gravity.y != 0) {
     var rot = new _dreamengine.default.Vector2(this.gravity.x, this.gravity.y).getAngle({
       x: 0,
       y: 0
     }) + Math.PI / 2;
-    this.rotation += (rot - this.rotation) / 20;
-  } else {
-    this.rotation = new _dreamengine.default.Vector2(this.gravity.x, this.gravity.y).getAngle({
-      x: 0,
-      y: 0
-    }) + Math.PI / 2;
+    rot = (Math.PI * 2 + rot) % (Math.PI * 2);
+    this.rotation = (Math.PI * 2 + this.rotation) % (Math.PI * 2);
+    if (rot < 1 && this.rotation > 6) rot = rot + this.rotation;
+    if (rot > 6 && this.rotation < 1) this.rotation = this.rotation + rot;
+    var calc = rot - this.rotation;
+    this.rotation += calc * this.ratioGravity;
+    this.gravity.x = 0;
+    this.gravity.y = 0;
   }
 
-  this.gravity.x = 0;
-  this.gravity.y = 0;
   var newAxe = new _dreamengine.default.Vector2(this.axes.x, this.axes.y);
   newAxe.rotate(this.rotation);
   this.translate(this.velocity, true);
@@ -52623,7 +52685,7 @@ Player.prototype.rotateJump = function (vector, angle) {
 
 Player.prototype.jump = function () {
   if (!this.landed) return;
-  var jump = new _dreamengine.default.Vector2(0, -7);
+  var jump = new _dreamengine.default.Vector2(0, -5);
   jump = this.rotateJump(jump, this.rotation);
   this.velocity.x += jump.x;
   this.velocity.y += jump.y;
@@ -52703,8 +52765,8 @@ dreamWorld.spawnPlayer = function () {
   this.player.y = this.planetSpawn.y - this.planetSpawn.height / 2;
   this.add(this.player);
   this.camera.focus(this.player, {
-    lock: {
-      rotation: false
+    options: {
+      rotation: true
     }
   });
 };
@@ -53014,7 +53076,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55227" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54399" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
