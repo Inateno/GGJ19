@@ -101,13 +101,13 @@ DreamWorldControler.prototype.checkEndGame = function()
 {
   if( this.dreamWorld.hud.allSlotFilled() )
   {
-    
+
     var scores = {
-      Ecolo: 0,
-      Bobo: 0,
-      Kitch: 0,
-      Gamer: 0,
-      Dark: 0
+      ecolo: 0,
+      bobo: 0,
+      kitch: 0,
+      gamer: 0,
+      dark: 0
     }
 
     var collectibles = this.dreamWorld.hud.getCollectibles();
@@ -118,7 +118,7 @@ DreamWorldControler.prototype.checkEndGame = function()
     }
 
     var most = 0;
-    var mostType = "Ecolo";
+    var mostType = "ecolo";
 
     for (const type in scores) {
       if(scores[ type ] > most)
