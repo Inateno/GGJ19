@@ -72,7 +72,6 @@ var homeWorld = new GameScreen( "HomeWorld", {
         this.afterNight( args[ 0 ] );
       }
       else {
-        this.house.enable = false;
         this.overHouse.enable = true;
         this.title.y = 170;
         this.title.fadeIn( 500, true );
@@ -94,7 +93,6 @@ var homeWorld = new GameScreen( "HomeWorld", {
         return;
       }
       if ( index === 1 && this.currentDay === 0 ) {
-        this.house.enable = true;
         this.overHouse.fadeOut();
       }
       this.currentDailyIndex = index;
