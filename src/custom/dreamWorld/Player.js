@@ -112,8 +112,7 @@ Player.prototype.land = function()
   if(!this.landed)
   {
     this.landed = true;
-    this.body.renderer.changeSprite( "dream-char-walk" );
-    DE.Audio.fx.play( "land" );
+    this.body.renderer.changeSprite( "dream-char-walk" );    
   }
 }
 

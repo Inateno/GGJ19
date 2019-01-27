@@ -79,6 +79,8 @@ Planet.prototype.rotateCollectible = function(vector, angle)
 
 Planet.prototype.releaseCollectibles = function( target )
 {
+  DE.Audio.fx.play( "land" );
+  
   if(this.type == Planet.IDS.hide)
   {
     this.hasReleasedCollectibles = true;
