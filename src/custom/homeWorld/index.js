@@ -1,5 +1,6 @@
 import DE from '@dreamirl/dreamengine';
 import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
+import MessageBox from '@dreamirl/de-plugin-messagebox';
 
 import CONFIG from 'config';
 
@@ -15,7 +16,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
   , initialize: function()
   {
     var self = this;
-    
+    MessageBox.init();
+
     this.title = new DE.GameObject( {
       x: CONFIG.SCREEN_WIDTH / 2,
       zindex: 20,
@@ -103,7 +105,45 @@ var homeWorld = new GameScreen( "HomeWorld", {
       this.character.renderer.changeSprite( happyPos.indexOf( index ) !== -1 ? 'real-char-happy' : 'real-char-idle' );
       if ( index >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );
-        setTimeout( () => this.goSleep(), 500 );
+
+        if ( this.currentDay < 6 ) {
+          setTimeout( () => this.goSleep(), 500 );
+        }
+        else {
+          MessageBox.create( "Does it feels like home now?", () => {
+            this.character.renderer.setPause(true);
+            if ( window.confirm( "Do you want to restart ?" ) ) {
+              this.currentDay = 0;
+              this.currentDailyIndex = 0;
+              this.character.x = -70;
+              this.environment.reset();
+              this.house.reset();
+              this.weather.reset();
+              this.inside.enable = false;
+              this.pet.enable = false;
+              this.roomType.customize( 'basic' );
+              this.dailyCheck( 0 );
+            }
+            else {
+              MessageBox.create( "Thanks for playing! /n This game has been made for the Globale Game Jam.", () => {
+                MessageBox.create( "The theme was 'What does home means to you?'", () => {
+                  MessageBox.create(
+                    "The game has been made by:/n\
+                      - Masami Komuro (composer)/n\
+                      - Crounchann (arts)/n\
+                      - Inateno (designer, programmer)/n\
+                      - Matteo Covelli (students, sound designer)/n\
+                      - Akibo (students, arts)/n\
+                      - Grimka (programmer)/n\
+                    ", () => {
+                      MessageBox.create( "Nothing more, it's time to chill or launch the game again :)" );
+                  } );
+                } );
+              } );
+            }
+            this.character.renderer.setPause(false);
+          } )
+        }
         return;
       }
       if ( index === 1 && this.currentDay === 0 ) {

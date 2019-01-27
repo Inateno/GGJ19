@@ -20,8 +20,6 @@ RoomType.prototype.customize = function( result )
 {
   this.enable = true;
   this.renderer.changeSprite( 'room-' + result );
-
-  DE.Audio.music.stopAllAndPlay( 'house-' + result );
 };
 
 export default RoomType;

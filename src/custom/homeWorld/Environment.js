@@ -26,6 +26,12 @@ Environment.prototype.customize = function( result )
   this.removeAutomatism( 'changeFrame' );
 };
 
+Environment.prototype.reset = function()
+{
+  this.renderer.changeSprite( 'env-basic' );
+  this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
+};
+
 Environment.prototype.changeFrame = function()
 {
   let frameNum = this.renderer.spriteName === this.animatedSprite ? '-2' : '';

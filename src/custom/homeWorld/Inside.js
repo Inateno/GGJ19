@@ -2,7 +2,7 @@ import DE from '@dreamirl/dreamengine'
 
 import CONFIG from 'config';
 
-function House( data )
+function Inside( data )
 {
   DE.GameObject.call( this, {
     x: CONFIG.INSIDE_X
@@ -13,11 +13,11 @@ function House( data )
   this.enable = false;
 }
 
-House.prototype = new DE.GameObject();
-House.constructor = House;
-House.supr = DE.GameObject.prototype;
+Inside.prototype = new DE.GameObject();
+Inside.constructor = Inside;
+Inside.supr = DE.GameObject.prototype;
 
-House.prototype.customize = function( result )
+Inside.prototype.customize = function( result )
 {
   this.enable = true;
   this.renderer.changeSprite( 'inside-' + result );
@@ -27,5 +27,5 @@ House.prototype.customize = function( result )
   }
 };
 
-export default House;
+export default Inside;
 

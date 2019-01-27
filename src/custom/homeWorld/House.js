@@ -35,6 +35,12 @@ House.prototype.customize = function( result )
   }
 };
 
+House.prototype.reset = function()
+{
+  this.renderer.changeSprite( 'house-basic' );
+  this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
+};
+
 House.prototype.changeFrame = function()
 {
   let frameNum = this.renderer.spriteName === this.basicSprite[ this.currentState ] ? '-2' : '';

@@ -74,5 +74,14 @@ Weather.prototype.customize = function( result )
   return filters;
 };
 
+Weather.prototype.reset = function()
+{
+  this.bg.renderer.changeSprite( 'weather-bg-basic' );
+  this.rain.stop();
+  this.snow.stop();
+  this.stars.stop();
+};
+
+
 export default Weather;
 
