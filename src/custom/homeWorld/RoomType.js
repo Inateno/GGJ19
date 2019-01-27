@@ -21,8 +21,7 @@ RoomType.prototype.customize = function( result )
   this.enable = true;
   this.renderer.changeSprite( 'room-' + result );
 
-  // change the music in any case (??)
-  // DE.AudioManager.stopAllAndPlay( result + '-theme' );
+  DE.Audio.music.stopAllAndPlay( 'house-' + result );
 };
 
 export default RoomType;

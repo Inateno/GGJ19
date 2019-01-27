@@ -31,7 +31,7 @@ House.prototype.customize = function( result )
   this.removeAutomatism( 'changeFrame' );
 
   if ( result === 'dark' ) {
-    // DE.AudioManager.stopAllAndPlay( 'dark-theme' );
+    DE.Audio.music.stopAllAndPlay( 'house-dark' );
   }
 };
 

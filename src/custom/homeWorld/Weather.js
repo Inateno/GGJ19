@@ -71,14 +71,6 @@ Weather.prototype.customize = function( result )
     filters.push( this.supersun.godray );
   }
 
-  if ( result === 'dark' ) {
-    // DE.AudioManager.stopAllAndPlay( 'ecolo-theme' );
-  }
-  // hude exception
-  else if ( result === 'ecolo' ) {
-    // DE.AudioManager.stopAllAndPlay( 'happiness-theme' );
-  }
-
   return filters;
 };
 

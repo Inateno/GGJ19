@@ -24,10 +24,6 @@ Environment.prototype.customize = function( result )
   this.enable = true;
   this.renderer.changeSprite( 'env-' + result );
   this.removeAutomatism( 'changeFrame' );
-
-  if ( result === 'ecolo' || result === 'dark' ) {
-    // DE.AudioManager.stopAllAndPlay( result + '-theme' );
-  }
 };
 
 Environment.prototype.changeFrame = function()

@@ -77,6 +77,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
         this.title.fadeIn( 500, true );
 
         // this.environment.enable = false;
+        DE.Audio.music.stopAllAndPlay( 'main-theme' );
       }
     } );
     this.on( "hide", function()
@@ -86,10 +87,15 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.currentDailyIndex = 0;
     this.dailyCheck = function( index ) {
-      this.character.renderer.changeSprite( this.currentDay > index ? 'real-char-happy' : 'real-char-idle' );
+      var happyPos = [];
+      for ( var i = 0; i < this.currentDay; ++i ) {
+        happyPos.push( CONFIG.ANIM.DAILY_INDEXES[ i ] + 1 );
+      }
+      
+      this.character.renderer.changeSprite( happyPos.indexOf( index ) !== -1 ? 'real-char-happy' : 'real-char-idle' );
       if ( index >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );
-        setTimeout( () => this.goSleep(), 500 );
+        // setTimeout( () => this.goSleep(), 500 );
         return;
       }
       if ( index === 1 && this.currentDay === 0 ) {
@@ -123,6 +129,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
     };
   
     this.afterNight = function( result ) {
+      DE.Audio.music.stopAllAndPlay( 'house-' + result );
+
       let target = this.customOrder[ this.currentDay ];
       this.currentDay++;
       var filters = target.customize( result );
@@ -133,6 +141,19 @@ var homeWorld = new GameScreen( "HomeWorld", {
         }
         this.scene.filters = this.scene.filters.concat( filters );
       }
+
+      if ( this.weather.rain.enable ) {
+        DE.Audio.music.play( 'rain' );
+      }
+
+      if ( this.environment.renderer.spriteName === 'env-ecolo' ) {
+        DE.Audio.music.play( 'nature' );
+      }
+      else if ( this.environment.renderer.spriteName === 'env-kitch' ) {
+        DE.Audio.music.play( 'sea' );
+      }
+
+      this.dailyCheck( 0 );
   
       // this.character.animate( target.name, result )
       //   .then( () => {
@@ -142,7 +163,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
     };
     this.goSleep = function() {
       // TODO make transition great again
-  
+      DE.Audio.music.stopAll();
+
       this.trigger( 'changeScreen', 'dreamWorld' );
     };
   }
