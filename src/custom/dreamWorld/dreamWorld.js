@@ -40,7 +40,7 @@ dreamWorld.spawnPlanets = function()
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
 
-  this.collectibles = this.collectibles.concat( this.planetSpawn.spawnCollectibles( 5 ) );
+  this.collectibles = this.collectibles.concat( this.planetSpawn.spawnCollectibles( 50 ) );
   
   for ( let index = 1; index < 4; index++ ) {
     
@@ -52,7 +52,7 @@ dreamWorld.spawnPlanets = function()
     this.add( planet );
     this.planets.push( planet );
 
-    this.collectibles = this.collectibles.concat( planet.spawnCollectibles( 5 ) );
+    this.collectibles = this.collectibles.concat( planet.spawnCollectibles( 50 ) );
   }
 
   this.add( this.collectibles );

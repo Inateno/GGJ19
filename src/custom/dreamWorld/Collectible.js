@@ -8,13 +8,13 @@ function Collectible( data )
     attractForce: 3,
     zindex: -1,
     type: data.type,
+    value: data.value,
+    scale: data.scale,
     velocity: new DE.Vector2( 0, 0 ),
     renderer: new DE.SpriteRenderer( { spriteName: "collectible"/* + data.type */ } ),
     slowRate: 0.98,
     automatisms: [ [ "move", "move" ] ]
   } );
-
-  console.log(this.type);
 
   switch (this.type) {
     case Collectible.Types.Ecolo:

@@ -47,7 +47,10 @@ Planet.prototype.spawnCollectibles = function( numberCollectibles )
 
   for ( let index = 0; index < numberCollectibles; index++ ) {
 
-    var collectible = new Collectible( { type: Collectible.getRandomType() } );
+    var scale = Math.random() * 1 + 0.5;
+    var value = scale * 100;
+
+    var collectible = new Collectible( { type: Collectible.getRandomType(), value: value, scale: scale } );
 
     collectible.x = this.x;
     collectible.y = this.y;

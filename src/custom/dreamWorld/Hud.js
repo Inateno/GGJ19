@@ -31,6 +31,17 @@ Hud.prototype.getSlot = function()
   return slot;
 }
 
+Hud.prototype.getCollectibles = function()
+{
+  var collectibles = [];
+
+  for (let index = 0; index < this.slots.length; index++) {
+    collectibles.push( this.slots[index].gameObjects[ 0 ] );
+  }
+
+  return collectibles;
+}
+
 Hud.prototype.allSlotFilled = function()
 {
   for (let index = 0; index < this.slots.length; index++) {
