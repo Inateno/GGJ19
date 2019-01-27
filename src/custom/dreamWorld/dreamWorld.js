@@ -82,7 +82,7 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
 dreamWorld.spawnPlanets = function()
 {
-  this.planetSpawn = new Planet( { planetId: Planet.IDS.vide, scale: 0.5 } );
+  this.planetSpawn = new Planet( { planetId: Planet.IDS.hide, scale: 0.5 } );
   
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
@@ -134,7 +134,7 @@ dreamWorld.spawnPlanets = function()
 
 dreamWorld.spawnPlayer = function()
 {
-  this.player = new Player( { skin: "" } );
+  this.player = new Player();
 
   this.player.y = this.planetSpawn.y - this.planetSpawn.height / 2;
 

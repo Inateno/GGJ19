@@ -79,16 +79,20 @@ const images = {
       , [ "dream-char-fly", "space/mr-dream-fly.png", { totalFrame: 3, interval: 120 } ]
 
       , [ "tileBackground", "space/tileBackground.png" ]
+      
+      , [ "planet-ecolo", "space/planet-ecolo.png" ]
+      , [ "planet-bobo", "space/planet-bobo.png" ]
+      , [ "planet-kitch", "space/planet-kitch.png" ]
+      , [ "planet-gamer", "space/planet-gamer.png" ]
+      , [ "planet-dark", "space/planet-dark.png" ]
+      , [ "planet-hide", "space/planet-hide.png" ]
 
-      , [ "player", "space/player.png" ]
-      , [ "planetVide", "space/planetVide.png" ]
-      , [ "planetEcolo", "space/planetEcolo.png" ]
-      , [ "planetBobo", "space/planetBobo.png" ]
-      , [ "planetKitch", "space/planetKitch.png" ]
-      , [ "planetGamer", "space/planetGamer.png" ]
-      , [ "planetDark", "space/planetDark.png" ]
-      , [ "planetHide", "space/planetHide.png" ]
-      , [ "collectible", "space/collectible.png" ]
+      , [ "collectible-bobo", "space/collectible-bobo.png" ]
+      , [ "collectible-dark", "space/collectible-dark.png" ]
+      , [ "collectible-gamer", "space/collectible-gamer.png" ]
+      , [ "collectible-kitch", "space/collectible-kitch.png" ]
+      , [ "collectible-ecolo", "space/collectible-ecolo.png" ]
+
       , [ "nuagePlanet", "space/nuagePlanet.png" ]
 
     ],

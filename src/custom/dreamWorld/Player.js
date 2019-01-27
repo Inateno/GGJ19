@@ -1,6 +1,6 @@
 import DE from '@dreamirl/dreamengine'
 
-function Player( data )
+function Player( )
 {
   DE.GameObject.call( this, {
     axes: new DE.Vector2( 0, 0 )
@@ -13,7 +13,7 @@ function Player( data )
 
   this.body = new DE.GameObject( { 
     y: -32
-    ,renderer: new DE.SpriteRenderer( { spriteName: "player" + data.skin } ) 
+    ,renderer: new DE.SpriteRenderer( { spriteName: "dream-char-walk" } ) 
   } );
 
   this.add( this.body );
@@ -66,6 +66,15 @@ Player.prototype.move = function()
 
   this.translate( this.velocity, true );
   this.translate( newAxe );
+
+  this.body.renderer.setPause( false );
+
+  if(newAxe.x < 0)
+    this.body.scale.x = -1;
+  else if(newAxe.x > 0)
+    this.body.scale.x = 1;
+  else if(this.landed)
+    this.body.renderer.setPause( true );
 }
 
 Player.prototype.rotateJump = function(vector, angle)
@@ -84,6 +93,8 @@ Player.prototype.jump = function()
   if( !this.landed ) 
     return;
 
+  this.landed = false;
+
   var jump = new DE.Vector2( 0, -5 );
 
   jump = this.rotateJump( jump, this.rotation );
@@ -91,7 +102,19 @@ Player.prototype.jump = function()
   this.velocity.x += jump.x;
   this.velocity.y += jump.y;
 
-  this.translate( { x: jump.x * 0.5, y: jump.y * 0.5 }, true );
+  this.translate( { x: jump.x, y: jump.y }, true );
+
+  this.body.renderer.changeSprite( "dream-char-fly" );
+}
+
+Player.prototype.land = function()
+{
+  if(!this.landed)
+  {
+    this.landed = true;
+    this.body.renderer.changeSprite( "dream-char-walk" );
+    DE.Audio.fx.play( "land" );
+  }
 }
 
 Player.prototype.addGravity = function( vector )

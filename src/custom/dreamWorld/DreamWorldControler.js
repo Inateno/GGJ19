@@ -22,16 +22,16 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 {
   const player = this.dreamWorld.player;
 
-  var landed = false;
+  //var landed = false;
 
   for ( let index = 0; index < this.dreamWorld.planets.length; index++ ) {
 
     const planet = this.dreamWorld.planets[ index ];
 
-    if ( player.vector2.getDistance( planet ) - planet.collisionRadius < 5 )
+    if ( player.vector2.getDistance( planet ) - planet.collisionRadius < 2 )
     {
-      landed = true;
-
+      player.land();
+      
       if ( !planet.hasReleasedCollectibles )
       {
         planet.createShockwave( this.dreamWorld.scene  );
@@ -61,7 +61,7 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
     }
   }
 
-  player.landed = landed;
+  //player.landed = landed;
 
 }
 
@@ -101,6 +101,7 @@ DreamWorldControler.prototype.checkEndGame = function()
 {
   if( this.dreamWorld.hud.allSlotFilled() )
   {
+    
     var scores = {
       Ecolo: 0,
       Bobo: 0,

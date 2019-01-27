@@ -7,8 +7,8 @@ function Planet( data )
   DE.GameObject.call( this, {
     scale: data.scale || 1,
     renderers: [ 
-      new DE.SpriteRenderer( { spriteName: "planetHide" } ),
-      new DE.SpriteRenderer( { spriteName: "planet" + data.planetId } ),
+      new DE.SpriteRenderer( { spriteName: "planet-hide" } ),
+      new DE.SpriteRenderer( { spriteName: "planet-" + data.planetId } ),
       new DE.GraphicRenderer()
      ]
   } );
@@ -28,18 +28,18 @@ function Planet( data )
 }
 
 Planet.IDS = {
-  vide: "Vide"
-  ,"0": "Vide"
-  ,ecolo: "Ecolo"
-  ,"1": "Ecolo"
-  ,bobo: "Bobo"
-  ,"2": "Bobo"
-  ,kitch: "Kitch"
-  ,"3": "Kitch"
-  ,gamer: "Gamer"
-  ,"4": "Gamer"
-  ,dark: "Dark"
-  ,"5": "Dark"
+  hide: "hide"
+  ,"0": "hide"
+  ,ecolo: "ecolo"
+  ,"1": "ecolo"
+  ,bobo: "bobo"
+  ,"2": "bobo"
+  ,kitch: "kitch"
+  ,"3": "kitch"
+  ,gamer: "gamer"
+  ,"4": "gamer"
+  ,dark: "dark"
+  ,"5": "dark"
 }
 
 Planet.prototype = new DE.GameObject();
@@ -50,7 +50,7 @@ Planet.prototype.spawnCollectibles = function( numberCollectibles )
 {
   for ( let index = 0; index < numberCollectibles; index++ ) {
 
-    var scale = Math.random() * 1 + 0.5;
+    var scale = Math.random() * 2 + 1;
     var value = scale * 100;
 
     var collectible = new Collectible( { type: this.type, value: value, scale: scale } );
@@ -79,6 +79,12 @@ Planet.prototype.rotateCollectible = function(vector, angle)
 
 Planet.prototype.releaseCollectibles = function( target )
 {
+  if(this.type == Planet.IDS.hide)
+  {
+    this.hasReleasedCollectibles = true;
+    return;
+  }
+
   for (let index = 0; index < this.collectibles.length; index++) {
     const collectible = this.collectibles[index];
     
