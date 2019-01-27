@@ -7,7 +7,7 @@ function Pet( data )
   DE.GameObject.call( this, {
     x: CONFIG.SCREEN_WIDTH / 2
     ,y: CONFIG.SCREEN_HEIGHT / 2
-    ,renderer: new DE.SpriteRenderer( { spriteName: "pet-ecolo" } )
+    ,renderer: new DE.SpriteRenderer( { spriteName: "pet-bobo" } )
     ,zindex: 8
   } );
   this.enable = false;

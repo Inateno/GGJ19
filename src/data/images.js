@@ -65,7 +65,11 @@ const images = {
       , [ "room-dark", "house/room-type/room-dark.png" ]
 
       // TODO pets to add
-      , [ "pet-ecolo", "house/pet/ecolo.png" ]
+      , [ "pet-ecolo", "house/pet/pet-ecolo.png" ]
+      , [ "pet-dark", "house/pet/pet-dark.png" ]
+      , [ "pet-bobo", "house/pet/pet-bobo.png" ]
+      , [ "pet-kitch", "house/pet/pet-kitch.png" ]
+      , [ "pet-gamer", "house/pet/pet-gamer.png" ]
 
       , [ "real-char-walk", "house/mr-holme-walk.png", { totalFrame: 4, interval: 100 } ]
       , [ "real-char-idle", "house/mr-holme-idle.png", { totalFrame: 5, interval: 300, startFrame: 1, endFrame: 4, pingPongMode: true } ]
