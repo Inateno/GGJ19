@@ -37,6 +37,12 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.character.enable = true;
     this.character.makeMove = function( target, duration, cb )
     {
+      if ( target.x < this.x ) {
+        this.renderer.scale.x = -1;
+      }
+      else {
+        this.renderer.scale.x = 1;
+      }
       this.renderer.changeSprite( 'real-char-walk' );
       this.moveTo( target, duration, cb );
     };
@@ -95,7 +101,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       this.character.renderer.changeSprite( happyPos.indexOf( index ) !== -1 ? 'real-char-happy' : 'real-char-idle' );
       if ( index >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );
-        // setTimeout( () => this.goSleep(), 500 );
+        setTimeout( () => this.goSleep(), 500 );
         return;
       }
       if ( index === 1 && this.currentDay === 0 ) {
@@ -130,6 +136,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
   
     this.afterNight = function( result ) {
       DE.Audio.music.stopAllAndPlay( 'house-' + result );
+      DE.Audio.music.get( 'house-' + result ).fade( 0, 1, 500 );
 
       let target = this.customOrder[ this.currentDay ];
       this.currentDay++;
@@ -144,28 +151,33 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
       if ( this.weather.rain.enable ) {
         DE.Audio.music.play( 'rain' );
+        DE.Audio.music.get( 'rain' ).fade( 0, 1, 500 );
       }
 
       if ( this.environment.renderer.spriteName === 'env-ecolo' ) {
         DE.Audio.music.play( 'nature' );
+        DE.Audio.music.get( 'nature' ).fade( 0, 1, 500 );
       }
       else if ( this.environment.renderer.spriteName === 'env-kitch' ) {
         DE.Audio.music.play( 'sea' );
+        DE.Audio.music.get( 'sea' ).fade( 0, 1, 500 );
       }
 
       this.dailyCheck( 0 );
-  
-      // this.character.animate( target.name, result )
-      //   .then( () => {
-      //     this.currentDay++;
-      //     this.goSleep();
-      //   } );
     };
+
     this.goSleep = function() {
       // TODO make transition great again
-      DE.Audio.music.stopAll();
+      this.character.renderer.changeSprite( 'real-char-back' );
+      const musics = DE.Audio.music.getAll();
+      for ( let i in musics ) {
+        musics[ i ].fade(1, 0, 2000);
+      }
 
-      this.trigger( 'changeScreen', 'dreamWorld' );
+      setTimeout( () => {
+        DE.Audio.fx.play( 'warp' );
+        this.trigger( 'changeScreen', 'dreamWorld' );
+      }, 2000 );
     };
   }
 } );

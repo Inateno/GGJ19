@@ -17,10 +17,10 @@ const CONFIG = {
     DAILY_CHECK: {
       WEATHER: 270,
       ENV: 950,
-      ROOM: 500,
-      INSIDE: 750,
-      HOUSE: 630,
-      SLEEP_ROOM: 810
+      ROOM: 460,
+      INSIDE: 700,
+      HOUSE: 600,
+      SLEEP_ROOM: 770
     },
     DAILY_ORDER: [ 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
     DAILY_INDEXES: [ 0, 3, 4, 2, 1 ]

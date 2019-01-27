@@ -44,7 +44,7 @@ Game.onload = function()
 {
   console.log( "game start" );
 
-  DE.Audio.mute();
+  // DE.Audio.mute();
   DE.Audio.music.setVolume( 75 );
   DE.Audio.fx.setVolume( 50 );
   Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );

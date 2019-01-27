@@ -70,6 +70,7 @@ const images = {
       , [ "real-char-walk", "house/mr-holme-walk.png", { totalFrame: 4, interval: 100 } ]
       , [ "real-char-idle", "house/mr-holme-idle.png", { totalFrame: 5, interval: 300, startFrame: 1, endFrame: 4, pingPongMode: true } ]
       , [ "real-char-happy", "house/mr-holme-happy.png", { totalFrame: 5, interval: 150, startFrame: 1, pingPongMode: true } ]
+      , [ "real-char-back", "house/mr-holme-back.png", { totalFrame: 3, interval: 150 } ]
 
       , [ "particle-rain", "house/weather/rain.png" ]
       , [ "particle-snow", "house/weather/snow.png" ]

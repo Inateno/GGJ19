@@ -27,6 +27,7 @@ const audios = [
 
   // FX
   ,[ "land", "audio/fx/amerissage", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
+  ,[ "warp", "audio/fx/warp", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
 ];
 
 export default audios;
