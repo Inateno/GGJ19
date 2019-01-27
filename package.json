@@ -35,6 +35,8 @@
     "Player": "./src/custom/dreamWorld/Player.js",
     "homeWorld": "./src/custom/homeWorld/index.js",
     "Weather": "./src/custom/homeWorld/Weather.js",
+    "particles-rain": "./src/custom/homeWorld/weather/rain.json",
+    "particles-snow": "./src/custom/homeWorld/weather/snow.json",
     "Environment": "./src/custom/homeWorld/Environment.js",
     "House": "./src/custom/homeWorld/House.js",
     "Inside": "./src/custom/homeWorld/Inside.js",

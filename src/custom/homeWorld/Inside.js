@@ -8,6 +8,7 @@ function House( data )
     x: CONFIG.SCREEN_WIDTH / 2
     ,y: CONFIG.SCREEN_HEIGHT / 2
     ,renderer: new DE.SpriteRenderer( { spriteName: 'inside-ecolo' } )
+    ,zindex: 6
   } );
   this.enable = false;
 }

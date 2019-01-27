@@ -21,12 +21,49 @@ const images = {
   pools: {
     // loaded when engine is inited
     default: [
+      // main / real world
       [ "title", "house/title.png", { totalFrame: 3, interval: 250 } ]
-      , [ "house-basic", "house/house/basic.png" ]
+
+      , [ "house-out", "house/house/out-1.png" ]
+      , [ "house-out-2", "house/house/out-2.png" ]
+
+      , [ "house-basic", "house/house/basic-1.png" ]
+      , [ "house-basic-2", "house/house/basic-2.png" ]
+      , [ "house-ecolo", "house/house/ecolo.png" ]
+      , [ "house-bobo", "house/house/bobo.png" ]
+      , [ "house-kitch", "house/house/kitch.png" ]
+      , [ "house-gamer", "house/house/gamer.png" ]
+      , [ "house-dark", "house/house/dark.png" ]
+
+      , [ "env-basic", "house/env/basic-1.png" ]
+      , [ "env-basic-2", "house/env/basic-2.png" ]
+      , [ "env-ecolo", "house/env/ecolo.png" ]
+      , [ "env-bobo", "house/env/bobo.png" ]
+      , [ "env-kitch", "house/env/kitch.png" ]
+      , [ "env-gamer", "house/env/gamer.png" ]
+      , [ "env-dark", "house/env/dark.png" ]
+
+      // TODO inside to add
+      , [ "inside-ecolo", "house/inside/ecolo.png" ]
+
+      , [ "room-basic", "house/room-type/basic.png" ]
+      , [ "room-ecolo", "house/room-type/ecolo.png" ]
+      , [ "room-bobo", "house/room-type/bobo.png" ]
+      , [ "room-kitch", "house/room-type/kitch.png" ]
+      , [ "room-gamer", "house/room-type/gamer.png" ]
+      , [ "room-dark", "house/room-type/dark.png" ]
+
+      // TODO pets to add
+      , [ "pet-ecolo", "house/pet/ecolo.png" ]
+
       , [ "real-char-walk", "house/mr-holme-walk.png", { totalFrame: 4, interval: 100 } ]
       , [ "real-char-idle", "house/mr-holme-idle.png", { totalFrame: 5, interval: 300, startFrame: 1, endFrame: 4, pingPongMode: true } ]
       , [ "real-char-happy", "house/mr-holme-happy.png", { totalFrame: 5, interval: 150, startFrame: 1, pingPongMode: true } ]
 
+      , [ "particle-rain", "house/weather/rain.png" ]
+      , [ "particle-snow", "house/weather/snow.png" ]
+
+      // dream world
       , [ "dream-char-walk", "space/mr-dream-walk.png", { totalFrame: 3, interval: 120 } ]
       , [ "dream-char-fly", "space/mr-dream-fly.png", { totalFrame: 3, interval: 120 } ]
 
