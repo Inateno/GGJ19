@@ -8,7 +8,8 @@
   "license": "ISC",
   "dependencies": {
     "@dreamirl/de-plugin-gamescreen": "file:@dreamirl/de-plugin-gamescreen",
-    "@dreamirl/dreamengine": "github:dreamirl/dreamengine"
+    "@dreamirl/dreamengine": "github:dreamirl/dreamengine",
+    "pixi-filters": "^2.7.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
@@ -26,11 +27,12 @@
   "alias": {
     "Game": "./src/Game.js",
     "config": "./src/config.js",
-    "DreamWorldControler": "./src/custom/DreamWorldControler.js",
-    "Collectible": "./src/custom/Collectible.js",
-    "dreamWorld": "./src/custom/dreamWorld.js",
-    "Planet": "./src/custom/Planet.js",
-    "Player": "./src/custom/Player.js",
+    "DreamWorldControler": "./src/custom/dreamWorld/DreamWorldControler.js",
+    "Hud": "./src/custom/dreamWorld/Hud.js",
+    "Collectible": "./src/custom/dreamWorld/Collectible.js",
+    "dreamWorld": "./src/custom/dreamWorld/dreamWorld.js",
+    "Planet": "./src/custom/dreamWorld/Planet.js",
+    "Player": "./src/custom/dreamWorld/Player.js",
     "homeWorld": "./src/custom/homeWorld/index.js",
     "Weather": "./src/custom/homeWorld/Weather.js",
     "Environment": "./src/custom/homeWorld/Environment.js",

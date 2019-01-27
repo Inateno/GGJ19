@@ -1,4 +1,5 @@
 import DE from '@dreamirl/dreamengine'
+import { ShockwaveFilter } from "pixi-filters"
 
 function DreamWorldControler( dreamWorld )
 {
@@ -6,8 +7,11 @@ function DreamWorldControler( dreamWorld )
 
   this.dreamWorld = dreamWorld;
 
+  this.shockWaveRadius = 0;
+
   this.addAutomatism("checkPlanetsGravity", "checkPlanetsGravity");
   this.addAutomatism("checkPlanetsCollectibles", "checkPlanetsCollectibles");
+  this.addAutomatism("checkEndGame", "checkEndGame");
 }
 
 DreamWorldControler.prototype = new DE.GameObject();
@@ -29,7 +33,10 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
       landed = true;
 
       if ( !planet.hasReleasedCollectibles )
+      {
+        planet.createShockwave( this.dreamWorld.scene  );
         planet.releaseCollectibles();
+      }
     }
       
     if ( player.vector2.isInRangeFrom( planet.vector2, planet.gravityRadius ) ) {
@@ -80,10 +87,18 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
       {
         this.dreamWorld.collectibles.splice( i, 1 );
         i--;
-        collectible.askToKill();
+        collectible.goToSlot( this.dreamWorld.hud.getSlot(), player );
       }
     }
   }
+}
+
+DreamWorldControler.prototype.checkEndGame = function()
+{
+  if( this.dreamWorld.hud.allSlotFilled() )
+  {
+    
+  } 
 }
 
 export default DreamWorldControler;

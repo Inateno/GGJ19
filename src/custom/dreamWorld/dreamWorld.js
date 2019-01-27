@@ -4,6 +4,7 @@ import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
 import DreamWorldControler from 'DreamWorldControler';
 import Planet from 'Planet';
 import Player from 'Player';
+import Hud from 'Hud';
 
 var dreamWorld = new GameScreen( "dreamWorld", {
   camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, {} ]
@@ -12,7 +13,11 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     var self = this;
 
     this.controler = new DreamWorldControler( this );
-    this.scene.add( this.controler );
+    this.hud = new Hud();
+    this.scene.add( this.controler, this.hud );
+
+    this.scene.filterArea = new PIXI.Rectangle(-4000,-4000,8000,8000);
+    this.scene.filters = [];
 
     this.collectibles = [];
 
@@ -50,7 +55,6 @@ dreamWorld.spawnPlanets = function()
     this.collectibles = this.collectibles.concat( planet.spawnCollectibles( 5 ) );
   }
 
-  console.log(this.collectibles);
   this.add( this.collectibles );
 }
 
@@ -63,6 +67,8 @@ dreamWorld.spawnPlayer = function()
   this.add( this.player );
 
   this.camera.focus( this.player, { options: { rotation: true } } );
+  
+  this.player.add( this.hud.slots );
 }
 
 export default dreamWorld;

@@ -35,7 +35,9 @@ const images = {
       , [ "planetGoth", "space/planetGoth.png" ]
       , [ "planetGiraffe", "space/planetGiraffe.png" ]
       , [ "planetChill", "space/planetChill.png" ]
-      , [ "collectible", "collectible.png" ]
+      , [ "planetHide", "space/planetHide.png" ]
+      , [ "collectible", "space/collectible.png" ]
+      , [ "nuagePlanet", "space/nuagePlanet.png" ]
 
     ],
     
