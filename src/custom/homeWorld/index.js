@@ -179,7 +179,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       setTimeout( () => {
         this.camera.fadeOut( 500 );
         DE.Audio.fx.play( 'warp' );
-        setTimeout( () => this.trigger( 'changeScreen', 'dreamWorld' ), 500 );
+        setTimeout( () => this.trigger( 'changeScreen', 'dreamWorld' ), 800 );
       }, 2000 );
     };
   }
