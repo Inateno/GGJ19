@@ -25,7 +25,7 @@ Pet.prototype.customize = function( result )
   // TODO add position / animations sequence depending on the pet
 
   if ( result === 'dark' || result === 'kitch' ) {
-    DE.AudioManager.stopAllAndPlay( result + '-theme' );
+    // DE.AudioManager.stopAllAndPlay( result + '-theme' );
   }
 };
 

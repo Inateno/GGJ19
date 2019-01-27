@@ -5,8 +5,8 @@ import CONFIG from 'config';
 function House( currentState )
 {
   DE.GameObject.call( this, {
-    x: CONFIG.HOUSE_X
-    ,y: CONFIG.HOUSE_Y
+    x: CONFIG.SCREEN_WIDTH / 2
+    ,y: CONFIG.SCREEN_HEIGHT / 2
     ,renderer: new DE.SpriteRenderer( { spriteName: 'house-out' } )
     ,zindex: 3
   } );
@@ -30,7 +30,7 @@ House.prototype.customize = function( result )
   this.removeAutomatism( 'changeFrame' );
 
   if ( result === 'dark' ) {
-    DE.AudioManager.stopAllAndPlay( 'dark-theme' );
+    // DE.AudioManager.stopAllAndPlay( 'dark-theme' );
   }
 };
 

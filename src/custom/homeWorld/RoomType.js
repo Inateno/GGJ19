@@ -5,12 +5,11 @@ import CONFIG from 'config';
 function RoomType( data )
 {
   DE.GameObject.call( this, {
-    x: CONFIG.SCREEN_WIDTH / 2
-    ,y: CONFIG.SCREEN_HEIGHT / 2
-    ,renderer: new DE.SpriteRenderer( { spriteName: 'room-ecolo' } )
+    x: CONFIG.ROOM_TYPE_X
+    ,y: CONFIG.ROOM_TYPE_Y
+    ,renderer: new DE.SpriteRenderer( { spriteName: 'room-basic' } )
     ,zindex: 7
   } );
-  this.enable = false;
 }
 
 RoomType.prototype = new DE.GameObject();
@@ -23,7 +22,7 @@ RoomType.prototype.customize = function( result )
   this.renderer.changeSprite( 'room-' + result );
 
   // change the music in any case (??)
-  DE.AudioManager.stopAllAndPlay( result + '-theme' );
+  // DE.AudioManager.stopAllAndPlay( result + '-theme' );
 };
 
 export default RoomType;

@@ -10,7 +10,8 @@
     "@dreamirl/de-plugin-gamescreen": "file:@dreamirl/de-plugin-gamescreen",
     "@dreamirl/de-plugin-particles-emitter": "github:dreamirl/de-plugin-particles-emitter",
     "@dreamirl/dreamengine": "github:dreamirl/dreamengine",
-    "pixi-filters": "^2.7.0"
+    "pixi-filters": "^2.7.0",
+    "pixi.js": "^4.8.5"
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
@@ -38,6 +39,7 @@
     "Weather": "./src/custom/homeWorld/Weather.js",
     "particles-rain": "./src/custom/homeWorld/weather/rain.json",
     "particles-snow": "./src/custom/homeWorld/weather/snow.json",
+    "particles-stars": "./src/custom/homeWorld/weather/stars.json",
     "Environment": "./src/custom/homeWorld/Environment.js",
     "House": "./src/custom/homeWorld/House.js",
     "Inside": "./src/custom/homeWorld/Inside.js",
