@@ -10,6 +10,7 @@ function DreamWorldControler( dreamWorld )
 
   this.addAutomatism("checkPlanetsGravity", "checkPlanetsGravity");
   this.addAutomatism("checkPlanetsCollectibles", "checkPlanetsCollectibles");
+  this.addAutomatism("checkPlayerOutside", "checkPlayerOutside");
   this.addAutomatism("checkEndGame", "checkEndGame");
 }
 
@@ -130,6 +131,20 @@ DreamWorldControler.prototype.checkEndGame = function()
       this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType.toLowerCase() } );
     }, 2000 );
   } 
+}
+
+DreamWorldControler.prototype.checkPlayerOutside = function()
+{
+  const player = this.dreamWorld.player;
+
+  if(player.x < -3000)
+    player.x = 3000;
+  if(player.x > 3000)
+    player.x = -3000;
+  if(player.y < -3000)
+    player.y = 3000;
+  if(player.y > 3000)
+    player.y = -3000;
 }
 
 export default DreamWorldControler;
