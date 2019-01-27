@@ -90,8 +90,15 @@ Player.prototype.rotateJump = function(vector, angle)
 
 Player.prototype.jump = function()
 {
-  if( !this.landed ) 
+  if ( !this.landed ) {
     return;
+  }
+  
+  if ( this.currentMusic ) {
+    DE.Audio.music.get( this.currentMusic ).fade( 1, 0, 850 );
+    DE.Audio.music.play( 'space' );
+    this.currentMusic = null;
+  }
 
   this.landed = false;
 
@@ -107,10 +114,17 @@ Player.prototype.jump = function()
   this.body.renderer.changeSprite( "dream-char-fly" );
 }
 
-Player.prototype.land = function()
+Player.prototype.land = function( planet )
 {
-  if(!this.landed)
-  {
+  if ( !this.landed ) {
+    if ( planet.type !== 'hide' ) {
+      DE.Audio.music.pauseAllAndPlay( 'planet-' + planet.type );
+      DE.Audio.music.get( 'planet-' + planet.type ).fade( 0, 1, 250 );
+      this.currentMusic = 'planet-' + planet.type;
+    }
+    else {
+      DE.Audio.music.pauseAllAndPlay( 'space' );
+    }
     this.landed = true;
     this.body.renderer.changeSprite( "dream-char-walk" );    
   }

@@ -30,7 +30,7 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 
     if ( player.vector2.getDistance( planet ) - planet.collisionRadius < 2 )
     {
-      player.land();
+      player.land( planet );
       
       if ( !planet.hasReleasedCollectibles )
       {
