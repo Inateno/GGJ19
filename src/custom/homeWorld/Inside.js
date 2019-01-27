@@ -23,7 +23,7 @@ House.prototype.customize = function( result )
   this.renderer.changeSprite( 'inside-' + result );
 
   if ( result === 'dark' ) {
-    // DE.AudioManager.stopAllAndPlay( 'dark-theme' );
+    DE.Audio.music.stopAllAndPlay( 'house-dark' );
   }
 };
 

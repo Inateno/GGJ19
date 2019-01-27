@@ -22,7 +22,8 @@ const CONFIG = {
       HOUSE: 630,
       SLEEP_ROOM: 810
     },
-    DAILY_ORDER: [ 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ]
+    DAILY_ORDER: [ 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
+    DAILY_INDEXES: [ 0, 3, 4, 2, 1 ]
   }
 }
 
