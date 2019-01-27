@@ -128,6 +128,7 @@ DreamWorldControler.prototype.checkEndGame = function()
       }
     }
 
+    this.enable = false;
     setTimeout( () => {
       this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType.toLowerCase() } );
     }, 2000 );

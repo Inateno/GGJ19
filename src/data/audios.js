@@ -24,9 +24,11 @@ const audios = [
   ,[ "rain", "audio/fx/rain", [ 'ogg', 'mp3' ], { "preload": true, "loop": true, "isMusic": true } ]
   ,[ "sea", "audio/fx/sea", [ 'ogg', 'mp3' ], { "preload": true, "loop": true, "isMusic": true } ]
   ,[ "nature", "audio/fx/nature", [ 'ogg', 'mp3' ], { "preload": true, "loop": true, "isMusic": true } ]
+  ,[ "space", "audio/music/space", [ 'ogg', 'mp3' ], { "preload": true, "loop": true, "isMusic": true } ]
 
   // FX
   ,[ "land", "audio/fx/amerissage", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
+  ,[ "warp", "audio/fx/warp", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
 ];
 
 export default audios;
