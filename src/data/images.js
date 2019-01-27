@@ -77,6 +77,8 @@ const images = {
       , [ "dream-char-walk", "space/mr-dream-walk.png", { totalFrame: 3, interval: 120 } ]
       , [ "dream-char-fly", "space/mr-dream-fly.png", { totalFrame: 3, interval: 120 } ]
 
+      , [ "tileBackground", "space/tileBackground.png" ]
+
       , [ "player", "space/player.png" ]
       , [ "planetVide", "space/planetVide.png" ]
       , [ "planetEcolo", "space/planetEcolo.png" ]

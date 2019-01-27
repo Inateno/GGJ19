@@ -12,23 +12,70 @@ var dreamWorld = new GameScreen( "dreamWorld", {
   {
     var self = this;
 
-    this.controler = new DreamWorldControler( this );
-    this.hud = new Hud();
-    this.scene.add( this.controler, this.hud );
+    this.background = new DE.GameObject( {
+      x: -5000,
+      y: -5000,
+      zindex:-50,
+      renderer: new DE.TilingRenderer( { spriteName: "tileBackground", width: 10000, height: 10000 } )
+    } );
+    this.background.focus( this.camera );
+    this.scene.add( this.background );
 
     this.scene.filterArea = new PIXI.Rectangle(-4000,-4000,8000,8000);
     this.scene.filters = [];
 
     this.collectibles = [];
+    this.planets = [];
+
+    this.collectiblesStored = 0;
 
     this.on( "show", function( self, args )
     {
       this.spawnPlanets();
+      this.hud = new Hud();
       this.spawnPlayer();
+      this.controler = new DreamWorldControler( this );
+      
+      this.scene.add( this.controler, this.hud );
+
     } );
     this.on( "hide", function()
     {
-      
+      //delete collectibles
+      for (let index = 0; index < this.collectibles.length; index++) {
+        const collec = this.collectibles[index];
+        this.scene.remove(collec);
+      }
+      this.collectibles = [];
+      this.collectiblesStored = 0;
+
+      //delete planets
+      for (let index = 0; index < this.planets.length; index++) {
+        const planet = this.planets[index];
+        this.scene.remove(planet);
+      }
+      this.planet = [];
+
+      //delete hud
+      if(this.player)
+      {
+        for (let index = 0; index < this.hud.slots.length; index++) {
+          const slot = this.hud.slots[index];
+
+          slot.removeChildren();
+        }
+        this.player.removeChildren();
+        this.scene.remove( this.hud );
+        this.hud = undefined;
+
+        //delete player
+        this.scene.remove(this.player);
+        this.player = undefined;
+      }
+
+      //reset arrays
+      this.scene.remove(this.controler);
+      this.controler = undefined;
     } );
   }
 } );

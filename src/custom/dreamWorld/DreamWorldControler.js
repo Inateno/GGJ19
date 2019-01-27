@@ -67,6 +67,9 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 
 DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
 
+  if( this.dreamWorld.collectiblesStored == 10 )
+    return;
+
   const player = this.dreamWorld.player;
 
   for ( let i = 0; i < this.dreamWorld.collectibles.length; i++ ) {
@@ -83,8 +86,9 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
       collectible.velocity.x += dir.x * 0.016;
       collectible.velocity.y += dir.y * 0.016;
 
-      if( collectible.vector2.getDistance( player ) < 50 )
+      if( collectible.vector2.getDistance( player ) < 50 && this.dreamWorld.collectiblesStored < 10 )
       {
+        this.dreamWorld.collectiblesStored++;
         this.dreamWorld.collectibles.splice( i, 1 );
         i--;
         collectible.goToSlot( this.dreamWorld.hud.getSlot(), player );
@@ -97,10 +101,6 @@ DreamWorldControler.prototype.checkEndGame = function()
 {
   if( this.dreamWorld.hud.allSlotFilled() )
   {
-    this.removeAutomatism( "checkPlanetsCollectibles" );
-    this.removeAutomatism( "checkPlanetsGravity" );
-    this.removeAutomatism( "checkEndGame" );
-
     var scores = {
       Ecolo: 0,
       Bobo: 0,
