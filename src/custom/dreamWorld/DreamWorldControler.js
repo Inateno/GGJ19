@@ -97,7 +97,39 @@ DreamWorldControler.prototype.checkEndGame = function()
 {
   if( this.dreamWorld.hud.allSlotFilled() )
   {
-    
+    this.removeAutomatism( "checkPlanetsCollectibles" );
+    this.removeAutomatism( "checkPlanetsGravity" );
+    this.removeAutomatism( "checkEndGame" );
+
+    var scores = {
+      Ecolo: 0,
+      Bobo: 0,
+      Kitch: 0,
+      Gamer: 0,
+      Dark: 0
+    }
+
+    var collectibles = this.dreamWorld.hud.getCollectibles();
+
+    for (let index = 0; index < collectibles.length; index++) {
+      const collectible = collectibles[index];
+      scores[collectible.type] += collectible.value;
+    }
+
+    var most = 0;
+    var mostType = "Ecolo";
+
+    for (const type in scores) {
+      if(scores[ type ] > most)
+      {
+        most = scores[ type ];
+        mostType = type;
+      }
+    }
+
+    setTimeout( function() {
+      DE.trigger( "changeScreen", "homeWorld", { type: mostType } );
+    } )
   } 
 }
 
