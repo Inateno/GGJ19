@@ -8,6 +8,7 @@ function RoomType( data )
     x: CONFIG.SCREEN_WIDTH / 2
     ,y: CONFIG.SCREEN_HEIGHT / 2
     ,renderer: new DE.SpriteRenderer( { spriteName: 'room-ecolo' } )
+    ,zindex: 7
   } );
   this.enable = false;
 }

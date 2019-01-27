@@ -8,6 +8,7 @@ function Pet( data )
     x: CONFIG.SCREEN_WIDTH / 2
     ,y: CONFIG.SCREEN_HEIGHT / 2
     ,renderer: new DE.SpriteRenderer( { spriteName: "pet-ecolo" } )
+    ,zindex: 8
   } );
   this.enable = false;
 }
