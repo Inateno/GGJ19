@@ -9,8 +9,8 @@ import achievements from 'achievements';
 
 console.log( "game main file loaded DREAM_ENGINE is:" , DE );
 
-DE.config.DEBUG = true;
-DE.config.DEBUG_LEVEL = 5;
+//DE.config.DEBUG = true;
+//DE.config.DEBUG_LEVEL = 5;
 
 DE.init(
 {

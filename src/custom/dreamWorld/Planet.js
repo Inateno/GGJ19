@@ -136,7 +136,7 @@ Planet.prototype.createShockwave = function( target )
   
   this.filterTarget = target;
   
-  this.filterTarget.filters = this.filterTarget.filters.concat( [ this.swFilter ] );
+  this.filterTarget.filters =  this.filterTarget.filters.concat( [ this.swFilter ] );
 
   this.addAutomatism( "updateFilter", "updateFilter" );
 }
@@ -149,6 +149,7 @@ Planet.prototype.updateFilter = function()
   {
     this.removeAutomatism( "updateFilter" );
     this.filterTarget.filters.splice( this.filterTarget.filters.indexOf( this.swFilter ), 1 );
+    this.filterTarget.filters = [].concat(this.filterTarget.filters);
   }
 
   var worldPos = this.getPos();
