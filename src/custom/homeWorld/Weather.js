@@ -13,15 +13,13 @@ function Weather( data )
   DE.GameObject.call( this, {
     x: CONFIG.SCREEN_WIDTH / 2,
     y: 0,
-    zindex: 2,
-    enable: false
+    zindex: 2
   } );
 
   this.bg = new DE.GameObject( {
     x: CONFIG.SCREEN_WIDTH / 2,
     y: CONFIG.SCREEN_HEIGHT / 2,
-    renderer: new DE.SpriteRenderer( { spriteName: 'weather-bg-ecolo' } ),
-    enable: false
+    renderer: new DE.SpriteRenderer( { spriteName: 'weather-bg-basic' } )
   } );
 
   this.rain = new ParticlesEmitter( {}, RAIN_CONFIG, [ 'particle-rain' ] );
@@ -47,6 +45,7 @@ function Weather( data )
   };
 
   for ( let i in this.themeParticles ) {
+    this.themeParticles[ i ].enable = false;
     this.add( this.themeParticles[ i ] );
   }
   this.add( this.supersun );

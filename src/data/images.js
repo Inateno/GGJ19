@@ -24,6 +24,7 @@ const images = {
       // main / real world
       [ "title", "house/title.png", { totalFrame: 3, interval: 250 } ]
 
+      , [ "weather-bg-basic", "house/weather/basic.png" ]
       , [ "weather-bg-ecolo", "house/weather/bg-ecolo.png" ]
       , [ "weather-bg-bobo", "house/weather/bg-bobo.png" ]
       , [ "weather-bg-kitch", "house/weather/bg-kitch.png" ]

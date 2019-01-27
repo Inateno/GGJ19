@@ -5,10 +5,10 @@ import CONFIG from 'config';
 function House( currentState )
 {
   DE.GameObject.call( this, {
-    x: CONFIG.SCREEN_WIDTH / 2
-    ,y: CONFIG.SCREEN_HEIGHT / 2
-    ,renderer: new DE.SpriteRenderer( { spriteName: 'house-out' } )
-    ,zindex: 3
+    x: CONFIG.SCREEN_WIDTH / 2,
+    y: CONFIG.SCREEN_HEIGHT / 2,
+    renderer: new DE.SpriteRenderer( { spriteName: 'house-out' } ),
+    zindex: 3
   } );
 
   this.basicSprite =  {
@@ -17,6 +17,7 @@ function House( currentState )
   };
   this.currentState = currentState || 'inside';
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
+  this.changeFrame();
 }
 
 House.prototype = new DE.GameObject();
