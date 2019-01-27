@@ -15,7 +15,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
   , initialize: function()
   {
     var self = this;
-
+    
     this.title = new DE.GameObject( {
       x: CONFIG.SCREEN_WIDTH / 2,
       zindex: 20,
@@ -66,8 +66,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.on( "show", function( self, args )
     {
-      if ( args && args[ 1 ] ) {
-        this.afterNight( args[ 1 ] );
+      if ( args && args[ 0 ] ) {
+        this.afterNight( args[ 0 ] );
       }
       else {
         this.house.enable = false;

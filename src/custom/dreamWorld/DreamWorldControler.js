@@ -127,9 +127,9 @@ DreamWorldControler.prototype.checkEndGame = function()
       }
     }
 
-    setTimeout( function() {
-      DE.trigger( "changeScreen", "homeWorld", { type: mostType } );
-    } )
+    setTimeout( () => {
+      this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType.toLowerCase() } );
+    }, 2000 );
   } 
 }
 
