@@ -8,6 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "@dreamirl/de-plugin-gamescreen": "file:@dreamirl/de-plugin-gamescreen",
+    "@dreamirl/de-plugin-particles-emitter": "github:dreamirl/de-plugin-particles-emitter",
     "@dreamirl/dreamengine": "github:dreamirl/dreamengine",
     "pixi-filters": "^2.7.0"
   },
