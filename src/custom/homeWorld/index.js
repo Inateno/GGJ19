@@ -72,10 +72,11 @@ var homeWorld = new GameScreen( "HomeWorld", {
     // this.scene.add( this.house, this.character, this.title );
     this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg );
 
-    this.on( "show", function( self, args )
+    this.on( "show", function( params  )
     {
-      if ( args && args[ 0 ] ) {
-        this.afterNight( args[ 0 ] );
+      console.log( "show", params, this.currentDay );
+      if ( params && params.type ) {
+        this.afterNight( params.type );
       }
       else {
         this.overHouse.enable = true;
@@ -137,8 +138,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.afterNight = function( result ) {
       DE.Audio.music.stopAllAndPlay( 'house-' + result );
       DE.Audio.music.get( 'house-' + result ).fade( 0, 1, 500 );
-
       let target = this.customOrder[ this.currentDay ];
+      console.log( result, this.currentDay, target )
       this.currentDay++;
       var filters = target.customize( result );
 

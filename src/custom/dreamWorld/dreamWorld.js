@@ -35,6 +35,9 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       this.hud = new Hud();
       this.spawnPlayer();
       this.controler = new DreamWorldControler( this );
+
+      DE.Audio.music.stopAllAndPlay( 'space' );
+      DE.Audio.music.get( 'space' ).fade( 0, 0.4, 500 );
       
       this.scene.add( this.controler, this.hud );
 

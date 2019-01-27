@@ -31,7 +31,7 @@ Game.init = function()
     resizeMode       : "stretch-ratio",
     width          : CONFIG.SCREEN_WIDTH,
     height         : CONFIG.SCREEN_HEIGHT,
-    backgroundColor: "0x00004F",
+    backgroundColor: "0x000000",
     roundPixels    : false,
     powerPreferences: "high-performance"
   } );
