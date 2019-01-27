@@ -5,8 +5,8 @@ import CONFIG from 'config';
 function Pet( data )
 {
   DE.GameObject.call( this, {
-    x: CONFIG.SCREEN_WIDTH / 2
-    ,y: CONFIG.SCREEN_HEIGHT / 2
+    x: CONFIG.PET_X
+    ,y: CONFIG.PET_Y
     ,renderer: new DE.SpriteRenderer( { spriteName: "pet-bobo" } )
     ,zindex: 8
   } );
