@@ -1,5 +1,4 @@
 import DE from '@dreamirl/dreamengine'
-import { ShockwaveFilter } from "pixi-filters"
 
 function DreamWorldControler( dreamWorld )
 {
@@ -35,7 +34,7 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
       if ( !planet.hasReleasedCollectibles )
       {
         planet.createShockwave( this.dreamWorld.scene  );
-        planet.releaseCollectibles();
+        planet.releaseCollectibles( player );
       }
     }
       

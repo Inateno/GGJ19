@@ -7,7 +7,7 @@ import Player from 'Player';
 import Hud from 'Hud';
 
 var dreamWorld = new GameScreen( "dreamWorld", {
-  camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, {} ]
+  camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, { } ]
   , initialize: function()
   {
     var self = this;
@@ -35,24 +35,51 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
 dreamWorld.spawnPlanets = function()
 {
-  this.planetSpawn = new Planet( { planetId: Planet.IDS.vide } );
+  this.planetSpawn = new Planet( { planetId: Planet.IDS.vide, scale: 0.5 } );
   
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
-
-  this.collectibles = this.collectibles.concat( this.planetSpawn.spawnCollectibles( 50 ) );
   
-  for ( let index = 1; index < 4; index++ ) {
-    
-    var planet = new Planet( { planetId: Planet.IDS[ index ] } );
-    
-    planet.x = ( index % 2 ) * 1000;
-    planet.y = ( index > 1 ? 1000 : 0 );
+  var vectorTranslation = new DE.Vector2( 0, 0 );
 
-    this.add( planet );
-    this.planets.push( planet );
+  for ( let i = 1; i < 6; i++ ) {
+    
+    var bigPlanet = new Planet( { planetId: Planet.IDS[ i ] } );
+    
+    vectorTranslation.rotate( ( Math.PI * 2 / 5 ) * ( i - 1 ), true );
+    vectorTranslation.translate( { x: 0, y: -1500 }, false, true );
 
-    this.collectibles = this.collectibles.concat( planet.spawnCollectibles( 50 ) );
+    bigPlanet.x = vectorTranslation.x;
+    bigPlanet.y = vectorTranslation.y;
+    bigPlanet.rotation = vectorTranslation.rotation;
+
+    this.add( bigPlanet );
+    this.planets.push( bigPlanet );
+
+    this.collectibles = this.collectibles.concat( bigPlanet.spawnCollectibles( 2 ) );
+
+    for ( let j = 1; j < 5; j++ ) {
+      var smallPlanet = new Planet( { planetId: Planet.IDS[ i ], scale: 0.5 } );
+
+      vectorTranslation.rotation = bigPlanet.rotation;
+      vectorTranslation.x = bigPlanet.x;
+      vectorTranslation.y = bigPlanet.y;
+
+      vectorTranslation.rotate( ( Math.PI * 2 / 4 ) * ( j - 1 ), true );
+      vectorTranslation.translate( { x: 0, y: -750 }, false, true );
+
+      smallPlanet.x = vectorTranslation.x;
+      smallPlanet.y = vectorTranslation.y;
+
+      this.add( smallPlanet );
+      this.planets.push( smallPlanet );
+
+      this.collectibles = this.collectibles.concat( smallPlanet.spawnCollectibles( 2 ) );
+    }
+
+    vectorTranslation.x = 0;
+    vectorTranslation.y = 0;
+    vectorTranslation.rotation = 0;
   }
 
   this.add( this.collectibles );

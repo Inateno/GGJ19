@@ -5,6 +5,7 @@ import { ShockwaveFilter } from 'pixi-filters';
 function Planet( data )
 {
   DE.GameObject.call( this, {
+    scale: data.scale || 1,
     renderers: [ 
       new DE.SpriteRenderer( { spriteName: "planetHide" } ),
       new DE.SpriteRenderer( { spriteName: "planet" + data.planetId } ),
@@ -16,25 +17,29 @@ function Planet( data )
   this.planetMask = this.renderers[ 2 ];
   this.renderers[ 1 ].mask = this.planetMask;
 
+  this.collectibles = [];
   this.maskRadius = 0;
   this.maxMaskRadius = 250;
-  this.collisionRadius = 245;
-  this.gravityRadius = 750;
+  this.collisionRadius = 245 * this.scale.x;
+  this.gravityRadius = 650 * this.scale.x;
   this.attractForce = 4;
   this.type = "";
   this.hasReleasedCollectibles = false;
-  this.collectibles = undefined;
 }
 
 Planet.IDS = {
   vide: "Vide"
   ,"0": "Vide"
-  ,goth: "Goth"
-  ,"1": "Goth"
-  ,giraffe: "Giraffe"
-  ,"2": "Giraffe"
-  ,chill: "Chill"
-  ,"3": "Chill"
+  ,ecolo: "Ecolo"
+  ,"1": "Ecolo"
+  ,bobo: "Bobo"
+  ,"2": "Bobo"
+  ,kitch: "Kitch"
+  ,"3": "Kitch"
+  ,gamer: "Gamer"
+  ,"4": "Gamer"
+  ,dark: "Dark"
+  ,"5": "Dark"
 }
 
 Planet.prototype = new DE.GameObject();
@@ -43,8 +48,6 @@ Planet.supr = DE.GameObject.prototype;
 
 Planet.prototype.spawnCollectibles = function( numberCollectibles )
 {
-  var collectibles = [];
-
   for ( let index = 0; index < numberCollectibles; index++ ) {
 
     var scale = Math.random() * 1 + 0.5;
@@ -57,24 +60,35 @@ Planet.prototype.spawnCollectibles = function( numberCollectibles )
     
     collectible.rotation = Math.random() * Math.PI * 2;
 
-    collectibles.push( collectible );
+    this.collectibles.push( collectible );
   }
 
-  this.collectibles = collectibles;
-  
-  return collectibles;
+  return this.collectibles;
 }
 
-Planet.prototype.releaseCollectibles = function()
+Planet.prototype.rotateCollectible = function(vector, angle)
+{
+  let cos = Math.cos( angle );
+  let sin = Math.sin( angle );
+
+  return new DE.Vector2 (
+      (vector.x * cos - vector.y * sin),
+      (vector.x * sin + vector.y * cos)
+  );
+}
+
+Planet.prototype.releaseCollectibles = function( target )
 {
   for (let index = 0; index < this.collectibles.length; index++) {
     const collectible = this.collectibles[index];
     
-    var velocity = new DE.Vector2( Math.random() * 2 - 1, Math.random() * 2 - 1 );
+    var velocity = new DE.Vector2( target.x - this.x, target.y - this.y );
     var speed = Math.random() * 4 + 6;
 
     velocity.normalize();
     velocity.multiply( speed );
+
+    velocity = this.rotateCollectible( velocity, ( 1 - 2 * index ) * Math.PI / 3 );
 
     collectible.velocity = velocity;
 
@@ -92,10 +106,17 @@ Planet.prototype.updateMask = function()
   this.planetMask.drawCircle( 0, 0, this.maskRadius )
   this.planetMask.endFill();
 
-  this.maskRadius += 9;
+  this.maskRadius += 9 / this.scale.x;
 
   if(this.maskRadius >= this.maxMaskRadius)
+  {
     this.removeAutomatism( "updateMask" );
+
+    this.planetMask.clear();
+    this.planetMask.beginFill( 0xffffff );
+    this.planetMask.drawCircle( 0, 0, this.maxMaskRadius )
+    this.planetMask.endFill();
+  }
 }
 
 Planet.prototype.createShockwave = function( target )

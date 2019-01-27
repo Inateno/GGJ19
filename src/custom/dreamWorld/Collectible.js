@@ -4,7 +4,7 @@ function Collectible( data )
 {
   DE.GameObject.call( this, {
     collisionRadius: 50,
-    attractRadius: 250,
+    attractRadius: 150,
     attractForce: 3,
     zindex: -1,
     type: data.type,
