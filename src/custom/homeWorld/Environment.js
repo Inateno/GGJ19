@@ -26,7 +26,7 @@ Environment.prototype.customize = function( result )
   this.removeAutomatism( 'changeFrame' );
 
   if ( result === 'ecolo' || result === 'dark' ) {
-    DE.AudioManager.stopAllAndPlay( result + '-theme' );
+    // DE.AudioManager.stopAllAndPlay( result + '-theme' );
   }
 };
 

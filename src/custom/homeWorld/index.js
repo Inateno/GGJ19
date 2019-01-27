@@ -20,7 +20,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       x: CONFIG.SCREEN_WIDTH / 2,
       zindex: 20,
       z: -2,
-      renderer: new DE.SpriteRenderer( { spriteName: "title" } ),
+      renderer: new DE.SpriteRenderer( { spriteName: 'title' } ),
       hitArea: new DE.PIXI.Rectangle( 0, 0, 1000, 1000 ),
       interactive: true,
       pointerup: () => {
@@ -42,6 +42,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
     };
 
     this.weather     = new Weather();
+    window.wt = this.weather;
+    window.home = this;
     this.environment = new Environment();
     this.house       = new House();
     this.overHouse   = new House( 'outside' );
@@ -62,7 +64,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.currentDay = 0;
 
     // this.scene.add( this.house, this.character, this.title );
-    this.scene.add( this.customOrder, this.character, this.title, this.overHouse );
+    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg );
 
     this.on( "show", function( self, args )
     {
@@ -74,6 +76,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
         this.overHouse.enable = true;
         this.title.y = 170;
         this.title.fadeIn( 500, true );
+
+        // this.environment.enable = false;
       }
     } );
     this.on( "hide", function()
@@ -83,7 +87,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.currentDailyIndex = 0;
     this.dailyCheck = function( index ) {
-      this.character.renderer.changeSprite( 'real-char-idle' );
+      this.character.renderer.changeSprite( this.currentDay > index ? 'real-char-happy' : 'real-char-idle' );
       if ( index >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );
         setTimeout( () => this.goSleep(), 500 );
@@ -122,13 +126,21 @@ var homeWorld = new GameScreen( "HomeWorld", {
   
     this.afterNight = function( result ) {
       let target = this.customOrder[ this.currentDay ];
-      target.customize( result );
+      this.currentDay++;
+      var filters = target.customize( result );
+
+      if ( filters ) {
+        if ( !this.scene.filters ) {
+          this.scene.filters = [];
+        }
+        this.scene.filters = this.scene.filters.concat( filters );
+      }
   
-      this.character.animate( target.name, result )
-        .then( () => {
-          this.currentDay++;
-          this.goSleep();
-        } );
+      // this.character.animate( target.name, result )
+      //   .then( () => {
+      //     this.currentDay++;
+      //     this.goSleep();
+      //   } );
     };
     this.goSleep = function() {
       // TODO make transition great again
