@@ -74,6 +74,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.on( "show", function( params  )
     {
+      this.camera.fadeIn();
       console.log( "show", params, this.currentDay );
       if ( params && params.type ) {
         this.afterNight( params.type );
@@ -176,8 +177,9 @@ var homeWorld = new GameScreen( "HomeWorld", {
       }
 
       setTimeout( () => {
+        this.camera.fadeOut( 500 );
         DE.Audio.fx.play( 'warp' );
-        this.trigger( 'changeScreen', 'dreamWorld' );
+        setTimeout( () => this.trigger( 'changeScreen', 'dreamWorld' ), 500 );
       }, 2000 );
     };
   }
