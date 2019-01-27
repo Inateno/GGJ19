@@ -10,8 +10,7 @@
     "@dreamirl/de-plugin-gamescreen": "file:@dreamirl/de-plugin-gamescreen",
     "@dreamirl/de-plugin-particles-emitter": "github:dreamirl/de-plugin-particles-emitter",
     "@dreamirl/dreamengine": "github:dreamirl/dreamengine",
-    "pixi-filters": "^2.7.0",
-    "pixi.js": "^4.8.5"
+    "pixi-filters": "^2.7.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",

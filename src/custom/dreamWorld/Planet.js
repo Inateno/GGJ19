@@ -23,7 +23,7 @@ function Planet( data )
   this.collisionRadius = 245 * this.scale.x;
   this.gravityRadius = 650 * this.scale.x;
   this.attractForce = 4;
-  this.type = "";
+  this.type = data.planetId;
   this.hasReleasedCollectibles = false;
 }
 
@@ -53,7 +53,7 @@ Planet.prototype.spawnCollectibles = function( numberCollectibles )
     var scale = Math.random() * 1 + 0.5;
     var value = scale * 100;
 
-    var collectible = new Collectible( { type: Collectible.getRandomType(), value: value, scale: scale } );
+    var collectible = new Collectible( { type: this.type, value: value, scale: scale } );
 
     collectible.x = this.x;
     collectible.y = this.y;
