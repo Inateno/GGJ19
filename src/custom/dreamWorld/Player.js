@@ -106,8 +106,6 @@ Player.prototype.onPointerUp = function( pos )
 
   var vector = new DE.Vector2( touchEnd.x - this.touchStart.x, touchEnd.y - this.touchStart.y );
 
-  console.log(vector)
-
   vector.x = Math.min(Math.max(vector.x, -300), 300);
   vector.y = Math.min(Math.max(vector.y, -300), 300);
 
