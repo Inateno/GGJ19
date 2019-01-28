@@ -80,7 +80,7 @@ Player.prototype.move = function()
 
 Player.prototype.onPointerDown = function( pos )
 {
-  this.touchStart = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+  this.touchStart = { x: CONFIG.SCREEN_WIDTH, y: CONFIG.SCREEN_HEIGHT  } ;
 }
 
 Player.prototype.onPointerMove = function( pos )
@@ -99,6 +99,8 @@ Player.prototype.onPointerUp = function( pos )
   var touchEnd = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
 
   var vector = new DE.Vector2( touchEnd.x - this.touchStart.x, touchEnd.y - this.touchStart.y );
+
+  console.log(vector)
 
   vector.x = Math.min(Math.max(vector.x, -300), 300);
   vector.y = Math.min(Math.max(vector.y, -300), 300);
