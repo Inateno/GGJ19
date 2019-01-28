@@ -6,6 +6,7 @@ function Player( )
 {
   DE.GameObject.call( this, {
     axes: new DE.Vector2( 0, 0 )
+    ,inputs: new DE.Vector2( 0, 0 )
     ,velocity: new DE.Vector2( 0, 0 )
     ,gravity: new DE.Vector2( 0, 0 )
     ,landed: false
@@ -19,11 +20,64 @@ function Player( )
   } );
 
   this.add( this.body );
+
+  this.setupInputs();
 }
 
 Player.prototype = new DE.GameObject();
 Player.constructor = Player;
 Player.supr = DE.GameObject.prototype;
+
+Player.prototype.setupInputs = function()
+{
+  var self = this;
+
+  DE.Inputs.on( "keyDown", "left", function() { self.inputs.x -= 4; } );
+  DE.Inputs.on( "keyDown", "right", function() { self.inputs.x += 4; } );
+  DE.Inputs.on( "keyUp", "left", function() { self.inputs.x += 4; } );
+  DE.Inputs.on( "keyUp", "right", function() { self.inputs.x -= 4; } );
+
+  DE.Inputs.on( "keyDown", "up", function() { self.inputs.y -= 4; } );
+  DE.Inputs.on( "keyDown", "down", function() { self.inputs.y += 4; } );
+  DE.Inputs.on( "keyUp", "up", function() { self.inputs.y += 4; } );
+  DE.Inputs.on( "keyUp", "down", function() { self.inputs.y -= 4; } );
+
+  DE.Inputs.on( "keyUp", "jump", function() { 
+    var vector = new DE.Vector2( self.inputs.x, self.inputs.y );
+
+    console.log(vector);
+
+    var wasLanded = self.landed;
+    var shouldJump = vector.y < -0;
+
+    if( vector.y < 0 )
+    {
+      self.landed = false;
+      
+      self.body.renderer.changeSprite( "dream-char-fly" );
+      
+      if ( self.currentMusic ) {
+        DE.Audio.music.get( self.currentMusic ).fade( 1, 0, 850 );
+        DE.Audio.music.play( 'space' );
+        self.currentMusic = null;
+      }
+    }
+
+    vector.turnVector( self.rotation + Math.PI );
+  
+    if( wasLanded && shouldJump )
+    {
+      self.translate( { x: vector.x, y: vector.y }, true );
+    }
+    if( !wasLanded )
+    {
+      self.body.renderer.changeSprite( "dream-char-fly" );
+    }
+  
+    self.velocity.x += vector.x;
+    self.velocity.y += vector.y;
+  } );
+}
 
 Player.prototype.move = function()
 {
@@ -47,7 +101,7 @@ Player.prototype.move = function()
     this.gravity.y = 0;
   }
 
-  var inputAxes = new DE.Vector2( this.axes.x, this.axes.y );
+  var inputAxes = new DE.Vector2( this.inputs.x, this.inputs.y );
 
   this.body.renderer.setPause( false );
   
@@ -58,14 +112,14 @@ Player.prototype.move = function()
     else {
       this.body.renderer.setPause( true );
     }
-  
+    inputAxes.y = 0;
     this.translate( inputAxes );
   }
   else {
     inputAxes.turnVector( this.rotation + Math.PI );
 
-    this.velocity.x += inputAxes.x * 0.1;
-    this.velocity.y += inputAxes.y * 0.1;
+    this.velocity.x += inputAxes.x * 0.025;
+    this.velocity.y += inputAxes.y * 0.025;
   }
 
   if ( Math.abs( this.velocity.x ) > CONFIG.VELOCITY_MAX ) {
