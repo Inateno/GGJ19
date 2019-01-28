@@ -19,26 +19,11 @@ function Player( )
   } );
 
   this.add( this.body );
-
-  this.setupInputs();
-
 }
 
 Player.prototype = new DE.GameObject();
 Player.constructor = Player;
 Player.supr = DE.GameObject.prototype;
-
-Player.prototype.setupInputs = function()
-{
-  var self = this;
-
-  DE.Inputs.on( "keyDown", "left", function() { self.axes.x = -4; } );
-  DE.Inputs.on( "keyDown", "right", function() { self.axes.x = 4; } );
-  DE.Inputs.on( "keyUp", "left", function() { self.axes.x = 0; } );
-  DE.Inputs.on( "keyUp", "right", function() { self.axes.x = 0; } );
-
-  DE.Inputs.on( "keyDown", "jump", function() { self.jump(); } );
-}
 
 Player.prototype.move = function()
 {
@@ -77,8 +62,8 @@ Player.prototype.move = function()
     this.translate( inputAxes );
   }
   else {
-    
     inputAxes.turnVector( this.rotation + Math.PI );
+
     this.velocity.x += inputAxes.x * 0.1;
     this.velocity.y += inputAxes.y * 0.1;
   }
@@ -93,12 +78,40 @@ Player.prototype.move = function()
   this.translate( this.velocity, true );
 }
 
-Player.prototype.jump = function()
+Player.prototype.onPointerDown = function( pos )
 {
-  var jumpStrength = 0.5;
+  this.touchStart = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+}
 
-  if ( this.landed ) {
-    jumpStrength = 5;
+Player.prototype.onPointerMove = function( pos )
+{
+  if( this.landed && this.touchStart )
+  {
+    var touchMove = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+    var dirX = touchMove.x - this.touchStart.x;
+    
+    this.axes.x = dirX / Math.abs(dirX) * 4;
+  }
+}
+
+Player.prototype.onPointerUp = function( pos )
+{
+  var touchEnd = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+
+  var vector = new DE.Vector2( touchEnd.x - this.touchStart.x, touchEnd.y - this.touchStart.y );
+
+  vector.x = Math.min(Math.max(vector.x, -300), 300);
+  vector.y = Math.min(Math.max(vector.y, -300), 300);
+
+  var wasLanded = this.landed;
+  var shouldJump = vector.y < -25;
+
+  if( vector.y < 0 )
+  {
+    this.landed = false;
+    
+    this.body.renderer.changeSprite( "dream-char-fly" );
+    
     if ( this.currentMusic ) {
       DE.Audio.music.get( this.currentMusic ).fade( 1, 0, 850 );
       DE.Audio.music.play( 'space' );
@@ -106,17 +119,18 @@ Player.prototype.jump = function()
     }
   }
 
-  this.landed = false;
+  vector.turnVector( this.rotation + Math.PI );
+  
+  if( wasLanded && shouldJump )
+  {
+    this.translate( { x: vector.x * 0.05, y: vector.y * 0.05 }, true );
+  }
 
-  var jump = new DE.Vector2( 0, -jumpStrength );
-  jump.turnVector( this.rotation + Math.PI );
+  this.velocity.x += vector.x * 0.03;
+  this.velocity.y += vector.y * 0.03;
 
-  this.velocity.x += jump.x;
-  this.velocity.y += jump.y;
-
-  this.translate( { x: jump.x, y: jump.y }, true );
-
-  this.body.renderer.changeSprite( "dream-char-fly" );
+  this.axes.x = 0;
+  this.touchStart = undefined;
 }
 
 Player.prototype.land = function( planet )
@@ -142,7 +156,6 @@ Player.prototype.addGravity = function( vector )
 
   this.gravity.x += vector.x;
   this.gravity.y += vector.y;
-  
 }
 
 export default Player;

@@ -22,7 +22,7 @@ function Planet( data )
   this.maxMaskRadius = 250;
   this.collisionRadius = 245 * this.scale.x;
   this.gravityRadius = 650 * this.scale.x;
-  this.attractForce = ( this.scale.x / 2 ) * 10;
+  this.attractForce = 14 * this.scale.x;
   this.type = data.planetId;
   this.hasReleasedCollectibles = false;
 }
@@ -144,12 +144,16 @@ Planet.prototype.createShockwave = function( target )
 Planet.prototype.updateFilter = function()
 {
   this.swFilter.time += 0.02;
+  this.swFilter.wavelength -= 1;
   
-  if ( this.swFilter.time > 3 )
+  if ( this.swFilter.time > 4 )
   {
     this.removeAutomatism( "updateFilter" );
-    this.filterTarget.filters.splice( this.filterTarget.filters.indexOf( this.swFilter ), 1 );
-    this.filterTarget.filters = [].concat(this.filterTarget.filters);
+
+    var filters = [].concat( this.filterTarget.filters );
+    filters.indexOf( this.swFilter );
+    filters.splice( filters.indexOf( this.swFilter ), 1 );
+    this.filterTarget.filters = filters;
   }
 
   var worldPos = this.getPos();

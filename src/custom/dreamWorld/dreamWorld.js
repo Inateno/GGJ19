@@ -35,6 +35,28 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     this.collectibles = [];
     this.planets = [];
 
+    this.scene.interactive = true; 
+    this.scene.pointerdown = ( pos ) => {
+      if ( this.player )
+      {
+        this.player.onPointerDown( pos );
+      }
+    }
+
+    this.scene.pointermove = ( pos ) => {
+      if ( this.player )
+      {
+        this.player.onPointerMove( pos );
+      }
+    }
+
+    this.scene.pointerup = ( pos ) => {
+      if ( this.player )
+      {
+        this.player.onPointerUp( pos );
+      }
+    }
+
     this.collectiblesStored = 0;
 
     this.on( "show", function( self, args )

@@ -23,7 +23,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       zindex: 20,
       z: -2,
       renderer: new DE.SpriteRenderer( { spriteName: 'title' } ),
-      hitArea: new DE.PIXI.Rectangle( 0, 0, 1000, 1000 ),
+      hitArea: new DE.PIXI.Rectangle( -1000, -1000, 2000, 2000 ),
       interactive: true,
       pointerup: () => {
         this.interactive = false;

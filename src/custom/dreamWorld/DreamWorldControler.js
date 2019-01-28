@@ -78,7 +78,10 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
 
     if( collectible.vector2.getDistance( player ) < collectible.attractRadius )
     {
-      var dir = new DE.Vector2( player.x - collectible.x, player.y - collectible.y );
+      var offset = new DE.Vector2( 0, -32 );
+      offset.turnVector( player.rotation );
+      
+      var dir = new DE.Vector2( player.x - collectible.x + offset.x, player.y - collectible.y + offset.y );
 
       dir.normalize();
       dir.multiply( collectible.attractForce );
