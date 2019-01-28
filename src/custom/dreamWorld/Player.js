@@ -125,6 +125,10 @@ Player.prototype.onPointerUp = function( pos )
   {
     this.translate( { x: vector.x * 0.05, y: vector.y * 0.05 }, true );
   }
+  if( !wasLanded )
+  {
+    this.body.renderer.changeSprite( "dream-char-fly" );
+  }
 
   this.velocity.x += vector.x * 0.03;
   this.velocity.y += vector.y * 0.03;
