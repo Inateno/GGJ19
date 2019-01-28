@@ -29,7 +29,7 @@ const CONFIG = {
     DAILY_INDEXES: [ 0, 3, 4, 2, 1 ]
   },
 
-  VELOCITY_MAX: 7
+  VELOCITY_MAX: 6
 }
 
 export default CONFIG;

@@ -22,7 +22,7 @@ function Planet( data )
   this.maxMaskRadius = 250;
   this.collisionRadius = 245 * this.scale.x;
   this.gravityRadius = 650 * this.scale.x;
-  this.attractForce = ( this.scale.x / 2 ) * 8;
+  this.attractForce = ( this.scale.x / 2 ) * 10;
   this.type = data.planetId;
   this.hasReleasedCollectibles = false;
 }

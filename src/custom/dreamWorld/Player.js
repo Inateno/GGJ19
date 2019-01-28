@@ -93,34 +93,23 @@ Player.prototype.move = function()
   this.translate( this.velocity, true );
 }
 
-Player.prototype.rotateJump = function(vector, angle)
-{
-  let cos = Math.cos( angle );
-  let sin = Math.sin( angle );
-
-  return new DE.Vector2 (
-      (vector.x * cos - vector.y * sin),
-      (vector.x * sin + vector.y * cos)
-  );
-}
-
 Player.prototype.jump = function()
 {
-  if ( !this.landed ) {
-    return;
-  }
-  
-  if ( this.currentMusic ) {
-    DE.Audio.music.get( this.currentMusic ).fade( 1, 0, 850 );
-    DE.Audio.music.play( 'space' );
-    this.currentMusic = null;
+  var jumpStrength = 0.5;
+
+  if ( this.landed ) {
+    jumpStrength = 5;
+    if ( this.currentMusic ) {
+      DE.Audio.music.get( this.currentMusic ).fade( 1, 0, 850 );
+      DE.Audio.music.play( 'space' );
+      this.currentMusic = null;
+    }
   }
 
   this.landed = false;
 
-  var jump = new DE.Vector2( 0, -5 );
-
-  jump = this.rotateJump( jump, this.rotation );
+  var jump = new DE.Vector2( 0, -jumpStrength );
+  jump.turnVector( this.rotation + Math.PI );
 
   this.velocity.x += jump.x;
   this.velocity.y += jump.y;
