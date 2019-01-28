@@ -90,7 +90,13 @@ Player.prototype.onPointerMove = function( pos )
     var touchMove = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
     var dirX = touchMove.x - this.touchStart.x;
     
-    this.axes.x = dirX / Math.abs(dirX) * 4;
+    if ( Math.abs( dirX ) > 50 ) {
+      dirX = Math.sign( dirX ) * ( Math.abs( dirX ) - 50 );
+      this.axes.x = dirX / Math.abs(dirX) * 4;
+    }
+    else {
+      this.axes.x = 0;
+    }
   }
 }
 
