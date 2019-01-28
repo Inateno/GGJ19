@@ -12,6 +12,14 @@ var dreamWorld = new GameScreen( "dreamWorld", {
   {
     var self = this;
 
+    /*** DEBUG MODE */
+      window.dreamw = this;
+      // dreamw.scene.scale.x = 0.1;
+      // dreamw.scene.scale.y = 0.1;
+      // dreamw.camera.x = 1280;
+      // dreamw.camera.y = 720;
+    /*** */
+    
     this.background = new DE.GameObject( {
       x: -5000,
       y: -5000,

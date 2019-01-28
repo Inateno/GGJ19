@@ -1,4 +1,6 @@
-import DE from '@dreamirl/dreamengine'
+import DE from '@dreamirl/dreamengine';
+
+import CONFIG from 'config';
 
 function Player( )
 {
@@ -60,21 +62,35 @@ Player.prototype.move = function()
     this.gravity.y = 0;
   }
 
-  var newAxe = new DE.Vector2( this.axes.x, this.axes.y );
-  
-  newAxe.rotate( this.rotation );
-
-  this.translate( this.velocity, true );
-  this.translate( newAxe );
+  var inputAxes = new DE.Vector2( this.axes.x, this.axes.y );
 
   this.body.renderer.setPause( false );
+  
+  if ( this.landed ) {
+    if ( inputAxes.x !== 0 ) {
+      this.body.scale.x = Math.sign( inputAxes.x );
+    }
+    else {
+      this.body.renderer.setPause( true );
+    }
+  
+    this.translate( inputAxes );
+  }
+  else {
+    
+    inputAxes.turnVector( this.rotation + Math.PI );
+    this.velocity.x += inputAxes.x * 0.1;
+    this.velocity.y += inputAxes.y * 0.1;
+  }
 
-  if(newAxe.x < 0)
-    this.body.scale.x = -1;
-  else if(newAxe.x > 0)
-    this.body.scale.x = 1;
-  else if(this.landed)
-    this.body.renderer.setPause( true );
+  if ( Math.abs( this.velocity.x ) > CONFIG.VELOCITY_MAX ) {
+    this.velocity.x = Math.sign( this.velocity.x ) * CONFIG.VELOCITY_MAX;
+  }
+  if ( Math.abs( this.velocity.y ) > CONFIG.VELOCITY_MAX ) {
+    this.velocity.y = Math.sign( this.velocity.y ) * CONFIG.VELOCITY_MAX;
+  }
+
+  this.translate( this.velocity, true );
 }
 
 Player.prototype.rotateJump = function(vector, angle)

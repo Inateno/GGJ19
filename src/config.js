@@ -27,7 +27,9 @@ const CONFIG = {
     },
     DAILY_ORDER: [ 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
     DAILY_INDEXES: [ 0, 3, 4, 2, 1 ]
-  }
+  },
+
+  VELOCITY_MAX: 7
 }
 
 export default CONFIG;
