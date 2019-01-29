@@ -92,11 +92,11 @@ const images = {
       , [ "planet-dark", "space/planet-dark.png" ]
       , [ "planet-hide", "space/planet-hide.png" ]
 
-      , [ "collectible-bobo", "space/collectible-bobo.png", { totalFrame: 3, interval: 500 } ]
-      , [ "collectible-dark", "space/collectible-dark.png", { totalFrame: 5, interval: 500 } ]
-      , [ "collectible-gamer", "space/collectible-gamer.png", { totalFrame: 3, interval: 500 } ]
-      , [ "collectible-kitch", "space/collectible-kitch.png", { totalFrame: 3, interval: 500 } ]
-      , [ "collectible-ecolo", "space/collectible-ecolo.png", { totalFrame: 3, interval: 500 } ]
+      , [ "collectible-bobo", "space/collectible-bobo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "collectible-dark", "space/collectible-dark.png", { totalFrame: 5, interval: 250 } ]
+      , [ "collectible-gamer", "space/collectible-gamer.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "collectible-kitch", "space/collectible-kitch.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "collectible-ecolo", "space/collectible-ecolo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
 
       , [ "nuagePlanet", "space/nuagePlanet.png" ]
 
