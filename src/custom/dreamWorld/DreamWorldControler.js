@@ -142,14 +142,14 @@ DreamWorldControler.prototype.checkPlayerOutside = function()
 {
   const player = this.dreamWorld.player;
 
-  if(player.x < -3000)
-    player.x = 3000;
-  if(player.x > 3000)
-    player.x = -3000;
-  if(player.y < -3000)
-    player.y = 3000;
-  if(player.y > 3000)
-    player.y = -3000;
+  if(player.x < -4000)
+    player.x = 4000;
+  if(player.x > 4000)
+    player.x = -4000;
+  if(player.y < -4000)
+    player.y = 4000;
+  if(player.y > 4000)
+    player.y = -4000;
 }
 
 export default DreamWorldControler;

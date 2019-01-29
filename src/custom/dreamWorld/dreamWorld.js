@@ -13,11 +13,11 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     var self = this;
 
     /*** DEBUG MODE */
-      window.dreamw = this;
-      // dreamw.scene.scale.x = 0.1;
-      // dreamw.scene.scale.y = 0.1;
-      // dreamw.camera.x = 1280;
-      // dreamw.camera.y = 720;
+      /*window.dreamw = this;
+       dreamw.scene.scale.x = 0.1;
+       dreamw.scene.scale.y = 0.1;
+       dreamw.camera.x = 1280;
+       dreamw.camera.y = 720;*/
     /*** */
     
     this.background = new DE.GameObject( {
@@ -26,6 +26,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       zindex:-50,
       renderer: new DE.TilingRenderer( { spriteName: "tileBackground", width: 10000, height: 10000 } )
     } );
+    /*this.background.x = -CONFIG.SCREEN_WIDTH / 2;
+    this.background.y = -CONFIG.SCREEN_HEIGHT / 2;*/
     this.background.focus( this.camera );
     this.scene.add( this.background );
 
@@ -123,47 +125,53 @@ dreamWorld.spawnPlanets = function()
   
   var vectorTranslation = new DE.Vector2( 0, 0 );
 
-  for ( let i = 1; i < 6; i++ ) {
-    
-    var bigPlanet = new Planet( { planetId: Planet.IDS[ i ] } );
-    
-    vectorTranslation.rotate( ( Math.PI * 2 / 5 ) * ( i - 1 ), true );
-    vectorTranslation.translate( { x: 0, y: -1500 }, false, true );
+  for (let i = 0; i < 250; i++) {
+    var pos = { x: Math.random() * 6000 - 3000, y: Math.random() * 6000 - 3000 };
 
-    bigPlanet.x = vectorTranslation.x;
-    bigPlanet.y = vectorTranslation.y;
-    bigPlanet.rotation = vectorTranslation.rotation;
+    var planet = new Planet( { 
+      planetId: Planet.IDS[ Math.floor( Math.random() * 5 ) + 1 ], 
+      scale: Math.random() * 0.5 + 0.5, 
+    } );
 
-    this.add( bigPlanet );
-    this.planets.push( bigPlanet );
+    planet.rotation = Math.random() * Math.PI * 2;
+    planet.x = pos.x;
+    planet.y = pos.y;
 
-    this.collectibles = this.collectibles.concat( bigPlanet.spawnCollectibles( 2 ) );
-
-    for ( let j = 1; j < 5; j++ ) {
-      var smallPlanet = new Planet( { planetId: Planet.IDS[ i ], scale: 0.5 } );
-
-      vectorTranslation.rotation = bigPlanet.rotation;
-      vectorTranslation.x = bigPlanet.x;
-      vectorTranslation.y = bigPlanet.y;
-
-      vectorTranslation.rotate( ( Math.PI * 2 / 4 ) * ( j - 1 ), true );
-      vectorTranslation.translate( { x: 0, y: -750 }, false, true );
-
-      smallPlanet.x = vectorTranslation.x;
-      smallPlanet.y = vectorTranslation.y;
-
-      this.add( smallPlanet );
-      this.planets.push( smallPlanet );
-
-      this.collectibles = this.collectibles.concat( smallPlanet.spawnCollectibles( 2 ) );
-    }
-
-    vectorTranslation.x = 0;
-    vectorTranslation.y = 0;
-    vectorTranslation.rotation = 0;
+    this.add( planet );
+    this.planets.push( planet );
   }
 
-  this.add( this.collectibles );
+  for (let index1 = 0; index1 < this.planets.length; index1++) {
+      
+    const planet1 = this.planets[ index1 ];
+    
+    for (let index2 = 0; index2 < this.planets.length; index2++) {
+      
+      if(index2 == index1 )
+        continue;
+      
+      const planet2 = this.planets[ index2 ];
+      
+      if( planet1.vector2.isInRangeFrom( planet2, planet1.gravityRadius + planet2.gravityRadius ) )
+      {
+        this.planets.splice( index2, 1 );
+        planet2.askToKill();
+        
+        if( index2 < index1 ) 
+          index1--;
+        index2--;
+      }
+    }
+  }
+
+  this.planets.forEach(planet => {
+    if( planet.type == Planet.IDS.hide)
+      return;
+
+    var collectibles = planet.spawnCollectibles( 2 );
+    this.collectibles = this.collectibles.concat( collectibles );
+    this.add( collectibles )
+  });
 }
 
 dreamWorld.spawnPlayer = function()
