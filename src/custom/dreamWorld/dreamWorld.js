@@ -116,7 +116,7 @@ var dreamWorld = new GameScreen( "dreamWorld", {
   }
 } );
 
-dreamWorld.prototype.spawnPlanets = function()
+dreamWorld.spawnPlanets = function()
 {
   this.planetSpawn = new Planet( { planetId: Planet.IDS.hide, scale: 0.5 } );
   
