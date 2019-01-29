@@ -8,7 +8,10 @@
 const inputs = {
   "left":{"keycodes":[ "K.left" , 'K.a', 'K.q' ] },
   "right":{"keycodes":[ "K.right" , 'K.d' ] },
-  "jump":{"keycodes":[ 'G0.B.A', "K.space" ], "stayOn": true }
+  "up":{"keycodes":[ "K.up" , 'K.z', 'K.w' ] },
+  "down":{"keycodes":[ "K.down" , 'K.s' ] },
+
+  "jump":{"keycodes":[ 'G0.B.A', "K.space" ] }
 };
 
 export default inputs;

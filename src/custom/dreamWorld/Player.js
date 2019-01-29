@@ -6,6 +6,7 @@ function Player( )
 {
   DE.GameObject.call( this, {
     axes: new DE.Vector2( 0, 0 )
+    ,inputs: new DE.Vector2( 0, 0 )
     ,velocity: new DE.Vector2( 0, 0 )
     ,gravity: new DE.Vector2( 0, 0 )
     ,landed: false
@@ -21,7 +22,6 @@ function Player( )
   this.add( this.body );
 
   this.setupInputs();
-
 }
 
 Player.prototype = new DE.GameObject();
@@ -32,12 +32,52 @@ Player.prototype.setupInputs = function()
 {
   var self = this;
 
-  DE.Inputs.on( "keyDown", "left", function() { self.axes.x = -4; } );
-  DE.Inputs.on( "keyDown", "right", function() { self.axes.x = 4; } );
-  DE.Inputs.on( "keyUp", "left", function() { self.axes.x = 0; } );
-  DE.Inputs.on( "keyUp", "right", function() { self.axes.x = 0; } );
+  DE.Inputs.on( "keyDown", "left", function() { self.inputs.x -= 4; } );
+  DE.Inputs.on( "keyDown", "right", function() { self.inputs.x += 4; } );
+  DE.Inputs.on( "keyUp", "left", function() { self.inputs.x += 4; } );
+  DE.Inputs.on( "keyUp", "right", function() { self.inputs.x -= 4; } );
 
-  DE.Inputs.on( "keyDown", "jump", function() { self.jump(); } );
+  DE.Inputs.on( "keyDown", "up", function() { self.inputs.y -= 4; } );
+  DE.Inputs.on( "keyDown", "down", function() { self.inputs.y += 4; } );
+  DE.Inputs.on( "keyUp", "up", function() { self.inputs.y += 4; } );
+  DE.Inputs.on( "keyUp", "down", function() { self.inputs.y -= 4; } );
+
+  DE.Inputs.on( "keyUp", "jump", function() { 
+    var vector = new DE.Vector2( self.inputs.x, self.inputs.y );
+
+    if(self.landed || ( self.inputs.x == 0 && self.inputs.y ==0 ) )
+      vector.y = -4;
+
+    var wasLanded = self.landed;
+    var shouldJump = vector.y < -0;
+
+    if( vector.y < 0 )
+    {
+      self.landed = false;
+      
+      self.body.renderer.changeSprite( "dream-char-fly" );
+      
+      if ( self.currentMusic ) {
+        DE.Audio.music.get( self.currentMusic ).fade( 1, 0, 850 );
+        DE.Audio.music.play( 'space' );
+        self.currentMusic = null;
+      }
+    }
+
+    vector.turnVector( self.rotation + Math.PI );
+  
+    if( wasLanded && shouldJump )
+    {
+      self.translate( { x: vector.x, y: vector.y }, true );
+    }
+    if( !wasLanded )
+    {
+      self.body.renderer.changeSprite( "dream-char-fly" );
+    }
+  
+    self.velocity.x += vector.x;
+    self.velocity.y += vector.y;
+  } );
 }
 
 Player.prototype.move = function()
@@ -62,7 +102,7 @@ Player.prototype.move = function()
     this.gravity.y = 0;
   }
 
-  var inputAxes = new DE.Vector2( this.axes.x, this.axes.y );
+  var inputAxes = new DE.Vector2( this.inputs.x || this.axes.x, this.inputs.y || this.axes.y );
 
   this.body.renderer.setPause( false );
   
@@ -73,14 +113,14 @@ Player.prototype.move = function()
     else {
       this.body.renderer.setPause( true );
     }
-  
+    inputAxes.y = 0;
     this.translate( inputAxes );
   }
   else {
-    
     inputAxes.turnVector( this.rotation + Math.PI );
-    this.velocity.x += inputAxes.x * 0.1;
-    this.velocity.y += inputAxes.y * 0.1;
+
+    this.velocity.x += inputAxes.x * 0.025;
+    this.velocity.y += inputAxes.y * 0.025;
   }
 
   if ( Math.abs( this.velocity.x ) > CONFIG.VELOCITY_MAX ) {
@@ -93,12 +133,38 @@ Player.prototype.move = function()
   this.translate( this.velocity, true );
 }
 
-Player.prototype.jump = function()
+Player.prototype.onPointerDown = function( pos )
 {
-  var jumpStrength = 0.5;
+  this.touchStart = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 };
 
-  if ( this.landed ) {
-    jumpStrength = 5;
+  this.addAutomatism( "moveToCursor", "moveToCursor" );
+}
+
+Player.prototype.onPointerMove = function( pos )
+{
+  this.touchMove = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+}
+
+Player.prototype.onPointerUp = function( pos )
+{
+  this.removeAutomatism( "moveToCursor", "moveToCursor" );
+
+  var touchEnd = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
+
+  var vector = new DE.Vector2( touchEnd.x - CONFIG.SCREEN_WIDTH, touchEnd.y - CONFIG.SCREEN_HEIGHT );
+
+  vector.x = Math.min(Math.max(vector.x, -300), 300);
+  vector.y = Math.min(Math.max(vector.y, -300), 300);
+
+  var wasLanded = this.landed;
+  var shouldJump = vector.y < -25;
+
+  if( vector.y < 0 )
+  {
+    this.landed = false;
+    
+    this.body.renderer.changeSprite( "dream-char-fly" );
+    
     if ( this.currentMusic ) {
       DE.Audio.music.get( this.currentMusic ).fade( 1, 0, 850 );
       DE.Audio.music.play( 'space' );
@@ -106,17 +172,54 @@ Player.prototype.jump = function()
     }
   }
 
-  this.landed = false;
+  vector.turnVector( this.rotation + Math.PI );
+  
+  if( wasLanded && shouldJump )
+  {
+    this.translate( { x: vector.x * 0.05, y: vector.y * 0.05 }, true );
+  }
+  if( !wasLanded )
+  {
+    this.body.renderer.changeSprite( "dream-char-fly" );
+  }
 
-  var jump = new DE.Vector2( 0, -jumpStrength );
-  jump.turnVector( this.rotation + Math.PI );
+  this.velocity.x += vector.x * 0.03;
+  this.velocity.y += vector.y * 0.03;
 
-  this.velocity.x += jump.x;
-  this.velocity.y += jump.y;
+  this.axes.x = 0;
+  this.touchStart = undefined;
+  this.touchMove = undefined;
+}
 
-  this.translate( { x: jump.x, y: jump.y }, true );
+Player.prototype.moveToCursor = function( )
+{
+  if(this.touchMove)
+    var vector = new DE.Vector2( this.touchMove.x - CONFIG.SCREEN_WIDTH, this.touchMove.y - CONFIG.SCREEN_HEIGHT );
+  else
+    var vector = new DE.Vector2( this.touchStart.x - CONFIG.SCREEN_WIDTH, this.touchStart.y - CONFIG.SCREEN_HEIGHT );
 
-  this.body.renderer.changeSprite( "dream-char-fly" );
+  if( this.landed && this.touchStart )
+  {
+    var dirX = vector.x;
+
+    if ( Math.abs( dirX ) > 50 ) {
+      dirX = Math.sign( dirX ) * ( Math.abs( dirX ) - 50 );
+      this.axes.x = dirX / Math.abs(dirX) * 4;
+    }
+    else {
+      this.axes.x = 0;
+    }
+  }
+  else if( !this.landed )
+  {
+    vector.x = Math.min(Math.max(vector.x, -300), 300);
+    vector.y = Math.min(Math.max(vector.y, -300), 300);
+  
+    vector.turnVector( this.rotation + Math.PI );
+  
+    this.velocity.x += vector.x * 0.001;
+    this.velocity.y += vector.y * 0.001;
+  }
 }
 
 Player.prototype.land = function( planet )
@@ -142,7 +245,6 @@ Player.prototype.addGravity = function( vector )
 
   this.gravity.x += vector.x;
   this.gravity.y += vector.y;
-  
 }
 
 export default Player;
