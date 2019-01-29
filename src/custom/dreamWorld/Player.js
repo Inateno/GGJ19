@@ -45,7 +45,8 @@ Player.prototype.setupInputs = function()
   DE.Inputs.on( "keyUp", "jump", function() { 
     var vector = new DE.Vector2( self.inputs.x, self.inputs.y );
 
-    console.log(vector);
+    if(self.landed || ( self.inputs.x == 0 && self.inputs.y ==0 ) )
+      vector.y = -4;
 
     var wasLanded = self.landed;
     var shouldJump = vector.y < -0;
@@ -101,7 +102,7 @@ Player.prototype.move = function()
     this.gravity.y = 0;
   }
 
-  var inputAxes = new DE.Vector2( this.inputs.x, this.inputs.y );
+  var inputAxes = new DE.Vector2( this.inputs.x || this.axes.x, this.inputs.y || this.axes.y );
 
   this.body.renderer.setPause( false );
   
@@ -134,31 +135,23 @@ Player.prototype.move = function()
 
 Player.prototype.onPointerDown = function( pos )
 {
-  this.touchStart = { x: CONFIG.SCREEN_WIDTH, y: CONFIG.SCREEN_HEIGHT  } ;
+  this.touchStart = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 };
+
+  this.addAutomatism( "moveToCursor", "moveToCursor" );
 }
 
 Player.prototype.onPointerMove = function( pos )
 {
-  if( this.landed && this.touchStart )
-  {
-    var touchMove = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
-    var dirX = touchMove.x - this.touchStart.x;
-    
-    if ( Math.abs( dirX ) > 50 ) {
-      dirX = Math.sign( dirX ) * ( Math.abs( dirX ) - 50 );
-      this.axes.x = dirX / Math.abs(dirX) * 4;
-    }
-    else {
-      this.axes.x = 0;
-    }
-  }
+  this.touchMove = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
 }
 
 Player.prototype.onPointerUp = function( pos )
 {
+  this.removeAutomatism( "moveToCursor", "moveToCursor" );
+
   var touchEnd = { x: pos.data.global.x + CONFIG.SCREEN_WIDTH / 2, y: pos.data.global.y + CONFIG.SCREEN_HEIGHT / 2 } ;
 
-  var vector = new DE.Vector2( touchEnd.x - this.touchStart.x, touchEnd.y - this.touchStart.y );
+  var vector = new DE.Vector2( touchEnd.x - CONFIG.SCREEN_WIDTH, touchEnd.y - CONFIG.SCREEN_HEIGHT );
 
   vector.x = Math.min(Math.max(vector.x, -300), 300);
   vector.y = Math.min(Math.max(vector.y, -300), 300);
@@ -195,6 +188,38 @@ Player.prototype.onPointerUp = function( pos )
 
   this.axes.x = 0;
   this.touchStart = undefined;
+  this.touchMove = undefined;
+}
+
+Player.prototype.moveToCursor = function( )
+{
+  if(this.touchMove)
+    var vector = new DE.Vector2( this.touchMove.x - CONFIG.SCREEN_WIDTH, this.touchMove.y - CONFIG.SCREEN_HEIGHT );
+  else
+    var vector = new DE.Vector2( this.touchStart.x - CONFIG.SCREEN_WIDTH, this.touchStart.y - CONFIG.SCREEN_HEIGHT );
+
+  if( this.landed && this.touchStart )
+  {
+    var dirX = vector.x;
+
+    if ( Math.abs( dirX ) > 50 ) {
+      dirX = Math.sign( dirX ) * ( Math.abs( dirX ) - 50 );
+      this.axes.x = dirX / Math.abs(dirX) * 4;
+    }
+    else {
+      this.axes.x = 0;
+    }
+  }
+  else if( !this.landed )
+  {
+    vector.x = Math.min(Math.max(vector.x, -300), 300);
+    vector.y = Math.min(Math.max(vector.y, -300), 300);
+  
+    vector.turnVector( this.rotation + Math.PI );
+  
+    this.velocity.x += vector.x * 0.001;
+    this.velocity.y += vector.y * 0.001;
+  }
 }
 
 Player.prototype.land = function( planet )
