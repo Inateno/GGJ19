@@ -116,14 +116,12 @@ var dreamWorld = new GameScreen( "dreamWorld", {
   }
 } );
 
-dreamWorld.spawnPlanets = function()
+dreamWorld.prototype.spawnPlanets = function()
 {
   this.planetSpawn = new Planet( { planetId: Planet.IDS.hide, scale: 0.5 } );
   
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
-  
-  var vectorTranslation = new DE.Vector2( 0, 0 );
 
   for (let i = 0; i < 250; i++) {
     var pos = { x: Math.random() * 6000 - 3000, y: Math.random() * 6000 - 3000 };
