@@ -1,4 +1,5 @@
 import DE from '@dreamirl/dreamengine'
+import CONFIG from 'config';
 
 function Collectible( data )
 {
@@ -11,10 +12,18 @@ function Collectible( data )
     value: data.value,
     scale: data.scale,
     velocity: new DE.Vector2( 0, 0 ),
-    renderer: new DE.SpriteRenderer( { spriteName: "collectible-" + data.type } ),
+    renderers: [
+      new DE.SpriteRenderer( { spriteName: "collectible-" + data.type } ),
+      new DE.SpriteRenderer( { spriteName: "collectible-" + data.type, scale: 1 } )
+    ],
     slowRate: 0.98,
-    automatisms: [ [ "move", "move" ] ]
+    automatisms: [ [ "move", "move" ], [ "updateEffect", "updateEffect" ] ]
   } );
+
+  this.renderers[ 1 ].alpha = 0;
+
+  this.effectSpeed = CONFIG.COLLECTIBLE_EFFECT_SPEED;
+
 }
 
 Collectible.Types = {
@@ -39,11 +48,30 @@ Collectible.prototype = new DE.GameObject();
 Collectible.constructor = Collectible;
 Collectible.supr = DE.GameObject.prototype;
 
+Collectible.prototype.updateEffect = function()
+{
+  this.renderers[ 1 ].alpha += this.effectSpeed;
+  this.renderers[ 1 ].scale.x += this.effectSpeed / 4;
+  this.renderers[ 1 ].scale.y += this.effectSpeed / 4;
+
+  if(this.renderers[ 1 ].alpha <= CONFIG.COLLECTIBLE_EFFECT_MIN)
+    this.effectSpeed = CONFIG.COLLECTIBLE_EFFECT_SPEED;
+  else if(this.renderers[ 1 ].alpha >= CONFIG.COLLECTIBLE_EFFECT_MAX)  
+    this.effectSpeed = -CONFIG.COLLECTIBLE_EFFECT_SPEED;
+}
+
 Collectible.prototype.move = function()
 {
+  var oldPos = new DE.Vector2( this.x, this.y );
+  var offset = new DE.Vector2();
+
   if(!this.targetSlot) 
   {
     this.translate( this.velocity, true );
+
+    offset.x = oldPos.x - this.x;
+    offset.y = oldPos.y - this.y;
+    offset.turnVector( -this.rotation + Math.PI );
 
     this.velocity.multiply( this.slowRate );
   }
@@ -65,6 +93,9 @@ Collectible.prototype.move = function()
       this.targetSlot.add( this );
     }
   }
+
+  this.renderers[ 1 ].x = offset.x;
+  this.renderers[ 1 ].y = offset.y;
 }
 
 Collectible.prototype.goToSlot = function( slot )

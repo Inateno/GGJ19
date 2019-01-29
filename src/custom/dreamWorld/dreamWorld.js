@@ -57,7 +57,7 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       }
     }
 
-    this.collectiblesStored = 0;
+    
 
     this.on( "show", function( self, args )
     {
@@ -65,6 +65,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       this.hud = new Hud();
       this.spawnPlayer();
       this.controler = new DreamWorldControler( this );
+
+      this.collectiblesStored = 0;
 
       DE.Audio.music.stopAllAndPlay( 'space' );
       DE.Audio.music.get( 'space' ).fade( 0, 0.7, 500 );
@@ -80,7 +82,6 @@ var dreamWorld = new GameScreen( "dreamWorld", {
         this.scene.remove(collec);
       }
       this.collectibles = [];
-      this.collectiblesStored = 0;
 
       //delete planets
       for (let index = 0; index < this.planets.length; index++) {
