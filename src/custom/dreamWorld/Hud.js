@@ -10,8 +10,9 @@ function Hud( )
 
   for (let index = 0; index < 10; index++) {
     var slot = new DE.GameObject( {
-      x: -375 + 37.5 + index * 75,
-      y: -CONFIG.SCREEN_HEIGHT / 2 + 75
+      x: -500 + 50 + index * 100,
+      y: -CONFIG.SCREEN_HEIGHT / 2 + 75,
+      renderer: new DE.SpriteRenderer( { spriteName: "hud-slot" } )
     } )
 
     this.slots.push(slot);

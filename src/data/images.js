@@ -98,7 +98,7 @@ const images = {
       , [ "collectible-kitch", "space/collectible-kitch.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
       , [ "collectible-ecolo", "space/collectible-ecolo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
 
-      , [ "nuagePlanet", "space/nuagePlanet.png" ]
+      , [ "hud-slot", "space/hud-slot.png" ]
 
     ],
     

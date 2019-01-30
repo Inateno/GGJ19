@@ -39,8 +39,8 @@ function Weather( data )
 
   this.clouds = []; // used for rain and snow
   this.themeParticles = {
-    bobo: this.snow,
-    gamer: this.rain,
+    bobo: this.rain,
+    gamer: this.snow,
     dark: this.stars
   };
 
