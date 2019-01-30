@@ -91,6 +91,10 @@ Collectible.prototype.move = function()
       this.y = 0;
       this.rotation = 0;
       this.targetSlot.add( this );
+
+      /*this.renderers[ 0 ].setPause( true );
+      this.removeAutomatism( "updateEffect" );
+      this.renderers[ 1 ].visible = false;*/
     }
   }
 
