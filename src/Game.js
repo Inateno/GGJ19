@@ -48,7 +48,8 @@ Game.onload = function()
   DE.Audio.music.setVolume( 75 );
   DE.Audio.fx.setVolume( 50 );
   Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
-  Game.screenManager.changeScreen( homeWorld.name );
+  Game.screenManager.changeScreen( dreamWorld.name );
+  // Game.screenManager.changeScreen( homeWorld.name );
   
 }
 

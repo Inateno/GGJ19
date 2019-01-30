@@ -97,6 +97,12 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.currentDailyIndex = 0;
     this.dailyCheck = function( index ) {
+
+
+      // change this to check FIRST the object that just changed
+      // check the first object then ask if its ok
+      // ChooseBox.ask();
+      
       var happyPos = [];
       for ( var i = 0; i < this.currentDay; ++i ) {
         happyPos.push( CONFIG.ANIM.DAILY_INDEXES[ i ] + 1 );
@@ -142,7 +148,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
               } );
             }
             this.character.renderer.setPause(false);
-          } )
+          } );
         }
         return;
       }

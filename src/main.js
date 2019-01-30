@@ -14,7 +14,7 @@ console.log( "game main file loaded DREAM_ENGINE is:" , DE );
 
 DE.init(
 {
-  'onReady'              : Game.init,
+  'onReady'            : Game.init,
   'onLoad'             : Game.onload,
   'inputs'             : inputs,
   'audios'             : audios,
