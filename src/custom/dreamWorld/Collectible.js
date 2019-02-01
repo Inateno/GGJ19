@@ -10,7 +10,7 @@ function Collectible( data )
     zindex: -1,
     type: data.type,
     value: data.value,
-    scale: data.scale,
+    scale: data.scale * ( data.phase > 1 ? 0.5 : 1 ),
     velocity: new DE.Vector2( 0, 0 ),
     renderers: [
       new DE.SpriteRenderer( { spriteName: "phase-" + data.phase + "-" + data.type } ),
