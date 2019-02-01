@@ -15,17 +15,16 @@
     "pixi-filters": "^2.7.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "parcel-bundler": "^1.11.0",
     "parcel-plugin-asset-copier": "^1.0.0"
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "parcel html/browser.html -d dist/dev/",
-    "build": "parcel build html/browser.html -d dist/prod/",
-    "dev:electron": "NODE_ENV=electron parcel html/browser.html -d dist/dev-electron/",
-    "build:electron": "NODE_ENV=electron parcel build html/browser.html -d dist/prod-electron/",
-    "win-dev:electron": "set NODE_ENV=electron&& parcel html/browser.html -d dist/dev-electron/",
-    "win-build:electron": "set NODE_ENV=electron&& parcel build html/browser.html -d dist/prod-electron/"
+    "dev": "cross-env parcel html/browser.html -d dist/dev/",
+    "build": "cross-env parcel build html/browser.html -d dist/prod/",
+    "dev:electron": "cross-env NODE_ENV=electron parcel html/browser.html -d dist/dev-electron/",
+    "build:electron": "cross-env NODE_ENV=electron parcel build html/browser.html -d dist/prod-electron/"
   },
   "alias": {
     "Game": "./src/Game.js",
