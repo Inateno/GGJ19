@@ -13,8 +13,12 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     var self = this;
 
     /*** DEBUG MODE */
-      /*window.dreamw = this;
-       dreamw.scene.scale.x = 0.1;
+      window.dreamw = this;
+      this.finish = function( type )
+      {
+        this.trigger( "changeScreen", "HomeWorld", { type: type || "bobo" } );
+      };
+      /* dreamw.scene.scale.x = 0.1;
        dreamw.scene.scale.y = 0.1;
        dreamw.camera.x = 1280;
        dreamw.camera.y = 720;*/

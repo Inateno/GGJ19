@@ -11,6 +11,7 @@ function Environment( data )
     ,zindex: 1
   } );
 
+  this.currentCusto = undefined;
   this.animatedSprite = 'env-basic';
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
 }
@@ -22,6 +23,7 @@ Environment.supr = DE.GameObject.prototype;
 Environment.prototype.customize = function( result )
 {
   this.enable = true;
+  this.currentCusto = result;
   this.renderer.changeSprite( 'env-' + result );
   this.removeAutomatism( 'changeFrame' );
 };
@@ -30,6 +32,7 @@ Environment.prototype.reset = function()
 {
   this.renderer.changeSprite( 'env-basic' );
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
+  this.currentCusto = undefined;
 };
 
 Environment.prototype.changeFrame = function()

@@ -11,6 +11,7 @@ function House( currentState )
     zindex: 3
   } );
 
+  this.currentCusto = undefined;
   this.basicSprite =  {
     outside: 'house-out',
     inside: 'house-basic'
@@ -27,6 +28,7 @@ House.supr = DE.GameObject.prototype;
 House.prototype.customize = function( result )
 {
   this.enable = true;
+  this.currentCusto = result;
   this.renderer.changeSprite( 'house-' + result );
   this.removeAutomatism( 'changeFrame' );
 
@@ -39,6 +41,7 @@ House.prototype.reset = function()
 {
   this.renderer.changeSprite( 'house-basic' );
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
+  this.currentCusto = undefined;
 };
 
 House.prototype.changeFrame = function()

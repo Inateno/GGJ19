@@ -1,6 +1,7 @@
 import DE from '@dreamirl/dreamengine';
 import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
 import MessageBox from '@dreamirl/de-plugin-messagebox';
+import ChooseBox from '@dreamirl/de-plugin-choosebox';
 
 import CONFIG from 'config';
 
@@ -16,7 +17,6 @@ var homeWorld = new GameScreen( "HomeWorld", {
   , initialize: function()
   {
     var self = this;
-    MessageBox.init();
 
     this.title = new DE.GameObject( {
       x: CONFIG.SCREEN_WIDTH / 2,
@@ -97,19 +97,12 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.currentDailyIndex = 0;
     this.dailyCheck = function( index ) {
+      this.currentDailyIndex = index;
 
+      console.log( "daily check", this.currentDailyIndex, "day", this.currentDay );
+      var isHappy = CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] === this.currentDay;
 
-      // change this to check FIRST the object that just changed
-      // check the first object then ask if its ok
-      // ChooseBox.ask();
-      
-      var happyPos = [];
-      for ( var i = 0; i < this.currentDay; ++i ) {
-        happyPos.push( CONFIG.ANIM.DAILY_INDEXES[ i ] + 1 );
-      }
-      
-      this.character.renderer.changeSprite( happyPos.indexOf( index ) !== -1 ? 'real-char-happy' : 'real-char-idle' );
-      if ( index >= CONFIG.ANIM.DAILY_ORDER.length ) {
+      if ( this.currentDailyIndex >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );
 
         if ( this.currentDay < 6 ) {
@@ -125,9 +118,9 @@ var homeWorld = new GameScreen( "HomeWorld", {
               this.environment.reset();
               this.house.reset();
               this.weather.reset();
-              this.inside.enable = false;
-              this.pet.enable = false;
-              this.roomType.customize( 'basic' );
+              this.inside.reset();
+              this.pet.reset();
+              this.roomType.reset();
               this.dailyCheck( 0 );
             }
             else {
@@ -152,25 +145,77 @@ var homeWorld = new GameScreen( "HomeWorld", {
         }
         return;
       }
-      if ( index === 1 && this.currentDay === 0 ) {
-        this.overHouse.fadeOut();
+      if ( this.currentDailyIndex === 1 && this.currentDay === 0 ) {
+        this.overHouse.addAutomatism( "fo", "fadeOut", { interval: 200, persistent: false } );
       }
-      this.currentDailyIndex = index;
       let pos = this.character.getWorldPos();
       let targetPos = {
         x: CONFIG.ANIM.DAILY_CHECK[ CONFIG.ANIM.DAILY_ORDER[ this.currentDailyIndex ] ],
         y: pos.y
       };
-      this.character.addAutomatism( 'mt', 'makeMove', {
-        args: [
-          targetPos,
-          speedToTime( pos, targetPos, CONFIG.CHARACTER_SPEED ),
-          () => this.dailyCheck( this.currentDailyIndex + 1 )
-        ],
-        interval: CONFIG.ANIM.IDLE_DURATION,
-        persistent: false
-      } );
+      if ( this.currentDay === 0 && this.currentDailyIndex === 0 ) {
+        targetPos.x = 200;
+      }
+      
+      this.character.makeMove( targetPos,
+        speedToTime( pos, targetPos, CONFIG.CHARACTER_SPEED ),
+        () => {
+          this.character.renderer.changeSprite( isHappy ? 'real-char-happy' : 'real-char-idle' );
+          setTimeout(() => this.displayDailyMessage(), 20 );//CONFIG.ANIM.IDLE_DURATION );
+        }
+      );
     }
+
+    /**
+     * create the message corresponding to what the character is checking
+     */
+    this.displayDailyMessage = function()
+    {
+      let target = this.customOrder[ this.currentDay - 1 ];
+      var key = "custom-" + CONFIG.ANIM.DAILY_ORDER[ this.currentDailyIndex ].toLowerCase();
+      if ( target && target.currentCusto !== undefined
+        && this.currentDailyIndex > 0
+        && this.currentDailyIndex < CONFIG.ANIM.DAILY_INDEXES.length - 2
+        && this.currentDay >= CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] ) {
+        key += "-" + target.currentCusto;
+      }
+      
+      console.log( "key is", key );
+      var msg = DE.Localization.get( key );
+      if ( this.currentDay === 0 && this.currentDailyIndex === 0 ) {
+        msg = "Voyons voir cette nouvelle maison";
+      }
+      MessageBox.create( msg, () => {
+        if ( this.currentDay > 0 && CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] === this.currentDay ) {
+          this.askToKeep();
+        }
+        else {
+          this.dailyCheck( this.currentDailyIndex + 1 );
+        }
+      } );
+    };
+
+    /**
+     * create the choose box that ask if we keep it or not, if answer is not, rollback one day
+     */
+    this.askToKeep = function()
+    {
+      MessageBox.create( "On garde ?" );
+      ChooseBox.create( [
+        { text: 'Oui', value: 1 },
+        { text: 'Non', value: 0 }
+      ], value => {
+        MessageBox.removeAll();
+        if ( value ) {
+          this.dailyCheck( this.currentDailyIndex + 1 );
+        }
+        else {
+          MessageBox.create( "Ah... Bon, je ferais mieux de retourner me coucher." );
+          this.currentDay--;
+          this.dailyCheck( CONFIG.ANIM.DAILY_ORDER.length - 1 );
+        }
+      } );
+    };
 
     // animation start
     this.startGame = function() {

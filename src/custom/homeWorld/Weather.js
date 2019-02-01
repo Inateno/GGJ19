@@ -16,6 +16,7 @@ function Weather( data )
     zindex: 2
   } );
 
+  this.currentCusto = undefined;
   this.bg = new DE.GameObject( {
     x: CONFIG.SCREEN_WIDTH / 2,
     y: CONFIG.SCREEN_HEIGHT / 2,
@@ -61,6 +62,7 @@ Weather.prototype.customize = function( result )
   this.enable = true;
   this.bg.enable = true;
 
+  this.currentCusto = result;
   this.bg.renderer.changeSprite( 'weather-bg-' + result );
 
   if ( this.themeParticles[ result ] ) {
@@ -80,6 +82,7 @@ Weather.prototype.reset = function()
   this.rain.stop();
   this.snow.stop();
   this.stars.stop();
+  this.currentCusto = undefined;
 };
 
 

@@ -10,6 +10,7 @@ function RoomType( data )
     ,renderer: new DE.SpriteRenderer( { spriteName: 'room-basic' } )
     ,zindex: 7
   } );
+  this.currentCusto = undefined;
 }
 
 RoomType.prototype = new DE.GameObject();
@@ -19,7 +20,14 @@ RoomType.supr = DE.GameObject.prototype;
 RoomType.prototype.customize = function( result )
 {
   this.enable = true;
+  this.currentCusto = result;
   this.renderer.changeSprite( 'room-' + result );
+};
+
+RoomType.prototype.reset = function()
+{
+  this.customize( 'basic' );
+  this.currentCusto = undefined;
 };
 
 export default RoomType;

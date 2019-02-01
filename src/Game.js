@@ -9,8 +9,11 @@
 simple Game declaration
 **/
 import DE from '@dreamirl/dreamengine';
-import CONFIG from 'config';
 import GameScreenManager from '@dreamirl/de-plugin-gamescreen';
+import ChooseBox from '@dreamirl/de-plugin-choosebox';
+import MessageBox from '@dreamirl/de-plugin-messagebox';
+
+import CONFIG from 'config';
 import homeWorld from 'homeWorld';
 import dreamWorld from 'dreamWorld';
 
@@ -47,10 +50,20 @@ Game.onload = function()
   // DE.Audio.mute();
   DE.Audio.music.setVolume( 75 );
   DE.Audio.fx.setVolume( 50 );
-  Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
-  Game.screenManager.changeScreen( dreamWorld.name );
-  // Game.screenManager.changeScreen( homeWorld.name );
-  
+  MessageBox.init();
+  ChooseBox.init();
+  ChooseBox.create( [
+    { text: "Anglais", value: "en" },
+    { text: "Francais", value: "fr" },
+    { text: "Italien", value: "it" },
+    { text: "Japonais", value: "jp" }
+  ], function( lang ) {
+    // DE.Localization.set(lang); // todo in engine "set"
+    console.log( "you choose lang", lang );
+    Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
+    // Game.screenManager.changeScreen( dreamWorld.name );
+    Game.screenManager.changeScreen( homeWorld.name );
+  } );
 }
 
 export default Game;

@@ -11,6 +11,7 @@ function Pet( data )
     ,zindex: 8
   } );
   this.enable = false;
+  this.currentCusto = undefined;
 }
 
 Pet.prototype = new DE.GameObject();
@@ -20,6 +21,7 @@ Pet.supr = DE.GameObject.prototype;
 Pet.prototype.customize = function( result )
 {
   this.enable = true;
+  this.currentCusto = result;
   this.renderer.changeSprite( 'pet-' + result );
 
   // TODO add position / animations sequence depending on the pet
@@ -27,6 +29,12 @@ Pet.prototype.customize = function( result )
   if ( result === 'dark' || result === 'kitch' ) {
     DE.Audio.music.stopAllAndPlay( 'house-' + result );
   }
+};
+
+Pet.prototype.reset = function()
+{
+  this.enable = false;
+  this.currentCusto = undefined;
 };
 
 export default Pet;

@@ -27,10 +27,11 @@ const CONFIG = {
       ROOM: 460,
       INSIDE: 700,
       HOUSE: 600,
-      SLEEP_ROOM: 770
+      SLEEP_ROOM: 770,
+      WHAT_CHANGED: 770
     },
-    DAILY_ORDER: [ 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
-    DAILY_INDEXES: [ 0, 3, 4, 2, 1 ]
+    DAILY_ORDER: [ 'WHAT_CHANGED', 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
+    DAILY_INDEXES: [ 0, 1, 4, 5, 3, 2, 6 ]
   },
 
   VELOCITY_MAX: 6

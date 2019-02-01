@@ -11,6 +11,7 @@ function Inside( data )
     ,zindex: 6
   } );
   this.enable = false;
+  this.currentCusto = undefined;
 }
 
 Inside.prototype = new DE.GameObject();
@@ -20,11 +21,18 @@ Inside.supr = DE.GameObject.prototype;
 Inside.prototype.customize = function( result )
 {
   this.enable = true;
+  this.currentCusto = result;
   this.renderer.changeSprite( 'inside-' + result );
 
   if ( result === 'dark' ) {
     DE.Audio.music.stopAllAndPlay( 'house-dark' );
   }
+};
+
+Inside.prototype.reset = function()
+{
+  this.enable = false;
+  this.currentCusto = undefined;
 };
 
 export default Inside;
