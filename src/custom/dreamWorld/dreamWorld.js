@@ -40,6 +40,7 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
     this.collectibles = [];
     this.planets = [];
+    this.phase = 0;
 
     this.scene.interactive = true; 
     this.scene.pointerdown = ( pos ) => {
@@ -63,10 +64,10 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       }
     }
 
-    
-
     this.on( "show", function( self, args )
     {
+      this.phase++;
+
       this.spawnPlanets();
       this.hud = new Hud();
       this.spawnPlayer();
@@ -127,7 +128,7 @@ dreamWorld.spawnPlanets = function()
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
 
-  for (let i = 0; i < 250; i++) {
+  for (let i = 0; i < 100; i++) {
     var pos = { x: Math.random() * 6000 - 3000, y: Math.random() * 6000 - 3000 };
 
     var planet = new Planet( { 
@@ -170,7 +171,7 @@ dreamWorld.spawnPlanets = function()
     if( planet.type == Planet.IDS.hide)
       return;
 
-    var collectibles = planet.spawnCollectibles( 2 );
+    var collectibles = planet.spawnCollectibles( this.phase, 2 );
     this.collectibles = this.collectibles.concat( collectibles );
     this.add( collectibles )
   });

@@ -46,14 +46,14 @@ Planet.prototype = new DE.GameObject();
 Planet.constructor = Planet;
 Planet.supr = DE.GameObject.prototype;
 
-Planet.prototype.spawnCollectibles = function( numberCollectibles )
+Planet.prototype.spawnCollectibles = function( phase, numberCollectibles )
 {
   for ( let index = 0; index < numberCollectibles; index++ ) {
 
     var scale = Math.random() * 2 + 1;
     var value = scale * 100;
 
-    var collectible = new Collectible( { type: this.type, value: value, scale: scale } );
+    var collectible = new Collectible( { phase: phase, type: this.type, value: value, scale: scale } );
 
     collectible.x = this.x;
     collectible.y = this.y;

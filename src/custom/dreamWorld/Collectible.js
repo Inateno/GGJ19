@@ -13,8 +13,8 @@ function Collectible( data )
     scale: data.scale,
     velocity: new DE.Vector2( 0, 0 ),
     renderers: [
-      new DE.SpriteRenderer( { spriteName: "collectible-" + data.type } ),
-      new DE.SpriteRenderer( { spriteName: "collectible-" + data.type, scale: 1 } )
+      new DE.SpriteRenderer( { spriteName: "phase-" + data.phase + "-" + data.type } ),
+      new DE.SpriteRenderer( { spriteName: "phase-" + data.phase + "-" + data.type, scale: 1 } )
     ],
     slowRate: 0.98,
     automatisms: [ [ "move", "move" ], [ "updateEffect", "updateEffect" ] ]

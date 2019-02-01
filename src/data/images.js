@@ -92,11 +92,35 @@ const images = {
       , [ "planet-dark", "space/planet-dark.png" ]
       , [ "planet-hide", "space/planet-hide.png" ]
 
-      , [ "collectible-bobo", "space/collectible-bobo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
-      , [ "collectible-dark", "space/collectible-dark.png", { totalFrame: 5, interval: 250 } ]
-      , [ "collectible-gamer", "space/collectible-gamer.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
-      , [ "collectible-kitch", "space/collectible-kitch.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
-      , [ "collectible-ecolo", "space/collectible-ecolo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "phase-1-bobo", "space/collectibles/phase-1-bobo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "phase-1-dark", "space/collectibles/phase-1-dark.png", { totalFrame: 5, interval: 250 } ]
+      , [ "phase-1-gamer", "space/collectibles/phase-1-gamer.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "phase-1-kitch", "space/collectibles/phase-1-kitch.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+      , [ "phase-1-ecolo", "space/collectibles/phase-1-ecolo.png", { totalFrame: 3, interval: 250, pingPongMode: true } ]
+
+      , [ "phase-2-bobo", "space/collectibles/phase-2-bobo.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-2-dark", "space/collectibles/phase-2-dark.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-2-gamer", "space/collectibles/phase-2-gamer.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-2-kitch", "space/collectibles/phase-2-kitch.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-2-ecolo", "space/collectibles/phase-2-ecolo.png", { totalFrame: 3, interval: 250 } ]
+
+      , [ "phase-3-bobo", "space/collectibles/phase-3-bobo.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-3-dark", "space/collectibles/phase-3-dark.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-3-gamer", "space/collectibles/phase-3-gamer.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-3-kitch", "space/collectibles/phase-3-kitch.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-3-ecolo", "space/collectibles/phase-3-ecolo.png", { totalFrame: 3, interval: 250 } ]
+
+      , [ "phase-4-bobo", "space/collectibles/phase-4-bobo.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-4-dark", "space/collectibles/phase-4-dark.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-4-gamer", "space/collectibles/phase-4-gamer.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-4-kitch", "space/collectibles/phase-4-kitch.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-4-ecolo", "space/collectibles/phase-4-ecolo.png", { totalFrame: 3, interval: 250 } ]
+
+      , [ "phase-5-bobo", "space/collectibles/phase-5-bobo.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-5-dark", "space/collectibles/phase-5-dark.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-5-gamer", "space/collectibles/phase-5-gamer.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-5-kitch", "space/collectibles/phase-5-kitch.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-5-ecolo", "space/collectibles/phase-5-ecolo.png", { totalFrame: 3, interval: 250 } ]
 
       , [ "hud-slot", "space/hud-slot.png" ]
 

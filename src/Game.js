@@ -36,7 +36,7 @@ Game.init = function()
     height         : CONFIG.SCREEN_HEIGHT,
     backgroundColor: "0x000000",
     roundPixels    : false,
-    powerPreferences: "high-performance"
+    scaleMode : PIXI.SCALE_MODES.NEAREST
   } );
   Game.render.init();
   

@@ -2,6 +2,7 @@ import DE from '@dreamirl/dreamengine';
 import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
 import MessageBox from '@dreamirl/de-plugin-messagebox';
 import ChooseBox from '@dreamirl/de-plugin-choosebox';
+import dreamWorld from 'dreamWorld'
 
 import CONFIG from 'config';
 
@@ -212,6 +213,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
         else {
           MessageBox.create( "Ah... Bon, je ferais mieux de retourner me coucher." );
           this.currentDay--;
+          dreamWorld.phase--;
           this.dailyCheck( CONFIG.ANIM.DAILY_ORDER.length - 1 );
         }
       } );
