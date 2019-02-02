@@ -53,10 +53,10 @@ Game.onload = function()
   MessageBox.init();
   ChooseBox.init();
   ChooseBox.create( [
-    { text: "Anglais", value: "en" },
+    { text: "English", value: "en" },
     { text: "Francais", value: "fr" },
-    { text: "Italien", value: "it" },
-    { text: "Japonais", value: "jp" }
+    { text: "Italiano", value: "it" },
+    { text: "日本人", value: "jp" }
   ], function( lang ) {
     // DE.Localization.set(lang); // todo in engine "set"
     console.log( "you choose lang", lang );
