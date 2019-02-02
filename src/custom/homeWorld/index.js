@@ -101,7 +101,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
       this.currentDailyIndex = index;
 
       console.log( "daily check", this.currentDailyIndex, "day", this.currentDay );
-      var isHappy = CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] === this.currentDay;
+      let target = this.customOrder[ CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] - 1 ];
+      var isHappy = target && target.currentCusto !== undefined;
 
       if ( this.currentDailyIndex >= CONFIG.ANIM.DAILY_ORDER.length ) {
         console.log( 'time to sleep' );

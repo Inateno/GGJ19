@@ -30,8 +30,8 @@ const CONFIG = {
       SLEEP_ROOM: 770,
       WHAT_CHANGED: 770
     },
-    DAILY_ORDER: [ 'WHAT_CHANGED', 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'SLEEP_ROOM' ],
-    DAILY_INDEXES: [ 0, 1, 4, 5, 3, 2, 6 ]
+    DAILY_ORDER: [ 'WHAT_CHANGED', 'WEATHER', 'ROOM', 'INSIDE', 'ENV', 'HOUSE', 'PET', 'SLEEP_ROOM' ],
+    DAILY_INDEXES: [ 0, 1, 5, 4, 2, 3, 6, 0 ]
   },
 
   VELOCITY_MAX: 6
