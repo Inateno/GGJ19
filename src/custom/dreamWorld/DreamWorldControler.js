@@ -98,6 +98,8 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
         this.dreamWorld.collectibles.splice( i, 1 );
         i--;
 
+        DE.Audio.fx.play( "collectible-catch" );
+
         collectible.goToSlot( this.dreamWorld.hud.getSlot(), this.dreamWorld.hud );
 
         var pos = collectible.getPos();

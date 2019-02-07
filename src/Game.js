@@ -32,11 +32,11 @@ Game.init = function()
   // Create the renderer before assets start loading
   Game.render = new DE.Render( "render", {
     resizeMode       : "stretch-ratio",
-    width          : CONFIG.SCREEN_WIDTH,
-    height         : CONFIG.SCREEN_HEIGHT,
-    backgroundColor: "0x000000",
-    roundPixels    : false,
-    scaleMode : PIXI.SCALE_MODES.NEAREST
+    width            : CONFIG.SCREEN_WIDTH,
+    height           : CONFIG.SCREEN_HEIGHT,
+    backgroundColor  : "0x000000",
+    roundPixels      : false,
+    scaleMode        : PIXI.SCALE_MODES.NEAREST
   } );
   Game.render.init();
   
@@ -58,7 +58,6 @@ Game.onload = function()
     { text: "Italiano", value: "it" },
     { text: "日本人", value: "jp" }
   ], function( lang ) {
-    // DE.Localization.set(lang); // todo in engine "set"
     console.log( "you choose lang", lang );
 
     DE.Localization.getLang( lang );

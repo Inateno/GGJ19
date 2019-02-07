@@ -29,6 +29,10 @@ const audios = [
   // FX
   ,[ "land", "audio/fx/amerissage", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
   ,[ "warp", "audio/fx/warp", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
+
+  ,[ "collectible-catch", "audio/fx/collectible-catch", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
+  ,[ "collectible-complete", "audio/fx/collectible-complete", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
+  ,[ "decollage", "audio/fx/decollage", [ 'ogg', 'mp3' ], { "preload": true, "loop": false, "pool": 1 } ]
 ];
 
 export default audios;

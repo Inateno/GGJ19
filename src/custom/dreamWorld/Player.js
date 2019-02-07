@@ -163,6 +163,7 @@ Player.prototype.onPointerUp = function( pos )
   {
     this.landed = false;
     
+    DE.Audio.fx.play( "decollage" );
     this.body.renderer.changeSprite( "dream-char-fly" );
     
     if ( this.currentMusic ) {
@@ -180,6 +181,7 @@ Player.prototype.onPointerUp = function( pos )
   }
   if( !wasLanded )
   {
+    DE.Audio.fx.play( "decollage" );
     this.body.renderer.changeSprite( "dream-char-fly" );
   }
 

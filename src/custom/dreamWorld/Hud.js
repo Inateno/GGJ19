@@ -102,6 +102,8 @@ Hud.prototype.checkCombineEnded = function()
   if( ended )
   {
     this.removeAutomatism( "checkCombineEnded" )
+    DE.Audio.fx.play( "collectible-complete" );
+    
     this.createShockwave();
     this.showWinCollectible();
   }
