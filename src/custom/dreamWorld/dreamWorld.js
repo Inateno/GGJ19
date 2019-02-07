@@ -8,6 +8,7 @@ import Hud from 'Hud';
 
 var dreamWorld = new GameScreen( "dreamWorld", {
   camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, { } ]
+  , gui: true
   , initialize: function()
   {
     var self = this;
@@ -41,24 +42,25 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     this.collectibles = [];
     this.planets = [];
     this.phase = 0;
+    this.gameEnded = false;
 
     this.scene.interactive = true; 
     this.scene.pointerdown = ( pos ) => {
-      if ( this.player )
+      if ( this.player && !this.gameEnded )
       {
         this.player.onPointerDown( pos );
       }
     }
 
     this.scene.pointermove = ( pos ) => {
-      if ( this.player )
+      if ( this.player && !this.gameEnded )
       {
         this.player.onPointerMove( pos );
       }
     }
 
     this.scene.pointerup = ( pos ) => {
-      if ( this.player )
+      if ( this.player && !this.gameEnded )
       {
         this.player.onPointerUp( pos );
       }
@@ -66,6 +68,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
     this.on( "show", function( self, args )
     {
+      this.camera.fadeIn();
+      
       this.phase++;
 
       this.spawnPlanets();
@@ -74,11 +78,13 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       this.controler = new DreamWorldControler( this );
 
       this.collectiblesStored = 0;
+      this.gameEnded = false;
 
       DE.Audio.music.stopAllAndPlay( 'space' );
       DE.Audio.music.get( 'space' ).fade( 0, 0.7, 500 );
       
-      this.scene.add( this.controler, this.hud );
+      this.scene.add( this.controler );
+      this.gui.add( this.hud );
 
     } );
     this.on( "hide", function()
@@ -100,13 +106,13 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       //delete hud
       if(this.player)
       {
-        for (let index = 0; index < this.hud.slots.length; index++) {
-          const slot = this.hud.slots[index];
+        for (let index = 0; index < this.hud.earnedCollectibles.length; index++) {
+          const earnedCollec = this.hud.earnedCollectibles[index];
 
-          slot.removeChildren();
+          this.hud.remove( earnedCollec );
         }
         this.player.removeChildren();
-        this.scene.remove( this.hud );
+        this.gui.remove( this.hud );
         this.hud = undefined;
 
         //delete player
@@ -186,8 +192,6 @@ dreamWorld.spawnPlayer = function()
   this.add( this.player );
 
   this.camera.focus( this.player, { options: { rotation: true } } );
-  
-  this.player.add( this.hud.slots );
 }
 
 export default dreamWorld;

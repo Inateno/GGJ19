@@ -6,6 +6,7 @@ function Planet( data )
 {
   DE.GameObject.call( this, {
     scale: data.scale || 1,
+    zindex: 15,
     renderers: [ 
       new DE.SpriteRenderer( { spriteName: "planet-hide" } ),
       new DE.SpriteRenderer( { spriteName: "planet-" + data.planetId } ),
@@ -155,11 +156,14 @@ Planet.prototype.updateFilter = function()
     filters.splice( filters.indexOf( this.swFilter ), 1 );
     this.filterTarget.filters = filters;
   }
+  else
+  {
+    var worldPos = this.getPos();
+  
+    this.swFilter.center.x = worldPos.x;
+    this.swFilter.center.y = worldPos.y;
+  }
 
-  var worldPos = this.getPos();
-
-  this.swFilter.center.x = worldPos.x;
-  this.swFilter.center.y = worldPos.y;
 }
 
 export default Planet;

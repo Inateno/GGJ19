@@ -10,7 +10,7 @@ function Player( )
     ,velocity: new DE.Vector2( 0, 0 )
     ,gravity: new DE.Vector2( 0, 0 )
     ,landed: false
-    ,zindex: 10
+    ,zindex: 20
     ,automatisms: [ ["move","move"] ]
   } );
 

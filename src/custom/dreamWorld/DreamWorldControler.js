@@ -20,9 +20,13 @@ DreamWorldControler.supr = DE.GameObject.prototype;
 
 DreamWorldControler.prototype.checkPlanetsGravity = function()
 {
-  const player = this.dreamWorld.player;
+  if ( this.dreamWorld.gameEnded )
+  {
+    this.dreamWorld.player.velocity.multiply( 0.95 );
+    return;
+  }
 
-  //var landed = false;
+  const player = this.dreamWorld.player;
 
   for ( let index = 0; index < this.dreamWorld.planets.length; index++ ) {
 
@@ -60,9 +64,6 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
       player.velocity.y = 0; 
     }
   }
-
-  //player.landed = landed;
-
 }
 
 DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
@@ -72,16 +73,18 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
 
   const player = this.dreamWorld.player;
 
-  for ( let i = 0; i < this.dreamWorld.collectibles.length; i++ ) {
+  var offset = new DE.Vector2( 0, 32 );
+  offset.turnVector( player.rotation );
 
+  var playerPos = new DE.Vector2( offset.x + player.x, offset.y + player.y );
+
+  for ( let i = 0; i < this.dreamWorld.collectibles.length; i++ ) 
+  {
     let collectible = this.dreamWorld.collectibles[ i ];
 
     if( collectible.vector2.getDistance( player ) < collectible.attractRadius )
     {
-      var offset = new DE.Vector2( 0, -32 );
-      offset.turnVector( player.rotation );
-      
-      var dir = new DE.Vector2( player.x - collectible.x + offset.x, player.y - collectible.y + offset.y );
+      var dir = new DE.Vector2( playerPos.x - collectible.x, playerPos.y - collectible.y );
 
       dir.normalize();
       dir.multiply( collectible.attractForce );
@@ -89,12 +92,18 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
       collectible.velocity.x += dir.x * 0.016;
       collectible.velocity.y += dir.y * 0.016;
 
-      if( collectible.vector2.getDistance( player ) < 50 && this.dreamWorld.collectiblesStored < 10 )
+      if( collectible.vector2.getDistance( playerPos ) < 50 && this.dreamWorld.collectiblesStored < 10 )
       {
         this.dreamWorld.collectiblesStored++;
         this.dreamWorld.collectibles.splice( i, 1 );
         i--;
-        collectible.goToSlot( this.dreamWorld.hud.getSlot(), player );
+
+        collectible.goToSlot( this.dreamWorld.hud.getSlot(), this.dreamWorld.hud );
+
+        var pos = collectible.getPos();
+        collectible.x = pos.x;
+        collectible.y = pos.y;
+        this.dreamWorld.hud.add( collectible );
       }
     }
   }
@@ -102,7 +111,7 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
 
 DreamWorldControler.prototype.checkEndGame = function()
 {
-  if( this.dreamWorld.hud.allSlotFilled() )
+  if( this.dreamWorld.hud.earnedCollectibles.length == 10 && !this.dreamWorld.gameEnded )
   {
 
     var scores = {
@@ -113,7 +122,7 @@ DreamWorldControler.prototype.checkEndGame = function()
       dark: 0
     }
 
-    var collectibles = this.dreamWorld.hud.getCollectibles();
+    var collectibles = this.dreamWorld.hud.earnedCollectibles;
 
     for (let index = 0; index < collectibles.length; index++) {
       const collectible = collectibles[index];
@@ -131,10 +140,17 @@ DreamWorldControler.prototype.checkEndGame = function()
       }
     }
 
-    this.enable = false;
-    setTimeout( () => {
-      this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType.toLowerCase() } );
-    }, 2000 );
+    var endFunc = () => {
+      this.dreamWorld.camera.fadeOut();
+      setTimeout( () => {
+        this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType } );
+      }, 2000 );
+    };
+
+    this.dreamWorld.gameEnded = true;
+    this.dreamWorld.player.removeAutomatism( "moveToCursor" );
+
+    this.dreamWorld.hud.combineCollectibles( { most: most, mostType: mostType, phase: this.dreamWorld.phase }, endFunc );
   } 
 }
 

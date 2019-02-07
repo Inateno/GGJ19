@@ -7,7 +7,7 @@ function Collectible( data )
     collisionRadius: 50,
     attractRadius: 150,
     attractForce: 3,
-    zindex: -1,
+    zindex: 10,
     type: data.type,
     value: data.value,
     scale: data.scale * ( data.phase > 1 ? 0.5 : 1 ),
@@ -87,10 +87,11 @@ Collectible.prototype.move = function()
     if( dir.getDistance( { x: 0, y: 0 } ) < 2 )
     {
       this.focused = true;
-      this.x = 0;
-      this.y = 0;
+      this.x = this.targetSlot.x;
+      this.y = this.targetSlot.y;
       this.rotation = 0;
-      this.targetSlot.add( this );
+      
+      this.hud.earnedCollectibles.push( this );
 
       /*this.renderers[ 0 ].setPause( true );
       this.removeAutomatism( "updateEffect" );
@@ -102,9 +103,10 @@ Collectible.prototype.move = function()
   this.renderers[ 1 ].y = offset.y;
 }
 
-Collectible.prototype.goToSlot = function( slot )
+Collectible.prototype.goToSlot = function( slot, hud )
 {
   this.targetSlot = slot;
+  this.hud = hud;
 }
 
 export default Collectible;
