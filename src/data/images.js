@@ -122,6 +122,12 @@ const images = {
       , [ "phase-5-kitch", "space/collectibles/phase-5-kitch.png", { totalFrame: 3, interval: 250 } ]
       , [ "phase-5-ecolo", "space/collectibles/phase-5-ecolo.png", { totalFrame: 3, interval: 250 } ]
 
+      , [ "phase-6-bobo", "space/collectibles/phase-6-bobo.png", { totalFrame: 4, interval: 250 } ]
+      , [ "phase-6-dark", "space/collectibles/phase-6-dark.png", { totalFrame: 3, interval: 250 } ]
+      , [ "phase-6-gamer", "space/collectibles/phase-6-gamer.png", { totalFrame: 4, interval: 250 } ]
+      , [ "phase-6-kitch", "space/collectibles/phase-6-kitch.png", { totalFrame: 4, interval: 250 } ]
+      , [ "phase-6-ecolo", "space/collectibles/phase-6-ecolo.png", { totalFrame: 3, interval: 250 } ]
+
       , [ "hud-slot", "space/hud-slot.png" ]
 
     ],

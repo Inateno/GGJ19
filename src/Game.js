@@ -60,6 +60,9 @@ Game.onload = function()
   ], function( lang ) {
     // DE.Localization.set(lang); // todo in engine "set"
     console.log( "you choose lang", lang );
+
+    DE.Localization.getLang( lang );
+
     Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
     // Game.screenManager.changeScreen( dreamWorld.name );
     Game.screenManager.changeScreen( homeWorld.name );
