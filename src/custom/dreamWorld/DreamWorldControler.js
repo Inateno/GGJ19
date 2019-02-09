@@ -144,9 +144,8 @@ DreamWorldControler.prototype.checkEndGame = function()
 
     var endFunc = () => {
       this.dreamWorld.camera.fadeOut();
-      setTimeout( () => {
-        this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType } );
-      }, 2000 );
+      this.dreamWorld.gui.fadeOut();
+      this.dreamWorld.trigger( "changeScreen", "HomeWorld", { type: mostType } );
     };
 
     this.dreamWorld.gameEnded = true;

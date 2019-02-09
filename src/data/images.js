@@ -50,6 +50,8 @@ const images = {
       , [ "env-gamer", "house/env/env-gamer.png" ]
       , [ "env-dark", "house/env/env-dark.png" ]
 
+      , [ "anim-transition-nuit", "house/anim-transition-nuit.png", { totalFrame: 49, loop: false, interval: 100 } ]
+
       // TODO inside to add
       , [ "inside-ecolo", "house/inside/inside-ecolo.png" ]
       , [ "inside-bobo", "house/inside/inside-bobo.png" ]
@@ -65,7 +67,7 @@ const images = {
       , [ "room-dark", "house/room-type/room-dark.png" ]
 
       // TODO pets to add
-      , [ "pet-ecolo", "house/pet/pet-ecolo.png", { totalFrame: 7, isLoop: false, interval: 100 } ]
+      , [ "pet-ecolo", "house/pet/pet-ecolo.png", { totalFrame: 7, loop: false, interval: 100 } ]
       , [ "pet-dark", "house/pet/pet-dark.png", { totalFrame: 3, interval: 70 } ]
       , [ "pet-bobo", "house/pet/pet-bobo.png", { totalFrame: 4, animated: false, interval: 100 } ]
       , [ "pet-kitch", "house/pet/pet-kitch.png", { totalFrame: 5, startFrame: 0, endFrame: 1, interval: 100 } ]

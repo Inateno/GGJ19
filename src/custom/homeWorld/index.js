@@ -72,12 +72,23 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     this.currentDay = 0;
 
-    // this.scene.add( this.house, this.character, this.title );
-    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg );
+    this.animTransition = new DE.GameObject( {
+      zindex: 100,
+      renderer: new DE.SpriteRenderer( { spriteName: "anim-transition-nuit" } )
+    } );
+    this.animTransition.enable = false;
+    this.animTransition.x = CONFIG.SCREEN_WIDTH / 2;
+    this.animTransition.y = CONFIG.SCREEN_HEIGHT / 2;
+    this.animTransition.width = CONFIG.SCREEN_WIDTH;
+    this.animTransition.height = CONFIG.SCREEN_HEIGHT;
+
+    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition );
 
     this.on( "show", function( params  )
     {
-      this.camera.fadeIn();
+      this.camera.fadeIn( undefined, true );
+      this.animTransition.enable = false;
+      this.animTransition.renderer.restartAnim();
       console.log( "show", params, this.currentDay );
       if ( params && params.type ) {
         this.afterNight( params.type );
@@ -271,10 +282,13 @@ var homeWorld = new GameScreen( "HomeWorld", {
       }
 
       setTimeout( () => {
-        this.camera.fadeOut( 500 );
-        DE.Audio.fx.play( 'warp' );
-        setTimeout( () => this.trigger( 'changeScreen', 'dreamWorld' ), 800 );
-      }, 2000 );
+        this.animTransition.enable = true;
+        this.animTransition.fadeIn( 250, true );
+        this.animTransition.renderer.onAnimEnd = () => {
+          DE.Audio.fx.play( 'warp' );
+          this.trigger( 'changeScreen', 'dreamWorld' );
+        }
+      }, 750 );
     };
   }
 } );

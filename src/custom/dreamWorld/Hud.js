@@ -39,6 +39,20 @@ function Hud( )
     this.combineContainers.push( container );
     this.add( container );
   }
+
+  this.animTransition = new DE.GameObject( {
+    zindex: 100,
+    renderer: new DE.SpriteRenderer( { spriteName: "anim-transition-nuit" } )
+  } );
+  this.animTransition.renderer.reversed = true;
+  this.animTransition.renderer.restartAnim();
+  this.animTransition.enable = false;
+  this.animTransition.x = CONFIG.SCREEN_WIDTH / 2;
+  this.animTransition.y = CONFIG.SCREEN_HEIGHT / 2;
+  this.animTransition.width = CONFIG.SCREEN_WIDTH;
+  this.animTransition.height = CONFIG.SCREEN_HEIGHT;
+
+  this.add( this.animTransition );
 }
 
 Hud.prototype = new DE.GameObject();
@@ -154,9 +168,16 @@ Hud.prototype.showWinCollectible = function()
   }
 
   setTimeout( () => {
-    this.bigCollectible.moveTo( { x: CONFIG.SCREEN_WIDTH / 2, y: CONFIG.SCREEN_HEIGHT / 2 - 32 }, 1500, this.endCallback );
+    this.bigCollectible.moveTo( { x: CONFIG.SCREEN_WIDTH / 2, y: CONFIG.SCREEN_HEIGHT / 2 - 32 }, 1500, () => { this.showTransition() } );
     this.bigCollectible.scaleTo( 0, 1500 );
   }, 2000 );
+}
+
+Hud.prototype.showTransition = function()
+{
+  this.animTransition.enable = true;
+  this.animTransition.fadeIn( 250, true );
+  this.animTransition.renderer.onAnimEnd = this.endCallback;
 }
 
 export default Hud;

@@ -68,7 +68,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
     this.on( "show", function( self, args )
     {
-      this.camera.fadeIn();
+      this.camera.fadeIn( undefined, true );
+      this.gui.fadeIn( undefined, true );
       
       this.phase++;
 
@@ -134,12 +135,12 @@ dreamWorld.spawnPlanets = function()
   this.add( this.planetSpawn );
   this.planets = [ this.planetSpawn ];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 250; i++) {
     var pos = { x: Math.random() * 6000 - 3000, y: Math.random() * 6000 - 3000 };
 
     var planet = new Planet( { 
       planetId: Planet.IDS[ Math.floor( Math.random() * 5 ) + 1 ], 
-      scale: Math.random() * 0.5 + 0.5, 
+      scale: Math.random() * 0.25 + 0.5, 
     } );
 
     planet.rotation = Math.random() * Math.PI * 2;
