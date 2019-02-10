@@ -17,6 +17,8 @@ import CONFIG from 'config';
 import homeWorld from 'homeWorld';
 import dreamWorld from 'dreamWorld';
 
+import './index.css';
+
 var Game = {};
   
 Game.render = null;
@@ -65,6 +67,11 @@ Game.onload = function()
     Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
     // Game.screenManager.changeScreen( dreamWorld.name );
     Game.screenManager.changeScreen( homeWorld.name );
+
+    var ms = DE.Audio.music.getAll();
+    for ( var i in ms ) {
+      ms[ i ].load();
+    }
   } );
 }
 

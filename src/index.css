@@ -1,0 +1,27 @@
+.de-plugin-messagebox {
+  bottom: 0;
+}
+
+.de-plugin-messagebox .content, .de-plugin-messagebox .sizer {
+  display: block;
+  min-height: 4rem;
+  line-height: 2rem;
+  font-size: 1.8rem;
+  padding: 1.2rem 2rem;
+  padding-right: 3.5rem;
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .de-plugin-messagebox .content, .de-plugin-messagebox .sizer {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    min-height: 1rem;
+    padding: 0.1rem 0.5rem;
+  }
+
+  .de-plugin-messagebox .close {
+    height: 2rem;
+    width: 2rem;
+  }
+}
