@@ -8,7 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "@dreamirl/de-plugin-choosebox": "github:dreamirl/de-plugin-choosebox",
-    "@dreamirl/de-plugin-gamescreen": "file:@dreamirl/de-plugin-gamescreen",
+    "@dreamirl/de-plugin-gamescreen": "github:dreamirl/de-plugin-gamescreen",
     "@dreamirl/de-plugin-messagebox": "github:dreamirl/de-plugin-messagebox",
     "@dreamirl/de-plugin-particles-emitter": "github:dreamirl/de-plugin-particles-emitter",
     "@dreamirl/dreamengine": "github:dreamirl/dreamengine",

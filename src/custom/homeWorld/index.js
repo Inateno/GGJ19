@@ -184,12 +184,9 @@ var homeWorld = new GameScreen( "HomeWorld", {
      */
     this.displayDailyMessage = function()
     {
-      let target = this.customOrder[ this.currentDay - 1 ];
+      let target = this.customOrder[ CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] - 1 ];
       var key = "custom-" + CONFIG.ANIM.DAILY_ORDER[ this.currentDailyIndex ].toLowerCase();
-      if ( target && target.currentCusto !== undefined
-        && this.currentDailyIndex > 0
-        && this.currentDailyIndex < CONFIG.ANIM.DAILY_INDEXES.length - 2
-        && this.currentDay >= CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] ) {
+      if ( target && target.currentCusto !== undefined ) {
         key += "-" + target.currentCusto;
       }
       
