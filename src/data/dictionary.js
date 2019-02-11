@@ -11,6 +11,7 @@ const dictionary = {
     "settings": "Settings",
     "credits": "Credits",
     "pause": "Pause",
+    
     "custom-weather": "Seriously, what is this weather ?",
     "custom-env": "What a strange place. I've no idea where we are.",
     "custom-house": "This house sucks./nI should take care of the decoration.",
@@ -55,7 +56,14 @@ const dictionary = {
     "custom-house-dark": "Hey Dracula, get out of your hiding place!",
     "custom-inside-dark": "Let's see this mirror, just to check that I have a reflection.../nAH! Oh no, it's nothing. Phew.",
     "custom-room-dark": "A vertical bed and candles to save the planet or invoke Satan./nI do not know! Hesitation, hesitation...",
-    "custom-pet-dark": "With a bat, say bye to spiders!"
+    "custom-pet-dark": "With a bat, say bye to spiders!",
+
+    "is-it-home": "Does it feels like home now?",
+    "wanna-restart": "Do you want to restart ?",
+    "credits-thanks": "Thanks for playing! /n This game has been made for the Globale Game Jam.",
+    "credits-theme": "The theme was 'What does home means to you?'",
+    "credits-team": "The game has been made by:/n- Masami Komuro (composer)/n- Crounchann (arts)/n- Inateno (designer, programmer)/n- Matteo Covelli (students, sound designer)/n- Akibo (students, arts)/n- Grimka (programmer)/n",
+    "the-end": "Nothing more, it's time to chill or launch the game again :)/n   -.-.- THE END -.-.-"
   },
   "fr" : {
     "play": "Jouer",
@@ -106,7 +114,14 @@ const dictionary = {
     "custom-house-dark": "Hey Dracula, sort de ta cachette !",
     "custom-inside-dark": "Voyons voir ce mirroir, histoire de vérifier que j'ai un reflet.../nAH! Ah non, c'est rien. Ouf.",
     "custom-room-dark": "Un lit vertical et des chandelles pour sauver la planète ou invoquer Satan./nJ'sais pas, j'hésite.",
-    "custom-pet-dark": "Avec une chauve-souris, fini les araignées !"
+    "custom-pet-dark": "Avec une chauve-souris, fini les araignées !",
+
+    "is-it-home": "Alors, on se sent chez soi maintenant ?",
+    "wanna-restart": "Voulez-vous recommencer ?",
+    "credits-thanks": "Merci d'avoir joué ! /n Ce jeu a été réalisé durant la Globale Game Jam.",
+    "credits-theme": "Le thème était 'What does home means to you?'",
+    "credits-team": "Ce jeu a été fait par:/n- Masami Komuro (composer)/n- Crounchann (arts)/n- Inateno (designer, programmer)/n- Matteo Covelli (students, sound designer)/n- Akibo (students, arts)/n- Grimka (programmer)/n",
+    "the-end": "C'est fini, il est temps d'admirer votre création ou de recommencer :)/n   -.-.- THE END -.-.-"
   },
   "jp" : {
     "play": "遊ぼ",

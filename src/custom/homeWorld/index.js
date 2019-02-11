@@ -156,9 +156,9 @@ var homeWorld = new GameScreen( "HomeWorld", {
           setTimeout( () => this.goSleep(), 500 );
         }
         else {
-          MessageBox.create( "Does it feels like home now?", () => {
+          MessageBox.create( DE.Localization.get( 'is-it-home' ), () => {
             this.character.renderer.setPause(true);
-            if ( window.confirm( "Do you want to restart ?" ) ) {
+            if ( window.confirm( DE.Localization.get( 'wanna-restart' ) ) ) {
               this.currentDay = 0;
               this.currentDailyIndex = 0;
               this.character.x = -70;
@@ -171,18 +171,10 @@ var homeWorld = new GameScreen( "HomeWorld", {
               this.dailyCheck( 0 );
             }
             else {
-              MessageBox.create( "Thanks for playing! /n This game has been made for the Globale Game Jam.", () => {
-                MessageBox.create( "The theme was 'What does home means to you?'", () => {
-                  MessageBox.create(
-                    "The game has been made by:/n\
-                      - Masami Komuro (composer)/n\
-                      - Crounchann (arts)/n\
-                      - Inateno (designer, programmer)/n\
-                      - Matteo Covelli (students, sound designer)/n\
-                      - Akibo (students, arts)/n\
-                      - Grimka (programmer)/n\
-                    ", () => {
-                      MessageBox.create( "Nothing more, it's time to chill or launch the game again :)" );
+              MessageBox.create( DE.Localization.get( 'credits-thanks' ), () => {
+                MessageBox.create( DE.Localization.get( 'credits-theme' ), () => {
+                  MessageBox.create( DE.Localization.get( 'credits-team' ), () => {
+                      MessageBox.create( DE.Localization.get( 'the-end' ) );
                   } );
                 } );
               } );
