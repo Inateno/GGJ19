@@ -2,9 +2,10 @@ import DE from '@dreamirl/dreamengine';
 import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
 import MessageBox from '@dreamirl/de-plugin-messagebox';
 import ChooseBox from '@dreamirl/de-plugin-choosebox';
-import dreamWorld from 'dreamWorld'
 
 import CONFIG from 'config';
+import dreamWorld from 'dreamWorld'
+import speedToTime from 'speedToTime';
 
 import Weather     from './Weather';
 import House       from './House';
@@ -18,6 +19,14 @@ var homeWorld = new GameScreen( "HomeWorld", {
   , initialize: function()
   {
     var self = this;
+
+    /*** */
+    if ( process.env.NODE_ENV === 'development' ) {
+      console.error( 'debug is active' );
+      window.wt = this.weather;
+      window.home = this;
+    }
+    /*** */
 
     this.title = new DE.GameObject( {
       x: CONFIG.SCREEN_WIDTH / 2,
@@ -78,8 +87,6 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
 
     this.weather     = new Weather();
-    window.wt = this.weather;
-    window.home = this;
     this.environment = new Environment();
     this.house       = new House();
     this.overHouse   = new House( 'outside' );
@@ -319,12 +326,5 @@ var homeWorld = new GameScreen( "HomeWorld", {
     };
   }
 } );
-
-function speedToTime( position, target, speed ) {
-  var vector = new DE.Vector2( position.x, position.y );
-  var distance = vector.getDistance( target );
-
-  return distance / speed * 16 >> 0;
-}
 
 export default homeWorld;

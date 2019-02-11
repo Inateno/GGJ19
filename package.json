@@ -36,6 +36,7 @@
     "Planet": "./src/custom/dreamWorld/Planet.js",
     "Player": "./src/custom/dreamWorld/Player.js",
     "homeWorld": "./src/custom/homeWorld/index.js",
+    "speedToTime": "./src/custom/homeWorld/speedToTime.js",
     "Weather": "./src/custom/homeWorld/Weather.js",
     "particles-rain": "./src/custom/homeWorld/weather/rain.json",
     "particles-snow": "./src/custom/homeWorld/weather/snow.json",
