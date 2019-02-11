@@ -60,7 +60,7 @@ Game.onload = function()
     { text: "Italiano", value: "it" },
     { text: "日本人", value: "jp" }
   ], function( lang ) {
-    console.log( "you choose lang", lang );
+    console.log( "you choosed lang", lang );
 
     DE.Localization.getLang( lang );
 
