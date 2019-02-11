@@ -23,6 +23,8 @@ const images = {
     default: [
       // main / real world
       [ "title", "house/title.png", { totalFrame: 3, interval: 250 } ]
+      , [ "cloud-1", "house/cloud-1.png" ]
+      , [ "cloud-2", "house/cloud-2.png" ]
 
       , [ "weather-bg-basic", "house/weather/basic.png" ]
       , [ "weather-bg-ecolo", "house/weather/bg-ecolo.png" ]
