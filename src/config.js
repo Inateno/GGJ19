@@ -26,7 +26,8 @@ const CONFIG = {
       ENV: 950,
       ROOM: 460,
       INSIDE: 700,
-      HOUSE: 600,
+      HOUSE: 650,
+      PET: 560,
       SLEEP_ROOM: 770,
       WHAT_CHANGED: 770
     },

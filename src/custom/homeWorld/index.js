@@ -22,6 +22,10 @@ var homeWorld = new GameScreen( "HomeWorld", {
   {
     var self = this;
 
+    this.camera.pointerup = function()
+    {
+      MessageBox.shutDownCurrentBox();
+    };
     /*** */
     if ( process.env.NODE_ENV === 'development' ) {
       console.error( 'debug is active' );
@@ -177,28 +181,36 @@ var homeWorld = new GameScreen( "HomeWorld", {
         else {
           MessageBox.create( DE.Localization.get( 'is-it-home' ), () => {
             this.character.renderer.setPause(true);
-            if ( window.confirm( DE.Localization.get( 'wanna-restart' ) ) ) {
-              this.currentDay = 0;
-              this.currentDailyIndex = 0;
-              this.character.x = -70;
-              this.environment.reset();
-              this.house.reset();
-              this.weather.reset();
-              this.inside.reset();
-              this.pet.reset();
-              this.roomType.reset();
-              this.dailyCheck( 0 );
-            }
-            else {
-              MessageBox.create( DE.Localization.get( 'credits-thanks' ), () => {
-                MessageBox.create( DE.Localization.get( 'credits-theme' ), () => {
-                  MessageBox.create( DE.Localization.get( 'credits-team' ), () => {
-                      MessageBox.create( DE.Localization.get( 'the-end' ) );
+            
+            MessageBox.create( DE.Localization.get( 'wanna-restart' ) );
+            ChooseBox.create( [
+              { text: DE.Localization.get( 'yes' ), value: 1 },
+              { text: DE.Localization.get( 'no' ), value: 0 }
+            ], value => {
+              MessageBox.removeAll();
+              if ( value ) {
+                this.currentDay = 1;
+                this.currentDailyIndex = 0;
+                this.character.x = -70;
+                this.environment.reset();
+                this.house.reset();
+                this.weather.reset();
+                this.inside.reset();
+                this.pet.reset();
+                this.roomType.reset();
+                this.dailyCheck( 0 );
+              }
+              else {
+                MessageBox.create( DE.Localization.get( 'credits-thanks' ), () => {
+                  MessageBox.create( DE.Localization.get( 'credits-theme' ), () => {
+                    MessageBox.create( DE.Localization.get( 'credits-team' ), () => {
+                        MessageBox.create( DE.Localization.get( 'the-end' ) );
+                    } );
                   } );
                 } );
-              } );
-            }
-            this.character.renderer.setPause(false);
+              }
+              this.character.renderer.setPause(false);
+            } );
           } );
         }
         return;
@@ -255,20 +267,21 @@ var homeWorld = new GameScreen( "HomeWorld", {
      */
     this.askToKeep = function()
     {
-      MessageBox.create( "On garde ?" );
+      MessageBox.create( DE.Localization.get( 'keep-it' ) );
       ChooseBox.create( [
-        { text: 'Oui', value: 1 },
-        { text: 'Non', value: 0 }
+        { text: DE.Localization.get( 'yes' ), value: 1 },
+        { text: DE.Localization.get( 'no' ), value: 0 }
       ], value => {
         MessageBox.removeAll();
         if ( value ) {
           this.dailyCheck( this.currentDailyIndex + 1 );
         }
         else {
-          MessageBox.create( "Ah... Bon, je ferais mieux de retourner me coucher." );
-          this.currentDay--;
-          dreamWorld.phase--;
-          this.dailyCheck( CONFIG.ANIM.DAILY_ORDER.length - 1 );
+          MessageBox.create( DE.Localization.get( 'not-keeping' ), () => {
+            this.currentDay--;
+            dreamWorld.phase--;
+            this.dailyCheck( CONFIG.ANIM.DAILY_ORDER.length - 1 );
+          } );
         }
       } );
     };
