@@ -34,6 +34,15 @@ const CONFIG = {
     DAILY_INDEXES: [ 0, 1, 5, 4, 2, 3, 6, 0 ]
   },
 
+  DAY_COLLECTIBLE_TARGETS: {
+    WEATHER: { x: 150, y: 150 },
+    ENV: { x: 970, y: 610 },
+    ROOM: { x: 500, y: 600 },
+    INSIDE: { x: 715, y: 530 },
+    HOUSE: { x: 600, y: 420 },
+    PET: { x: 610, y: 635 }
+  },
+
   VELOCITY_MAX: 6
 }
 

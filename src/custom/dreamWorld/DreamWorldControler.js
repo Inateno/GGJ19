@@ -34,7 +34,7 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 
     if ( player.vector2.getDistance( planet ) - planet.collisionRadius < 2 )
     {
-      player.land( planet );
+      //player.land( planet );
       
       if ( !planet.hasReleasedCollectibles )
       {
@@ -53,12 +53,13 @@ DreamWorldControler.prototype.checkPlanetsGravity = function()
 
       var ratio = 1 - ( player.vector2.getDistance( planet ) - planet.collisionRadius ) / ( planet.gravityRadius - planet.collisionRadius );
 
+      player.velocity.multiply( 0.98 );
       player.addGravity( { x: dir.x * ratio * 0.016, y: dir.y * ratio * 0.016 } );
       player.ratioGravity = ratio;
     }
 
     if ( player.vector2.isInRangeFrom( planet.vector2, planet.collisionRadius ) ) { 
-
+      player.land( planet );
       player.translate( new DE.Vector2( 0, player.vector2.getDistance( planet ) - planet.collisionRadius + 1 ) );
       player.velocity.x = 0; 
       player.velocity.y = 0; 
@@ -150,6 +151,7 @@ DreamWorldControler.prototype.checkEndGame = function()
 
     this.dreamWorld.gameEnded = true;
     this.dreamWorld.player.removeAutomatism( "moveToCursor" );
+    this.dreamWorld.player.axes.x = 0;
 
     this.dreamWorld.hud.combineCollectibles( { most: most, mostType: mostType, phase: this.dreamWorld.phase }, endFunc );
   } 

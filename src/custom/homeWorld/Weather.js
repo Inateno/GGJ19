@@ -32,11 +32,20 @@ function Weather( data )
     upTime: function() {
       this.godray.time += 0.01;
     },
+    filterFadeIn: function() {
+      this.godray.gain += 0.01;
+      if ( this.godray.gain >= 0.5 )
+      {
+        this.godray.gain = 0.5;
+        this.removeAutomatism( "filterFadeIn" );
+      }
+    },
     automatisms: [
       [ 'ut', 'upTime' ]
     ]
   } );
   this.supersun.godray = new GodrayFilter();
+  this.supersun.godray.gain = 0;
 
   this.clouds = []; // used for rain and snow
   this.themeParticles = {
@@ -73,6 +82,7 @@ Weather.prototype.customize = function( result )
   if ( result === 'kitch' ) {
     this.supersun.enable = true;
     filters.push( this.supersun.godray );
+    this.supersun.addAutomatism( "filterFadeIn", "filterFadeIn" );
   }
 
   return filters;

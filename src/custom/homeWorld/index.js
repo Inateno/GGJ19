@@ -14,6 +14,8 @@ import Inside      from './Inside';
 import RoomType    from './RoomType';
 import Pet         from './Pet';
 
+import Collectible from 'Collectible'
+
 var homeWorld = new GameScreen( "HomeWorld", {
   camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, {} ]
   , initialize: function()
@@ -87,13 +89,23 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
 
     this.weather     = new Weather();
+    this.weather.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.WEATHER;
     this.environment = new Environment();
+    this.environment.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.ENV;
     this.house       = new House();
+    this.house.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.HOUSE;
     this.overHouse   = new House( 'outside' );
     this.overHouse.zindex += 10;
     this.inside      = new Inside();
+    this.inside.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.INSIDE;
     this.roomType    = new RoomType();
+    this.roomType.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.ROOM;
     this.pet         = new Pet();
+    this.pet.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.PET;
+
+    this.afterNightCollectible = new Collectible( { type: "bobo", phase: 1, scale: 1 } );
+    this.afterNightCollectible.zindex = 50;
+    this.afterNightCollectible.enable = false;
 
     this.customOrder = [
       this.weather,
@@ -116,13 +128,20 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.animTransition.width = CONFIG.SCREEN_WIDTH;
     this.animTransition.height = CONFIG.SCREEN_HEIGHT;
 
-    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition, this.clouds );
+    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition, this.afterNightCollectible, this.clouds );
 
     this.on( "show", function( params  )
     {
       this.camera.fadeIn( undefined, true );
       this.animTransition.enable = false;
       this.animTransition.renderer.restartAnim();
+
+      if( this.tempFilters )
+      {
+        this.scene.filters = this.tempFilters;
+        this.tempFilters = undefined;
+      }
+
       // console.log( "show", params, this.currentDay );
       if ( params && params.type ) {
         this.afterNight( params.type );
@@ -271,32 +290,48 @@ var homeWorld = new GameScreen( "HomeWorld", {
       DE.Audio.music.stopAllAndPlay( 'house-' + result );
       DE.Audio.music.get( 'house-' + result ).fade( 0, 1, 500 );
       let target = this.customOrder[ this.currentDay ];
-      // console.log( result, this.currentDay, target )
-      this.currentDay++;
-      var filters = target.customize( result );
 
-      if ( filters ) {
-        if ( !this.scene.filters ) {
-          this.scene.filters = [];
-        }
-        this.scene.filters = this.scene.filters.concat( filters );
-      }
+      this.afterNightCollectible.customize( result, this.currentDay + 1, 0 );
+      this.afterNightCollectible.enable = true;
+      this.afterNightCollectible.x = this.character.x;
+      this.afterNightCollectible.y = this.character.y - 80;
 
-      if ( this.weather.rain.enable ) {
-        DE.Audio.music.play( 'rain' );
-        DE.Audio.music.get( 'rain' ).fade( 0, 1, 500 );
-      }
+      this.character.renderer.changeSprite( 'real-char-happy' );
 
-      if ( this.environment.renderer.spriteName === 'env-ecolo' ) {
-        DE.Audio.music.play( 'nature' );
-        DE.Audio.music.get( 'nature' ).fade( 0, 1, 500 );
-      }
-      else if ( this.environment.renderer.spriteName === 'env-kitch' ) {
-        DE.Audio.music.play( 'sea' );
-        DE.Audio.music.get( 'sea' ).fade( 0, 1, 500 );
-      }
+      setTimeout( () => 
+      { 
+        this.afterNightCollectible.scaleTo( ( ( this.currentDay + 1 ) > 1 ? 1 : 2 ), 1000, () => 
+        {
+          this.afterNightCollectible.moveTo( target.collectibleTarget, 2000, () => 
+          {
+            this.afterNightCollectible.scaleTo( 0, 500, () => 
+            {
+              this.currentDay++;
+              var filters = target.customize( result );
 
-      this.dailyCheck( 0 );
+              if ( filters ) {
+                this.scene.filters = filters;
+              }
+
+              if ( this.weather.rain.enable ) {
+                DE.Audio.music.play( 'rain' );
+                DE.Audio.music.get( 'rain' ).fade( 0, 1, 500 );
+              }
+
+              if ( this.environment.renderer.spriteName === 'env-ecolo' ) {
+                DE.Audio.music.play( 'nature' );
+                DE.Audio.music.get( 'nature' ).fade( 0, 1, 500 );
+              }
+              else if ( this.environment.renderer.spriteName === 'env-kitch' ) {
+                DE.Audio.music.play( 'sea' );
+                DE.Audio.music.get( 'sea' ).fade( 0, 1, 500 );
+              }
+
+              this.dailyCheck( 0 );
+            } );
+          } );
+        } );
+      }, 1000);
     };
 
     this.goSleep = function() {
@@ -308,6 +343,12 @@ var homeWorld = new GameScreen( "HomeWorld", {
       }
 
       setTimeout( () => {
+        if( this.scene.filters && this.scene.filters.length > 0 )
+        {
+          this.tempFilters = this.scene.filters;
+          this.scene.filters = [];
+        }
+          
         this.animTransition.enable = true;
         this.animTransition.fadeIn( 250, true );
         this.animTransition.renderer.onAnimEnd = () => {

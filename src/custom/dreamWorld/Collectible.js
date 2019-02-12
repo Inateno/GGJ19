@@ -9,7 +9,7 @@ function Collectible( data )
     attractForce: 3,
     zindex: 10,
     type: data.type,
-    value: data.value,
+    value: data.value || 0,
     scale: data.scale * ( data.phase > 1 ? 0.5 : 1 ),
     velocity: new DE.Vector2( 0, 0 ),
     renderers: [
@@ -47,6 +47,17 @@ Collectible.getRandomType = function()
 Collectible.prototype = new DE.GameObject();
 Collectible.constructor = Collectible;
 Collectible.supr = DE.GameObject.prototype;
+
+Collectible.prototype.customize = function( type, phase, scale )
+{
+  this.type = type;
+  this.phase = phase;
+  scale *= ( phase > 1 ? 0.5 : 1 );
+  this.setScale( scale, scale );
+
+  this.renderers[ 0 ].changeSprite( "phase-" + this.phase + "-" + this.type );
+  this.renderers[ 1 ].changeSprite( "phase-" + this.phase + "-" + this.type );
+}
 
 Collectible.prototype.updateEffect = function()
 {
