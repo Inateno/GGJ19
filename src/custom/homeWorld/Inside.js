@@ -22,11 +22,15 @@ Inside.prototype.customize = function( result )
 {
   this.enable = true;
   this.currentCusto = result;
-  this.renderer.changeSprite( 'inside-' + result );
 
-  if ( result === 'dark' ) {
-    DE.Audio.music.stopAllAndPlay( 'house-dark' );
-  }
+  this.fadeOut( undefined, undefined, () => {
+    this.renderer.changeSprite( 'inside-' + result );
+    this.fadeIn( undefined, undefined, () => {
+      if ( result === 'dark' ) {
+        DE.Audio.music.stopAllAndPlay( 'house-dark' );
+      }
+    } );
+  } );
 };
 
 Inside.prototype.reset = function()

@@ -21,7 +21,12 @@ RoomType.prototype.customize = function( result )
 {
   this.enable = true;
   this.currentCusto = result;
-  this.renderer.changeSprite( 'room-' + result );
+
+  this.fadeOut( undefined, undefined, () => {
+    this.renderer.changeSprite( 'room-' + result );
+    this.fadeIn();
+  } );
+  
 };
 
 RoomType.prototype.reset = function()

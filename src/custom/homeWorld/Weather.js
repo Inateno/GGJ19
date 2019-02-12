@@ -64,10 +64,12 @@ Weather.prototype.customize = function( result )
 
   this.currentCusto = result;
   this.bg.renderer.changeSprite( 'weather-bg-' + result );
+  this.bg.fadeIn( undefined, true, () => {
+    if ( this.themeParticles[ result ] ) {
+      this.themeParticles[ result ].start();
+    }
+  } );
 
-  if ( this.themeParticles[ result ] ) {
-    this.themeParticles[ result ].start();
-  }
   if ( result === 'kitch' ) {
     this.supersun.enable = true;
     filters.push( this.supersun.godray );

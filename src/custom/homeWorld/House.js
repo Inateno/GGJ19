@@ -29,12 +29,16 @@ House.prototype.customize = function( result )
 {
   this.enable = true;
   this.currentCusto = result;
-  this.renderer.changeSprite( 'house-' + result );
-  this.removeAutomatism( 'changeFrame' );
 
-  if ( result === 'dark' ) {
-    DE.Audio.music.stopAllAndPlay( 'house-dark' );
-  }
+  this.fadeOut( undefined, undefined, () => {
+    this.renderer.changeSprite( 'house-' + result );
+    this.removeAutomatism( 'changeFrame' );
+    this.fadeIn( undefined, undefined, () => {
+      if ( result === 'dark' ) {
+        DE.Audio.music.stopAllAndPlay( 'house-dark' );
+      }
+    } );
+  } );
 };
 
 House.prototype.reset = function()

@@ -24,8 +24,11 @@ Environment.prototype.customize = function( result )
 {
   this.enable = true;
   this.currentCusto = result;
-  this.renderer.changeSprite( 'env-' + result );
-  this.removeAutomatism( 'changeFrame' );
+  this.fadeOut( undefined, undefined, () => {
+    this.renderer.changeSprite( 'env-' + result );
+    this.removeAutomatism( 'changeFrame' );
+    this.fadeIn();
+  } );
 };
 
 Environment.prototype.reset = function()
