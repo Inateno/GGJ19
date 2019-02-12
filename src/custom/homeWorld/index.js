@@ -2,9 +2,10 @@ import DE from '@dreamirl/dreamengine';
 import { GameScreen } from '@dreamirl/de-plugin-gamescreen';
 import MessageBox from '@dreamirl/de-plugin-messagebox';
 import ChooseBox from '@dreamirl/de-plugin-choosebox';
-import dreamWorld from 'dreamWorld'
 
 import CONFIG from 'config';
+import dreamWorld from 'dreamWorld'
+import speedToTime from 'speedToTime';
 
 import Weather     from './Weather';
 import House       from './House';
@@ -18,6 +19,14 @@ var homeWorld = new GameScreen( "HomeWorld", {
   , initialize: function()
   {
     var self = this;
+
+    /*** */
+    if ( process.env.NODE_ENV === 'development' ) {
+      console.error( 'debug is active' );
+      window.wt = this.weather;
+      window.home = this;
+    }
+    /*** */
 
     this.title = new DE.GameObject( {
       x: CONFIG.SCREEN_WIDTH / 2,
@@ -49,10 +58,35 @@ var homeWorld = new GameScreen( "HomeWorld", {
       this.renderer.changeSprite( 'real-char-walk' );
       this.moveTo( target, duration, cb );
     };
+    this.clouds = [
+      new DE.GameObject( {
+        x: 200, y: 170, zindex: 19,
+        renderer: new DE.SpriteRenderer( { spriteName: 'cloud-1' } ),
+        revertPos: function() {
+          this.y += this.rdir * 20;
+          this.rdir = -this.rdir;
+        },
+        rdir: -1,
+        automatisms: [ [
+          'revertPos', 'revertPos', { interval: 723 }
+        ] ]
+      } ),
+      new DE.GameObject( {
+        x: CONFIG.SCREEN_WIDTH - 200, y: 110, zindex: 19,
+        renderer: new DE.SpriteRenderer( { spriteName: 'cloud-2' } ),
+        revertPos: function() {
+          this.y += this.rdir * 20;
+          this.rdir = -this.rdir;
+        },
+        rdir: 1,
+        automatisms: [ [
+          'revertPos', 'revertPos', { interval: 1083 }
+        ] ]
+      } )
+    ];
+
 
     this.weather     = new Weather();
-    window.wt = this.weather;
-    window.home = this;
     this.environment = new Environment();
     this.house       = new House();
     this.overHouse   = new House( 'outside' );
@@ -82,14 +116,14 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.animTransition.width = CONFIG.SCREEN_WIDTH;
     this.animTransition.height = CONFIG.SCREEN_HEIGHT;
 
-    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition );
+    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition, this.clouds );
 
     this.on( "show", function( params  )
     {
       this.camera.fadeIn( undefined, true );
       this.animTransition.enable = false;
       this.animTransition.renderer.restartAnim();
-      console.log( "show", params, this.currentDay );
+      // console.log( "show", params, this.currentDay );
       if ( params && params.type ) {
         this.afterNight( params.type );
       }
@@ -111,20 +145,20 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.dailyCheck = function( index ) {
       this.currentDailyIndex = index;
 
-      console.log( "daily check", this.currentDailyIndex, "day", this.currentDay );
+      // console.log( "daily check", this.currentDailyIndex, "day", this.currentDay );
       let target = this.customOrder[ CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] - 1 ];
       var isHappy = target && target.currentCusto !== undefined;
 
       if ( this.currentDailyIndex >= CONFIG.ANIM.DAILY_ORDER.length ) {
-        console.log( 'time to sleep' );
+        // console.log( 'time to sleep' );
 
         if ( this.currentDay < 6 ) {
           setTimeout( () => this.goSleep(), 500 );
         }
         else {
-          MessageBox.create( "Does it feels like home now?", () => {
+          MessageBox.create( DE.Localization.get( 'is-it-home' ), () => {
             this.character.renderer.setPause(true);
-            if ( window.confirm( "Do you want to restart ?" ) ) {
+            if ( window.confirm( DE.Localization.get( 'wanna-restart' ) ) ) {
               this.currentDay = 0;
               this.currentDailyIndex = 0;
               this.character.x = -70;
@@ -137,18 +171,10 @@ var homeWorld = new GameScreen( "HomeWorld", {
               this.dailyCheck( 0 );
             }
             else {
-              MessageBox.create( "Thanks for playing! /n This game has been made for the Globale Game Jam.", () => {
-                MessageBox.create( "The theme was 'What does home means to you?'", () => {
-                  MessageBox.create(
-                    "The game has been made by:/n\
-                      - Masami Komuro (composer)/n\
-                      - Crounchann (arts)/n\
-                      - Inateno (designer, programmer)/n\
-                      - Matteo Covelli (students, sound designer)/n\
-                      - Akibo (students, arts)/n\
-                      - Grimka (programmer)/n\
-                    ", () => {
-                      MessageBox.create( "Nothing more, it's time to chill or launch the game again :)" );
+              MessageBox.create( DE.Localization.get( 'credits-thanks' ), () => {
+                MessageBox.create( DE.Localization.get( 'credits-theme' ), () => {
+                  MessageBox.create( DE.Localization.get( 'credits-team' ), () => {
+                      MessageBox.create( DE.Localization.get( 'the-end' ) );
                   } );
                 } );
               } );
@@ -190,7 +216,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
         key += "-" + target.currentCusto;
       }
       
-      console.log( "key is", key );
+      // console.log( "key is", key );
       var msg = DE.Localization.get( key );
       if ( this.currentDay === 0 && this.currentDailyIndex === 0 ) {
         msg = "Voyons voir cette nouvelle maison";
@@ -230,19 +256,22 @@ var homeWorld = new GameScreen( "HomeWorld", {
 
     // animation start
     this.startGame = function() {
-      console.log( "start me" );
-      // TODO animate clouds to popout
+      // console.log( "start me" );
       this.title.fadeOut( 1500 );
       this.title.moveTo( { y: -150 }, 1500, () => {
+        this.title.enable = false;
         this.dailyCheck( 0 );
       } );
+      this.clouds.forEach(go => {
+        go.moveTo( { x: go.x > CONFIG.SCREEN_WIDTH * 0.5 ? CONFIG.SCREEN_WIDTH + 300 : -300 }, 2000, function(){ this.enable = false; } );
+      });
     };
   
     this.afterNight = function( result ) {
       DE.Audio.music.stopAllAndPlay( 'house-' + result );
       DE.Audio.music.get( 'house-' + result ).fade( 0, 1, 500 );
       let target = this.customOrder[ this.currentDay ];
-      console.log( result, this.currentDay, target )
+      // console.log( result, this.currentDay, target )
       this.currentDay++;
       var filters = target.customize( result );
 
@@ -289,12 +318,5 @@ var homeWorld = new GameScreen( "HomeWorld", {
     };
   }
 } );
-
-function speedToTime( position, target, speed ) {
-  var vector = new DE.Vector2( position.x, position.y );
-  var distance = vector.getDistance( target );
-
-  return distance / speed * 16 >> 0;
-}
 
 export default homeWorld;

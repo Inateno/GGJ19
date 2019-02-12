@@ -16,7 +16,8 @@ const inputs = {
   // dedicated for plugin choosebox
   "choose-up":{"keycodes":[ "K.up" , 'K.z', 'K.w' ] },
   "choose-down":{"keycodes":[ "K.down" , 'K.s' ] },
-  "choose-enter":{"keycodes":[ "K.space" , 'K.enter' ] }
+  "choose-enter":{"keycodes":[ "K.space" , 'K.enter' ] },
+  "skipMessage":{"keycodes":[ "K.space" , 'K.enter' ] }
 };
 
 export default inputs;

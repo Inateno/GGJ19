@@ -23,6 +23,8 @@ const images = {
     default: [
       // main / real world
       [ "title", "house/title.png", { totalFrame: 3, interval: 250 } ]
+      , [ "cloud-1", "house/cloud-1.png" ]
+      , [ "cloud-2", "house/cloud-2.png" ]
 
       , [ "weather-bg-basic", "house/weather/basic.png" ]
       , [ "weather-bg-ecolo", "house/weather/bg-ecolo.png" ]
@@ -67,11 +69,11 @@ const images = {
       , [ "room-dark", "house/room-type/room-dark.png" ]
 
       // TODO pets to add
-      , [ "pet-ecolo", "house/pet/pet-ecolo.png", { totalFrame: 7, loop: false, interval: 100 } ]
-      , [ "pet-dark", "house/pet/pet-dark.png", { totalFrame: 3, interval: 70 } ]
-      , [ "pet-bobo", "house/pet/pet-bobo.png", { totalFrame: 4, animated: false, interval: 100 } ]
-      , [ "pet-kitch", "house/pet/pet-kitch.png", { totalFrame: 5, startFrame: 0, endFrame: 1, interval: 100 } ]
-      , [ "pet-gamer", "house/pet/pet-gamer.png", { totalFrame: 4, animated: false, interval: 100 } ]
+      , [ "pet-ecolo", "house/pet/pet-ecolo.png", { totalFrame: 5, interval: 100, pingPongMode: true } ]
+      , [ "pet-bobo", "house/pet/pet-bobo.png", { totalFrame: 4, interval: 100, pingPongMode: true } ]
+      , [ "pet-kitch", "house/pet/pet-kitch.png", { totalFrame: 7, interval: 170 } ]
+      , [ "pet-gamer", "house/pet/pet-gamer.png", { totalFrame: 4, interval: 100, pingPongMode: true } ]
+      , [ "pet-dark", "house/pet/pet-dark.png", { totalFrame: 3, interval: 50, pingPongMode: false } ]
 
       , [ "real-char-walk", "house/mr-holme-walk.png", { totalFrame: 4, interval: 100 } ]
       , [ "real-char-idle", "house/mr-holme-idle.png", { totalFrame: 5, interval: 300, startFrame: 1, endFrame: 4, pingPongMode: true } ]

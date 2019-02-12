@@ -57,15 +57,11 @@ Game.onload = function()
   ChooseBox.create( [
     { text: "English", value: "en" },
     { text: "Francais", value: "fr" },
-    { text: "Italiano", value: "it" },
     { text: "日本人", value: "jp" }
   ], function( lang ) {
-    console.log( "you choosed lang", lang );
-
     DE.Localization.getLang( lang );
 
     Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
-    // Game.screenManager.changeScreen( dreamWorld.name );
     Game.screenManager.changeScreen( homeWorld.name );
 
     var ms = DE.Audio.music.getAll();
