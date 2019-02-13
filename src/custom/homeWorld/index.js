@@ -15,6 +15,7 @@ import RoomType    from './RoomType';
 import Pet         from './Pet';
 
 import Collectible from 'Collectible'
+import BtnAudio    from 'BtnAudio'
 
 var homeWorld = new GameScreen( "HomeWorld", {
   camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, {} ]
@@ -91,6 +92,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
       } )
     ];
 
+    this.btnAudio = new BtnAudio( DE.Audio.isMuted() );
+    this.btnAudio.enable = false;
 
     this.weather     = new Weather();
     this.weather.collectibleTarget = CONFIG.DAY_COLLECTIBLE_TARGETS.WEATHER;
@@ -132,13 +135,15 @@ var homeWorld = new GameScreen( "HomeWorld", {
     this.animTransition.width = CONFIG.SCREEN_WIDTH;
     this.animTransition.height = CONFIG.SCREEN_HEIGHT;
 
-    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition, this.afterNightCollectible, this.clouds );
+    this.scene.add( this.customOrder, this.character, this.title, this.overHouse, this.weather.bg, this.animTransition, this.afterNightCollectible, this.clouds, this.btnAudio );
 
     this.on( "show", function( params  )
     {
       this.camera.fadeIn( undefined, true );
       this.animTransition.enable = false;
       this.animTransition.renderer.restartAnim();
+
+      this.btnAudio.updateSprite();
 
       if( this.tempFilters )
       {
@@ -292,6 +297,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       this.title.fadeOut( 1500 );
       this.title.moveTo( { y: -150 }, 1500, () => {
         this.title.enable = false;
+        this.btnAudio.enable = true;
         this.dailyCheck( 0 );
       } );
       this.clouds.forEach(go => {

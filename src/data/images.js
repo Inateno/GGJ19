@@ -26,6 +26,9 @@ const images = {
       , [ "cloud-1", "house/cloud-1.png" ]
       , [ "cloud-2", "house/cloud-2.png" ]
 
+      , [ "btn-audio-on", "btn-audio-on.png" ]
+      , [ "btn-audio-off", "btn-audio-off.png" ]
+
       , [ "weather-bg-basic", "house/weather/basic.png" ]
       , [ "weather-bg-ecolo", "house/weather/bg-ecolo.png" ]
       , [ "weather-bg-bobo", "house/weather/bg-bobo.png" ]

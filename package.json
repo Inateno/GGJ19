@@ -31,6 +31,7 @@
     "config": "./src/config.js",
     "DreamWorldControler": "./src/custom/dreamWorld/DreamWorldControler.js",
     "Hud": "./src/custom/dreamWorld/Hud.js",
+    "BtnAudio": "./src/custom/BtnAudio.js",
     "Collectible": "./src/custom/dreamWorld/Collectible.js",
     "dreamWorld": "./src/custom/dreamWorld/dreamWorld.js",
     "Planet": "./src/custom/dreamWorld/Planet.js",

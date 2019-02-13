@@ -5,6 +5,7 @@ import DreamWorldControler from 'DreamWorldControler';
 import Planet from 'Planet';
 import Player from 'Player';
 import Hud from 'Hud';
+import BtnAudio from 'BtnAudio';
 
 var dreamWorld = new GameScreen( "dreamWorld", {
   camera: [ 0, 0, CONFIG.SCREEN_WIDTH, CONFIG.SCREEN_HEIGHT, { } ]
@@ -39,6 +40,9 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     this.scene.filterArea = new PIXI.Rectangle(-4000,-4000,8000,8000);
     this.scene.filters = [];
 
+    this.btnAudio = new BtnAudio( DE.Audio.isMuted() );
+    this.gui.add( this.btnAudio );
+
     this.collectibles = [];
     this.planets = [];
     this.phase = 0;
@@ -70,6 +74,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
     {
       this.camera.fadeIn( undefined, true );
       this.gui.fadeIn( undefined, true );
+
+      this.btnAudio.updateSprite();
       
       this.phase++;
 
