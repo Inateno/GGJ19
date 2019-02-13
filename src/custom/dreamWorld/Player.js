@@ -89,12 +89,7 @@ Player.prototype.move = function()
     rot = ( Math.PI * 2 + rot ) % (Math.PI * 2);
     this.rotation = ( Math.PI * 2 + this.rotation ) % (Math.PI * 2);
 
-    if( rot < 1 && this.rotation > 6 )
-      rot = rot + this.rotation;
-    if( rot > 6 && this.rotation < 1 )
-      this.rotation = this.rotation + rot;
-
-    var calc = rot - this.rotation;
+    var calc = ( ( ( ( rot - this.rotation ) % ( Math.PI * 2 ) ) + ( Math.PI * 3 ) ) % ( Math.PI * 2 ) ) - Math.PI;
 
     this.rotation += calc * this.ratioGravity;
     
