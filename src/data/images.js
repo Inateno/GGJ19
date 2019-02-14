@@ -39,6 +39,9 @@ const images = {
       , [ "house-out", "house/house/out-1.png" ]
       , [ "house-out-2", "house/house/out-2.png" ]
 
+      , [ "basic-door", "house/doors/basic-door.png", { totalFrame: 4, loop: false, interval: 200 } ]
+      , [ "wood-door", "house/doors/wood-door.png", { totalFrame: 4, loop: false, interval: 200 } ]
+
       , [ "house-basic", "house/house/basic-1.png" ]
       , [ "house-basic-2", "house/house/basic-2.png" ]
       , [ "house-ecolo", "house/house/house-ecolo.png" ]

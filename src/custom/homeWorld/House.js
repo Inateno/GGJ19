@@ -19,16 +19,45 @@ function House( currentState )
   this.currentState = currentState || 'inside';
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
   this.changeFrame();
+
+  if( !currentState )
+  {
+    this.door = new DE.GameObject( { 
+      x: 779 - this.x,
+      y: 608 - this.y,
+      renderer: new DE.SpriteRenderer( { spriteName: "basic-door" } )
+    } );
+    this.door.renderer.setPause( true );
+    this.add( this.door );
+  }
 }
 
 House.prototype = new DE.GameObject();
 House.constructor = House;
 House.supr = DE.GameObject.prototype;
 
+House.prototype.openDoor = function()
+{
+  this.door.renderer.reversed = false;
+  this.door.renderer.restartAnim();
+  this.door.renderer.setPause( false );
+}
+
+House.prototype.closeDoor = function()
+{
+  this.door.renderer.reversed = true;
+  this.door.renderer.restartAnim();
+}
+
 House.prototype.customize = function( result )
 {
   this.enable = true;
   this.currentCusto = result;
+
+  this.door.fadeOut( undefined, undefined, () => {
+    this.door.renderer.changeSprite( 'wood-door' );
+    this.door.fadeIn();
+  } );
 
   this.fadeOut( undefined, undefined, () => {
     this.renderer.changeSprite( 'house-' + result );

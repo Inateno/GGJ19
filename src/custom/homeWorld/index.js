@@ -347,6 +347,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
               }
 
               this.dailyCheck( 0 );
+
+              this.house.closeDoor();
             } );
           } );
         } );
@@ -360,6 +362,8 @@ var homeWorld = new GameScreen( "HomeWorld", {
       for ( let i in musics ) {
         musics[ i ].fade(1, 0, 2000);
       }
+
+      this.house.openDoor();
 
       setTimeout( () => {
         if( this.scene.filters && this.scene.filters.length > 0 )
