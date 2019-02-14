@@ -255,7 +255,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
       // console.log( "key is", key );
       var msg = DE.Localization.get( key );
       if ( this.currentDay === 0 && this.currentDailyIndex === 0 ) {
-        msg = "Voyons voir cette nouvelle maison";
+        msg = DE.Localization.get( 'new-house' );
       }
       MessageBox.create( msg, () => {
         if ( this.currentDay > 0 && CONFIG.ANIM.DAILY_INDEXES[ this.currentDailyIndex ] === this.currentDay ) {

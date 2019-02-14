@@ -12,6 +12,8 @@ const dictionary = {
     "credits": "Credits",
     "pause": "Pause",
 
+    "new-house": "Let's see this new house",
+
     "custom-weather": "Seriously, what is this weather ?",
     "custom-env": "What a strange place. I've no idea where we are.",
     "custom-house": "This house sucks./nI should take care of the decoration.",
@@ -75,6 +77,8 @@ const dictionary = {
     "settings": "Options",
     "credits": "Credits",
     "pause": "Pause",
+
+    "new-house": "Voyons voir cette nouvelle maison",
 
     "custom-weather": "C'est quoi ce temps ?",
     "custom-env": "Quel étrange lieu, aucune idée de où on est.",

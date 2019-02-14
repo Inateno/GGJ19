@@ -10,7 +10,7 @@ function BtnAudio( muted )
     renderer: new DE.SpriteRenderer( { spriteName: muted ? "btn-audio-off" : "btn-audio-on" } ),
     zindex: 50,
     interactive: true,
-    click: ( e ) => {
+    pointerup: ( e ) => {
       this.onClick( e );
     }
   } );
