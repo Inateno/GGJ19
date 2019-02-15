@@ -56,10 +56,11 @@ Game.onload = function()
   ChooseBox.init();
   ChooseBox.create( [
     { text: "English", value: "en" },
-    { text: "Francais", value: "fr" },
-    { text: "日本人", value: "jp" }
+    { text: "Français", value: "fr" }
   ], function( lang ) {
     DE.Localization.getLang( lang );
+
+    gtag( 'event', 'choosed-lang', { 'lang': lang } );
 
     Game.screenManager = new GameScreenManager( Game.render, [ homeWorld, dreamWorld ] );
     Game.screenManager.changeScreen( homeWorld.name );

@@ -106,6 +106,8 @@ DreamWorldControler.prototype.checkPlanetsCollectibles = function() {
         collectible.x = pos.x;
         collectible.y = pos.y;
         this.dreamWorld.hud.add( collectible );
+
+        gtag( 'event', 'catch-collectible', { 'type': collectible.type, 'value': collectible.value } );
       }
     }
   }
@@ -141,6 +143,8 @@ DreamWorldControler.prototype.checkEndGame = function()
         mostType = type;
       }
     }
+
+    gtag( 'event', 'end-night', { 'day': this.dreamWorld.phase, 'final-type': mostType } );
 
     var endFunc = () => {
       this.dreamWorld.camera.fadeOut();

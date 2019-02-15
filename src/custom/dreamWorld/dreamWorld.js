@@ -72,6 +72,8 @@ var dreamWorld = new GameScreen( "dreamWorld", {
 
     this.on( "show", function( self, args )
     {
+      gtag( 'event', 'start-night', { 'day': this.phase } );
+
       this.camera.fadeIn( undefined, true );
       this.gui.fadeIn( undefined, true );
 
