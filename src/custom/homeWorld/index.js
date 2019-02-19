@@ -204,6 +204,7 @@ var homeWorld = new GameScreen( "HomeWorld", {
                 this.pet.reset();
                 this.roomType.reset();
                 this.dailyCheck( 0 );
+                DE.Audio.music.stopAllAndPlay( 'main-theme' );
               }
               else {
                 MessageBox.create( DE.Localization.get( 'credits-thanks' ), () => {

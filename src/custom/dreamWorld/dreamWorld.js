@@ -78,6 +78,7 @@ var dreamWorld = new GameScreen( "dreamWorld", {
       this.gui.fadeIn( undefined, true );
 
       this.btnAudio.updateSprite();
+      this.btnAudio.enable = true;
       
       this.phase++;
 

@@ -155,6 +155,7 @@ DreamWorldControler.prototype.checkEndGame = function()
     this.dreamWorld.gameEnded = true;
     this.dreamWorld.player.removeAutomatism( "moveToCursor" );
     this.dreamWorld.player.axes.x = 0;
+    this.dreamWorld.btnAudio.enable = false;
 
     this.dreamWorld.hud.combineCollectibles( { most: most, mostType: mostType, phase: this.dreamWorld.phase }, endFunc );
   } 

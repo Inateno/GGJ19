@@ -73,6 +73,7 @@ House.prototype.customize = function( result )
 House.prototype.reset = function()
 {
   this.renderer.changeSprite( 'house-basic' );
+  this.door.renderer.changeSprite( 'basic-door' );
   this.addAutomatism( 'changeFrame', 'changeFrame', { interval: 500 } );
   this.currentCusto = undefined;
 };
