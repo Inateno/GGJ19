@@ -8,7 +8,7 @@
  */
 const audios = [
   // MUSICS
-  [ "main-theme", "audio/music/neutre", [ 'ogg', 'mp3' ], { "preload": false, "loop": true, "isMusic": true } ]
+  [ "main-theme", "audio/music/neutre", [ 'ogg', 'mp3' ], { "preload": true, "loop": true, "isMusic": true } ]
   
   ,[ "planet-ecolo", "audio/music/planet-ecolo", [ 'ogg', 'mp3' ], { "preload": false, "loop": true, "isMusic": true } ]
   ,[ "planet-bobo", "audio/music/planet-bowbow", [ 'ogg', 'mp3' ], { "preload": false, "loop": true, "isMusic": true } ]

@@ -11,6 +11,20 @@
   padding-right: 3.5rem;
 }
 
+#de-plugin-choosebox-container .de-choosebox-cursor {
+  display: none;
+  position: absolute;
+  right: -2.8rem;
+  top: 0.4rem;
+  border: solid white;
+  border-width: 0 0.4rem 0.4rem 0;
+  padding: 0.8rem;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  width: auto;
+  height: auto;
+  background: none;
+}
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .de-plugin-messagebox .content, .de-plugin-messagebox .sizer {
